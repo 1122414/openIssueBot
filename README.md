@@ -1,0 +1,2 @@
+# openIssueBot
+找出开源项目issue中对应的内容，或者没有内容自动根据已有issue或者自身能力去解决问题，相当于githubIssueRAG
