@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}错误 {{ error_code }} - OpenIssueBot{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        错误 {{ error_code }}
+                    </h4>
+                </div>
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        {% if error_code == 404 %}
+                            <i class="fas fa-search fa-5x text-muted mb-3"></i>
+                            <h5>页面未找到</h5>
+                            <p class="text-muted">抱歉，您访问的页面不存在或已被移动。</p>
+                        {% elif error_code == 500 %}
+                            <i class="fas fa-server fa-5x text-muted mb-3"></i>
+                            <h5>服务器内部错误</h5>
+                            <p class="text-muted">服务器遇到了一个错误，无法完成您的请求。</p>
+                        {% else %}
+                            <i class="fas fa-bug fa-5x text-muted mb-3"></i>
+                            <h5>发生错误</h5>
+                            <p class="text-muted">{{ error_message or '发生了未知错误' }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary">
+                            <i class="fas fa-home me-2"></i>
+                            返回首页
+                        </a>
+                        <button onclick="history.back()" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            返回上页
+                        </button>
+                    </div>
+                    
+                    {% if error_code == 404 %}
+                    <div class="mt-4">
+                        <h6>您可以尝试：</h6>
+                        <ul class="list-unstyled text-start">
+                            <li><i class="fas fa-check text-success me-2"></i>检查URL拼写是否正确</li>
+                            <li><i class="fas fa-check text-success me-2"></i>使用导航菜单浏览网站</li>
+                            <li><i class="fas fa-check text-success me-2"></i>搜索您需要的内容</li>
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// 自动刷新功能（仅对500错误）
+{% if error_code == 500 %}
+setTimeout(function() {
+    const refreshBtn = document.createElement('button');
+    refreshBtn.className = 'btn btn-warning mt-3';
+    refreshBtn.innerHTML = '<i class="fas fa-sync-alt me-2"></i>刷新页面';
+    refreshBtn.onclick = function() {
+        location.reload();
+    };
+    document.querySelector('.card-body').appendChild(refreshBtn);
+}, 3000);
+{% endif %}
+</script>
+{% endblock %}

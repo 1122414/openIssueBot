@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+
+{% block title %}OpenIssueBot - 首页{% endblock %}
+
+{% block content %}
+<!-- 欢迎横幅 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="jumbotron bg-gradient text-white rounded-3 p-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-4 fw-bold mb-3">
+                            <i class="bi bi-robot"></i>
+                            OpenIssueBot
+                        </h1>
+                        <p class="lead mb-4">
+                            基于RAG和大语言模型的GitHub Issue智能搜索助手
+                        </p>
+                        <p class="mb-4">
+                            通过先进的向量搜索和AI分析技术，帮助开发者快速找到相关的GitHub Issues和解决方案。
+                            支持中英文搜索，提供智能摘要和解决方案推荐。
+                        </p>
+                        <div class="d-flex gap-3">
+                            <a href="{{ url_for('search_page') }}" class="btn btn-light btn-lg">
+                                <i class="bi bi-search"></i> 开始搜索
+                            </a>
+                            <a href="{{ url_for('about_page') }}" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-info-circle"></i> 了解更多
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="bi bi-search" style="font-size: 8rem; opacity: 0.3;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 配置状态卡片 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-gear"></i> 系统状态
+                </h5>
+                <button class="btn btn-sm btn-outline-primary" onclick="refreshStatus()">
+                    <i class="bi bi-arrow-clockwise"></i> 刷新
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>基础配置</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                GitHub Token
+                                {% if config_status.github_token_configured %}
+                                    <span class="badge bg-success"><i class="bi bi-check-circle"></i> 已配置</span>
+                                {% else %}
+                                    <span class="badge bg-danger"><i class="bi bi-x-circle"></i> 未配置</span>
+                                {% endif %}
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                GitHub 仓库
+                                {% if config_status.github_repo_configured and config_status.github_repo_valid %}
+                                    <span class="badge bg-success"><i class="bi bi-check-circle"></i> 已配置</span>
+                                {% elif config_status.github_repo_configured %}
+                                    <span class="badge bg-warning"><i class="bi bi-exclamation-triangle"></i> 格式无效</span>
+                                {% else %}
+                                    <span class="badge bg-danger"><i class="bi bi-x-circle"></i> 未配置</span>
+                                {% endif %}
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                OpenAI API Key
+                                {% if config_status.openai_api_key_configured %}
+                                    <span class="badge bg-success"><i class="bi bi-check-circle"></i> 已配置</span>
+                                {% else %}
+                                    <span class="badge bg-secondary"><i class="bi bi-dash-circle"></i> 可选</span>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>服务状态</h6>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                嵌入模型
+                                {% if config_status.use_local_embedding %}
+                                    <span class="badge bg-info"><i class="bi bi-cpu"></i> 本地模型</span>
+                                {% else %}
+                                    <span class="badge bg-primary"><i class="bi bi-cloud"></i> OpenAI</span>
+                                {% endif %}
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Web服务
+                                <span class="badge bg-success"><i class="bi bi-check-circle"></i> {{ config_status.flask_host }}:{{ config_status.flask_port }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                缓存目录
+                                <span class="badge bg-info"><i class="bi bi-folder"></i> {{ config_status.cache_dir }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                {% if not (config_status.github_token_configured and config_status.github_repo_configured and config_status.github_repo_valid) %}
+                <div class="alert alert-warning mt-3" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <strong>配置不完整！</strong>
+                    请前往 <a href="{{ url_for('config_page') }}" class="alert-link">配置页面</a> 完成必要的设置。
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 功能特性 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <h2 class="text-center mb-4">核心功能</h2>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-search text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">智能搜索</h5>
+                <p class="card-text">
+                    基于向量相似度的语义搜索，理解查询意图，找到最相关的Issues。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-robot text-success" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">AI分析</h5>
+                <p class="card-text">
+                    集成大语言模型，提供智能问题分析和解决方案推荐。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-lightning text-warning" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">快速响应</h5>
+                <p class="card-text">
+                    高效的FAISS向量索引，毫秒级搜索响应，提升开发效率。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <i class="bi bi-translate text-info" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">多语言支持</h5>
+                <p class="card-text">
+                    支持中英文搜索，智能理解不同语言的技术问题描述。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 快速开始 -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-play-circle"></i> 快速开始
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>1. 配置环境</h6>
+                        <p class="text-muted">设置GitHub Token和目标仓库，可选配置OpenAI API Key。</p>
+                        <a href="{{ url_for('config_page') }}" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-gear"></i> 前往配置
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>2. 初始化索引</h6>
+                        <p class="text-muted">首次使用需要构建向量索引，这可能需要几分钟时间。</p>
+                        <button class="btn btn-outline-success btn-sm" onclick="initializeSystem()">
+                            <i class="bi bi-download"></i> 初始化系统
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>3. 开始搜索</h6>
+                        <p class="text-muted">输入错误信息或问题描述，获取相关的Issues和解决方案。</p>
+                        <a href="{{ url_for('search_page') }}" class="btn btn-primary btn-sm">
+                            <i class="bi bi-search"></i> 开始搜索
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>4. 学习RAG技术</h6>
+                        <p class="text-muted">通过项目代码学习RAG和大语言模型的实际应用。</p>
+                        <a href="{{ url_for('about_page') }}" class="btn btn-outline-info btn-sm">
+                            <i class="bi bi-book"></i> 技术文档
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 使用统计 -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-bar-chart"></i> 系统统计
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="stats-container">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">加载中...</span>
+                        </div>
+                        <p class="mt-2 text-muted">正在加载统计信息...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// 刷新状态
+function refreshStatus() {
+    location.reload();
+}
+
+// 初始化系统
+function initializeSystem() {
+    const btn = event.target;
+    const originalText = btn.innerHTML;
+    
+    btn.disabled = true;
+    btn.innerHTML = '<i class="bi bi-arrow-repeat"></i> 初始化中...';
+    
+    fetch('/api/initialize', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ force_refresh: false })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showMessage('success', '系统初始化成功！');
+            loadStats();
+        } else {
+            showMessage('danger', '初始化失败: ' + data.error);
+        }
+    })
+    .catch(error => {
+        showMessage('danger', '初始化过程中发生错误: ' + error.message);
+    })
+    .finally(() => {
+        btn.disabled = false;
+        btn.innerHTML = originalText;
+    });
+}
+
+// 加载统计信息
+function loadStats() {
+    fetch('/api/stats')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('stats-container');
+            
+            if (data.success) {
+                const stats = data.stats;
+                container.innerHTML = `
+                    <div class="row text-center">
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <h3 class="text-primary">${stats.total_issues || 0}</h3>
+                                <p class="text-muted">索引Issues数量</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <h3 class="text-success">${stats.embedding_service?.dimension || 0}</h3>
+                                <p class="text-muted">向量维度</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <h3 class="text-info">${stats.is_initialized ? '已就绪' : '未初始化'}</h3>
+                                <p class="text-muted">系统状态</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-item">
+                                <h3 class="text-warning">${stats.llm_available ? '可用' : '不可用'}</h3>
+                                <p class="text-muted">LLM服务</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = `
+                    <div class="alert alert-warning" role="alert">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        无法获取统计信息: ${data.error}
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            const container = document.getElementById('stats-container');
+            container.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    <i class="bi bi-x-circle"></i>
+                    加载统计信息失败: ${error.message}
+                </div>
+            `;
+        });
+}
+
+// 显示消息
+function showMessage(type, message) {
+    const container = document.getElementById('message-container');
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    container.appendChild(alertDiv);
+    
+    // 5秒后自动消失
+    setTimeout(() => {
+        if (alertDiv.parentNode) {
+            alertDiv.remove();
+        }
+    }, 5000);
+}
+
+// 页面加载完成后加载统计信息
+document.addEventListener('DOMContentLoaded', function() {
+    loadStats();
+});
+</script>
+{% endblock %}

@@ -1,0 +1,843 @@
+2025-07-23 22:33:58,713 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 22:33:59,275 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 22:33:59,276 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 22:33:59,276 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:35:23,762 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 22:35:24,247 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 22:35:24,248 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 22:35:24,248 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:38:30,822 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 22:38:31,312 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 22:38:31,312 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 22:38:31,312 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:38:31,347 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:39:38,904 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 22:39:39,429 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 22:39:39,430 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 22:39:39,430 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:39:39,455 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:40:40,450 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 22:40:40,911 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 22:40:40,912 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 22:40:40,912 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:40:40,934 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:40:41,033 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-23 22:40:41,047 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 22:40:41,047 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 22:40:49,858 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:40:49] "GET / HTTP/1.1" 200 -
+2025-07-23 22:40:50,143 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:40:50] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-07-23 22:40:50,144 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:40:50] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-23 22:40:50,634 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 22:40:50,635 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 22:40:50,706 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 22:40:50,706 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 22:40:51,808 - app.web_app - ERROR - Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GitHub\Repositories\openIssueBot\app\web_app.py", line 407, in not_found
+    return render_template('error.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-07-23 22:40:51,816 - OpenIssueBot - ERROR - 内部服务器错误: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-23 22:40:51,817 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:40:51] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+2025-07-23 22:40:51,836 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GitHub\Repositories\openIssueBot\app\web_app.py", line 407, in not_found
+    return render_template('error.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1399, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GitHub\Repositories\openIssueBot\app\web_app.py", line 417, in internal_error
+    return render_template('error.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-07-23 22:40:58,646 - huggingface_hub.file_download - WARNING - Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
+2025-07-23 22:41:10,644 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 22:41:10,644 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 22:41:10,644 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 22:41:10,645 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 22:41:10,646 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 22:41:10,646 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 22:41:10,651 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 22:41:10,651 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 22:41:10,652 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 22:41:10,652 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 22:41:10,653 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 22:41:10,654 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 22:41:14,761 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 22:41:14,762 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 22:41:14,762 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 22:41:14,762 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 22:41:14,762 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 22:41:14,762 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 22:41:14,763 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:16,809 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 22:41:16,809 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 22:41:16,809 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 22:41:16,811 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 22:41:16,811 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 22:41:16,812 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 22:41:16,812 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:16,948 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 22:41:16,948 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 22:41:16,950 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 22:41:16,950 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 22:41:16,950 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 22:41:16,950 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 22:41:16,951 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:17,975 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 22:41:17,975 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 22:41:17,975 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 22:41:17,975 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 22:41:17,975 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 22:41:17,976 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 22:41:17,976 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:38,821 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:38] "GET /?ide_webview_request_time=1753281698812 HTTP/1.1" 200 -
+2025-07-23 22:41:39,105 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:39] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-23 22:41:39,105 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:39] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-07-23 22:41:39,782 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:39,784 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:39,786 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:39,789 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:40,347 - app.web_app - ERROR - Exception on /@vite/client [GET]
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GitHub\Repositories\openIssueBot\app\web_app.py", line 407, in not_found
+    return render_template('error.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-07-23 22:41:40,350 - OpenIssueBot - ERROR - 内部服务器错误: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-07-23 22:41:40,350 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:40] "[35m[1mGET /@vite/client HTTP/1.1[0m" 500 -
+2025-07-23 22:41:40,359 - werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1458, in dispatch_request
+    self.raise_routing_exception(req)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1440, in raise_routing_exception
+    raise request.routing_exception  # type: ignore
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\ctx.py", line 353, in match_request
+    result = self.url_adapter.match(return_rule=True)  # type: ignore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\routing\map.py", line 629, in match
+    raise NotFound() from None
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1341, in handle_user_exception
+    return self.handle_http_exception(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1281, in handle_http_exception
+    return self.ensure_sync(handler)(e)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GitHub\Repositories\openIssueBot\app\web_app.py", line 407, in not_found
+    return render_template('error.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 370, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\werkzeug\serving.py", line 331, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\app.py", line 1399, in handle_exception
+    server_error = self.ensure_sync(handler)(server_error)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\GitHub\Repositories\openIssueBot\app\web_app.py", line 417, in internal_error
+    return render_template('error.html',
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: error.html
+2025-07-23 22:41:50,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:41:50,608 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:41:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:09,783 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:09,784 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:39,782 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:39,785 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:42:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:42:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:43:09,781 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:43:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:43:09,785 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:43:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:43:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:43:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:43:20,608 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:43:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:43:26,589 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:43:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:43:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:43:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:43:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:43:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:44:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:44:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:44:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:44:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:44:50,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:44:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:44:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:44:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:45:20,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:45:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:45:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:45:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:45:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:45:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:45:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:45:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:46:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:46:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:46:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:46:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:46:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:46:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:46:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:46:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:47:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:47:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:47:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:47:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:47:50,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:47:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:47:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:47:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:48:41,357 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 22:48:41,857 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 22:48:41,858 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 22:48:41,858 - faiss.loader - INFO - Loading faiss.
+2025-07-23 22:48:41,882 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 22:48:41,988 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-23 22:48:42,004 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 22:48:42,004 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 22:48:50,606 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 22:48:50,606 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 22:48:50,631 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 22:48:50,632 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 22:48:51,895 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:51] "GET /?ide_webview_request_time=1753282131876 HTTP/1.1" 200 -
+2025-07-23 22:48:52,308 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 22:48:52,317 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:52] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 22:48:52,392 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 22:48:52,393 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 22:48:52,397 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 22:48:52,397 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 22:48:52,406 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:52] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-23 22:48:59,679 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 22:48:59,679 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 22:48:59,679 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 22:48:59,679 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 22:48:59,698 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: gpt-3.5-turbo
+2025-07-23 22:48:59,698 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 22:48:59,698 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 22:48:59,699 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:48:59,702 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:48:59,705 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:48:59,708 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:48:59,838 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 22:48:59,838 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 22:48:59,838 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 22:48:59,838 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 22:48:59,857 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: gpt-3.5-turbo
+2025-07-23 22:48:59,857 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 22:48:59,859 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 22:48:59,859 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:48:59,862 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:48:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:22,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:22,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:52,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:49:52,396 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:49:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:20,608 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:22,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:22,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:52,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:50:52,396 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:50:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:20,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:22,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:22,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:52,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:51:52,396 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:51:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:22,391 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:22,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:52,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:52:52,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:52:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:22,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:22,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:52,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:53:52,397 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:53:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:22,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:22,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:50,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:52,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:54:52,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:54:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:22,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:22,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:52,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:52,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:55:59,554 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:55:59] "GET /config HTTP/1.1" 200 -
+2025-07-23 22:56:20,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:56:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:56:22,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:56:22,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:56:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:56:50,608 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:56:52,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:56:52,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:56:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:22,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:22,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:50,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:52,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:57:52,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:57:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:20,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:22,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:22,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:52,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:58:52,396 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:58:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:20,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:22,392 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:22,395 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:41,850 - OpenIssueBot - ERROR - 未处理的异常: 'project_stats' is undefined
+2025-07-23 22:59:41,852 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:41] "[35m[1mGET /about HTTP/1.1[0m" 500 -
+2025-07-23 22:59:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:50,608 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:52,393 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 22:59:52,394 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 22:59:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:45,103 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 23:00:45,654 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 23:00:45,654 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 23:00:45,654 - faiss.loader - INFO - Loading faiss.
+2025-07-23 23:00:45,684 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 23:00:45,800 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-23 23:00:45,821 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 23:00:45,821 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 23:00:46,886 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:46,886 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:46,920 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 23:00:46,920 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:47,499 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:47] "GET /?ide_webview_request_time=1753282847180 HTTP/1.1" 200 -
+2025-07-23 23:00:47,915 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:47] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-23 23:00:47,988 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:47] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-07-23 23:00:48,008 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:48,008 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:48,014 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 23:00:48,015 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:48,326 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:48] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-23 23:00:50,605 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:50,606 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:50,611 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 23:00:50,611 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:52,684 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:52,684 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:52,689 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda:0
+2025-07-23 23:00:52,689 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-23 23:00:53,388 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 23:00:53,388 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 23:00:53,388 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 23:00:53,388 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 23:00:53,411 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: gpt-3.5-turbo
+2025-07-23 23:00:53,411 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:53,411 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 23:00:53,413 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:54,390 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 23:00:54,392 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 23:00:54,392 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 23:00:54,392 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 23:00:54,414 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: gpt-3.5-turbo
+2025-07-23 23:00:54,414 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:54,418 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 23:00:54,418 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:54,722 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:55,026 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:55,330 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:56,825 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 23:00:56,825 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 23:00:56,825 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 23:00:56,827 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 23:00:56,847 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: gpt-3.5-turbo
+2025-07-23 23:00:56,848 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:56,851 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 23:00:56,851 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:56,855 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:00:59,199 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-23 23:00:59,199 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-23 23:00:59,199 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-23 23:00:59,201 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-23 23:00:59,219 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: gpt-3.5-turbo
+2025-07-23 23:00:59,220 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: facebook/react
+2025-07-23 23:00:59,222 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-23 23:00:59,227 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:00:59] "GET /about HTTP/1.1" 200 -
+2025-07-23 23:01:05,197 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:05] "GET /config HTTP/1.1" 200 -
+2025-07-23 23:01:10,921 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:10] "GET /?ide_webview_request_time=1753282870918 HTTP/1.1" 200 -
+2025-07-23 23:01:11,094 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 23:01:11,095 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:11] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:01:11,113 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:11,116 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:11,118 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:11,120 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:11,202 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:11] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-23 23:01:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:41,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:41,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:50,602 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:01:50,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:01:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:11,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:41,116 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:41,118 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:50,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:02:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:02:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:11,114 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:11,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:41,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:41,118 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:50,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:03:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:03:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:11,114 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:11,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:41,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:41,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:04:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:04:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:11,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:41,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:41,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:05:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:05:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:11,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:41,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:41,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:50,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:06:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:06:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:11,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:41,116 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:41,118 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:07:50,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:07:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:11,114 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:11,116 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:20,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:41,114 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:41,116 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:50,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:08:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:08:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:11,116 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:20,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:41,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:41,118 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:09:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:09:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:11,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:20,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:20,607 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:41,116 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:41,117 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:50,604 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:10:50,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:10:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:11,118 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:20,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:20,606 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:31,230 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:31] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:41,884 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:43,715 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:43] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:43,717 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:43] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:50,603 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:11:50,605 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:11:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:12:11,115 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:12:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:12:13,703 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:12:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:12:20,885 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:12:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:12:50,885 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:12:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:13:40,887 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:13:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:14:40,886 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:14:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:15:14,541 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 23:15:15,117 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 23:15:15,118 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 23:15:15,118 - faiss.loader - INFO - Loading faiss.
+2025-07-23 23:15:15,146 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 23:15:40,887 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:15:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:16:13,527 - tensorflow - WARNING - From C:\Users\Lenovo\AppData\Local\Programs\Python\Python311\Lib\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2025-07-23 23:16:14,019 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-23 23:16:14,019 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-23 23:16:14,020 - faiss.loader - INFO - Loading faiss.
+2025-07-23 23:16:14,045 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-23 23:16:14,156 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-23 23:16:14,174 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-23 23:16:14,175 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-23 23:16:26,234 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "GET /?ide_webview_request_time=1753283786225 HTTP/1.1" 200 -
+2025-07-23 23:16:26,525 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-23 23:16:26,526 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:16:26,549 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:16:26,551 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:16:26,554 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:16:26,557 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:16:26,661 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:26] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-23 23:16:40,887 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:16:54,568 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:16:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:19,854 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:19] "GET / HTTP/1.1" 200 -
+2025-07-23 23:17:19,917 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:19] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-23 23:17:19,918 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:19] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:17:20,203 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:20,206 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:20,208 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:20,211 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:20,679 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-23 23:17:24,697 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:24] "GET / HTTP/1.1" 200 -
+2025-07-23 23:17:24,718 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 23:17:24,719 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:24] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:17:24,747 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:24] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:24,749 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:24] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:24,753 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:24] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:24,756 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:24] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:26,425 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:26] "GET /search HTTP/1.1" 200 -
+2025-07-23 23:17:26,450 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 23:17:26,453 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:26] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:17:26,474 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:26,476 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:26,478 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:28,975 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:28] "GET /config HTTP/1.1" 200 -
+2025-07-23 23:17:29,004 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 23:17:29,005 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:29] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:17:29,025 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:29] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:29,027 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:29] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:29,029 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:29] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:31,022 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:31] "GET /about HTTP/1.1" 200 -
+2025-07-23 23:17:31,047 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 23:17:31,052 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:31] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:17:31,070 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:31] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:31,074 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:31] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:31,077 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:31] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:31,080 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:31] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:33,173 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:33] "GET / HTTP/1.1" 200 -
+2025-07-23 23:17:33,201 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 23:17:33,203 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:33] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:17:33,222 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:33,226 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:33,228 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:33,231 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:17:40,885 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:17:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:03,221 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:03] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:03,224 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:03] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:33,221 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:33,224 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:40,886 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:56,560 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "GET / HTTP/1.1" 200 -
+2025-07-23 23:18:56,584 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-23 23:18:56,586 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-07-23 23:18:56,618 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:56,620 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:56,622 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:18:56,624 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-23 23:19:26,885 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:19:26] "GET /api/stats HTTP/1.1" 200 -

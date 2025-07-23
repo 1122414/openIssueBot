@@ -1,0 +1,569 @@
+{% extends "base.html" %}
+
+{% block title %}搜索 - OpenIssueBot{% endblock %}
+
+{% block extra_head %}
+<style>
+.search-result-item {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.search-result-item:hover {
+    background-color: #f8f9fa;
+    border-left-color: #007bff;
+}
+
+.similarity-bar {
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #dc3545 0%, #ffc107 50%, #28a745 100%);
+}
+
+.similarity-high { background: #28a745; }
+.similarity-medium { background: #ffc107; }
+.similarity-low { background: #fd7e14; }
+.similarity-very-low { background: #dc3545; }
+
+.code-block {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+}
+
+.label-badge {
+    font-size: 0.75rem;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.search-tips {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- 搜索表单 -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-search"></i> 智能搜索
+                </h5>
+            </div>
+            <div class="card-body">
+                <form id="search-form">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <label for="query" class="form-label">搜索内容</label>
+                                <textarea class="form-control" id="query" name="query" rows="3" 
+                                         placeholder="请输入错误信息、问题描述或技术关键词...\n\n示例：\n• ImportError: No module named 'requests'\n• 如何使用Flask创建API\n• React组件渲染问题"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="search-type" class="form-label">搜索类型</label>
+                                <select class="form-select" id="search-type" name="search_type">
+                                    <option value="vector">向量搜索（推荐）</option>
+                                    <option value="hybrid">混合搜索</option>
+                                    <option value="keyword">关键词搜索</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="max-results" class="form-label">最大结果数</label>
+                                <select class="form-select" id="max-results" name="max_results">
+                                    <option value="3">3个结果</option>
+                                    <option value="5" selected>5个结果</option>
+                                    <option value="10">10个结果</option>
+                                    <option value="15">15个结果</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 高级选项 -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="accordion" id="advanced-options">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" 
+                                               data-bs-toggle="collapse" data-bs-target="#advanced-collapse">
+                                            <i class="bi bi-sliders"></i> 高级选项
+                                        </button>
+                                    </h2>
+                                    <div id="advanced-collapse" class="accordion-collapse collapse">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <label for="similarity-threshold" class="form-label">相似度阈值</label>
+                                                    <input type="range" class="form-range" id="similarity-threshold" 
+                                                           min="0.1" max="0.9" step="0.1" value="0.3">
+                                                    <div class="d-flex justify-content-between">
+                                                        <small>0.1</small>
+                                                        <small id="threshold-value">0.3</small>
+                                                        <small>0.9</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                               id="include-llm" checked>
+                                                        <label class="form-check-label" for="include-llm">
+                                                            启用AI分析
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">使用大语言模型提供智能分析</small>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" 
+                                                               id="real-time-search">
+                                                        <label class="form-check-label" for="real-time-search">
+                                                            实时搜索
+                                                        </label>
+                                                    </div>
+                                                    <small class="text-muted">输入时自动搜索</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-lg me-2">
+                                <i class="bi bi-search"></i> 搜索
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" onclick="clearSearch()">
+                                <i class="bi bi-x-circle"></i> 清空
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 搜索提示 -->
+<div class="row mb-4" id="search-tips">
+    <div class="col-12">
+        <div class="search-tips p-4">
+            <h6><i class="bi bi-lightbulb"></i> 搜索技巧</h6>
+            <div class="row">
+                <div class="col-md-4">
+                    <strong>错误搜索：</strong>
+                    <ul class="mb-0 small">
+                        <li>直接粘贴完整错误信息</li>
+                        <li>包含错误类型和关键信息</li>
+                        <li>去除个人路径和敏感信息</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <strong>功能搜索：</strong>
+                    <ul class="mb-0 small">
+                        <li>描述想要实现的功能</li>
+                        <li>包含相关技术栈关键词</li>
+                        <li>使用自然语言描述</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <strong>最佳实践：</strong>
+                    <ul class="mb-0 small">
+                        <li>先尝试向量搜索</li>
+                        <li>结果不理想时使用混合搜索</li>
+                        <li>启用AI分析获得更好建议</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 搜索结果 -->
+<div class="row" id="results-container" style="display: none;">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-list-ul"></i> 搜索结果
+                </h5>
+                <div>
+                    <span id="results-count" class="badge bg-primary">0</span>
+                    <span id="search-time" class="text-muted small"></span>
+                </div>
+            </div>
+            <div class="card-body" id="results-content">
+                <!-- 搜索结果将在这里显示 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI分析结果 -->
+<div class="row mt-4" id="llm-analysis-container" style="display: none;">
+    <div class="col-12">
+        <div class="card border-success">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="bi bi-robot"></i> AI智能分析
+                </h5>
+            </div>
+            <div class="card-body" id="llm-analysis-content">
+                <!-- AI分析结果将在这里显示 -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 配置检查提示 -->
+{% if not (config_status.github_token_configured and config_status.github_repo_configured and config_status.github_repo_valid) %}
+<div class="row">
+    <div class="col-12">
+        <div class="alert alert-warning" role="alert">
+            <i class="bi bi-exclamation-triangle"></i>
+            <strong>配置不完整！</strong>
+            搜索功能需要完整的GitHub配置。请前往 
+            <a href="{{ url_for('config_page') }}" class="alert-link">配置页面</a> 完成设置。
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- 加载遮罩 -->
+<div id="loading-overlay" class="loading-overlay" style="display: none;">
+    <div class="text-center text-white">
+        <div class="spinner-border mb-3" role="status">
+            <span class="visually-hidden">搜索中...</span>
+        </div>
+        <h5>正在搜索...</h5>
+        <p class="mb-0">请稍候，正在分析您的问题</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+let searchTimeout;
+let isSearching = false;
+
+// 表单提交处理
+document.getElementById('search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    performSearch();
+});
+
+// 相似度阈值滑块
+document.getElementById('similarity-threshold').addEventListener('input', function(e) {
+    document.getElementById('threshold-value').textContent = e.target.value;
+});
+
+// 实时搜索
+document.getElementById('query').addEventListener('input', function() {
+    if (document.getElementById('real-time-search').checked) {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            if (this.value.trim().length > 3) {
+                performSearch();
+            }
+        }, 1000);
+    }
+});
+
+// 执行搜索
+function performSearch() {
+    if (isSearching) return;
+    
+    const query = document.getElementById('query').value.trim();
+    if (!query) {
+        showMessage('warning', '请输入搜索内容');
+        return;
+    }
+    
+    isSearching = true;
+    showLoading(true);
+    hideSearchTips();
+    
+    const searchData = {
+        query: query,
+        search_type: document.getElementById('search-type').value,
+        max_results: parseInt(document.getElementById('max-results').value),
+        similarity_threshold: parseFloat(document.getElementById('similarity-threshold').value),
+        include_llm_analysis: document.getElementById('include-llm').checked
+    };
+    
+    const startTime = Date.now();
+    
+    fetch('/api/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(searchData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        const searchTime = Date.now() - startTime;
+        displayResults(data, searchTime);
+    })
+    .catch(error => {
+        showMessage('danger', '搜索失败: ' + error.message);
+        console.error('搜索错误:', error);
+    })
+    .finally(() => {
+        isSearching = false;
+        showLoading(false);
+    });
+}
+
+// 显示搜索结果
+function displayResults(data, searchTime) {
+    const resultsContainer = document.getElementById('results-container');
+    const resultsContent = document.getElementById('results-content');
+    const resultsCount = document.getElementById('results-count');
+    const searchTimeSpan = document.getElementById('search-time');
+    
+    if (!data.success) {
+        showMessage('danger', '搜索失败: ' + data.error);
+        return;
+    }
+    
+    const results = data.results || [];
+    resultsCount.textContent = results.length;
+    searchTimeSpan.textContent = `(${searchTime}ms)`;
+    
+    if (results.length === 0) {
+        resultsContent.innerHTML = `
+            <div class="text-center py-5">
+                <i class="bi bi-search text-muted" style="font-size: 3rem;"></i>
+                <h5 class="mt-3 text-muted">没有找到相关结果</h5>
+                <p class="text-muted">尝试调整搜索关键词或降低相似度阈值</p>
+            </div>
+        `;
+    } else {
+        resultsContent.innerHTML = results.map((result, index) => 
+            createResultItem(result, index + 1)
+        ).join('');
+    }
+    
+    resultsContainer.style.display = 'block';
+    
+    // 显示AI分析结果
+    if (data.llm_analysis || data.llm_enhancement) {
+        displayLLMAnalysis(data.llm_analysis || data.llm_enhancement);
+    } else {
+        document.getElementById('llm-analysis-container').style.display = 'none';
+    }
+    
+    // 滚动到结果
+    resultsContainer.scrollIntoView({ behavior: 'smooth' });
+}
+
+// 创建结果项
+function createResultItem(result, index) {
+    const similarity = result.similarity_score || 0;
+    const similarityPercent = (similarity * 100).toFixed(1);
+    const similarityClass = getSimilarityClass(similarity);
+    
+    const labels = result.labels_formatted || [];
+    const labelsHtml = labels.map(label => 
+        `<span class="badge label-badge" style="background-color: #${label.color}; color: ${getContrastColor(label.color)}">
+            ${label.name}
+        </span>`
+    ).join('');
+    
+    return `
+        <div class="search-result-item p-3 mb-3 border rounded">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+                <h6 class="mb-1">
+                    <span class="badge bg-secondary me-2">#${result.number}</span>
+                    <a href="${result.url}" target="_blank" class="text-decoration-none">
+                        ${result.title || '无标题'}
+                    </a>
+                </h6>
+                <div class="text-end">
+                    <span class="badge bg-${result.state === 'open' ? 'success' : 'secondary'}">
+                        ${result.state === 'open' ? '开放' : '已关闭'}
+                    </span>
+                </div>
+            </div>
+            
+            <div class="mb-2">
+                <div class="d-flex align-items-center mb-1">
+                    <small class="text-muted me-2">相似度:</small>
+                    <div class="flex-grow-1 me-2">
+                        <div class="similarity-bar ${similarityClass}" style="width: ${similarityPercent}%"></div>
+                    </div>
+                    <small class="text-muted">${similarityPercent}%</small>
+                </div>
+            </div>
+            
+            ${result.body_preview ? `
+                <div class="mb-2">
+                    <p class="text-muted small mb-1">内容预览:</p>
+                    <div class="code-block">${escapeHtml(result.body_preview)}</div>
+                </div>
+            ` : ''}
+            
+            ${result.solution_summary ? `
+                <div class="mb-2">
+                    <p class="text-success small mb-1"><i class="bi bi-check-circle"></i> 解决方案:</p>
+                    <div class="alert alert-success py-2 small">${escapeHtml(result.solution_summary)}</div>
+                </div>
+            ` : ''}
+            
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    ${labelsHtml}
+                </div>
+                <div class="text-muted small">
+                    ${result.created_at_formatted || ''}
+                    ${result.updated_at_formatted ? ` • 更新于 ${result.updated_at_formatted}` : ''}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// 显示LLM分析结果
+function displayLLMAnalysis(analysis) {
+    const container = document.getElementById('llm-analysis-container');
+    const content = document.getElementById('llm-analysis-content');
+    
+    if (analysis && analysis.success && analysis.answer) {
+        content.innerHTML = `
+            <div class="mb-3">
+                <h6><i class="bi bi-lightbulb"></i> 智能分析</h6>
+                <div class="alert alert-light">
+                    ${escapeHtml(analysis.answer).replace(/\n/g, '<br>')}
+                </div>
+            </div>
+            
+            ${analysis.problem_type ? `
+                <div class="mb-3">
+                    <h6><i class="bi bi-tag"></i> 问题类型</h6>
+                    <span class="badge bg-info">${analysis.problem_type}</span>
+                </div>
+            ` : ''}
+            
+            ${analysis.keywords && analysis.keywords.length > 0 ? `
+                <div class="mb-3">
+                    <h6><i class="bi bi-key"></i> 关键词</h6>
+                    ${analysis.keywords.map(keyword => 
+                        `<span class="badge bg-secondary me-1">${keyword}</span>`
+                    ).join('')}
+                </div>
+            ` : ''}
+            
+            ${analysis.confidence ? `
+                <div class="mb-3">
+                    <h6><i class="bi bi-graph-up"></i> 置信度</h6>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: ${analysis.confidence * 100}%">
+                            ${(analysis.confidence * 100).toFixed(1)}%
+                        </div>
+                    </div>
+                </div>
+            ` : ''}
+        `;
+        
+        container.style.display = 'block';
+    } else {
+        container.style.display = 'none';
+    }
+}
+
+// 工具函数
+function getSimilarityClass(similarity) {
+    if (similarity >= 0.8) return 'similarity-high';
+    if (similarity >= 0.6) return 'similarity-medium';
+    if (similarity >= 0.3) return 'similarity-low';
+    return 'similarity-very-low';
+}
+
+function getContrastColor(hexColor) {
+    const r = parseInt(hexColor.substr(0, 2), 16);
+    const g = parseInt(hexColor.substr(2, 2), 16);
+    const b = parseInt(hexColor.substr(4, 2), 16);
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    return brightness > 128 ? '#000000' : '#ffffff';
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function showLoading(show) {
+    document.getElementById('loading-overlay').style.display = show ? 'flex' : 'none';
+}
+
+function hideSearchTips() {
+    document.getElementById('search-tips').style.display = 'none';
+}
+
+function clearSearch() {
+    document.getElementById('query').value = '';
+    document.getElementById('results-container').style.display = 'none';
+    document.getElementById('llm-analysis-container').style.display = 'none';
+    document.getElementById('search-tips').style.display = 'block';
+}
+
+function showMessage(type, message) {
+    const container = document.getElementById('message-container');
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    container.appendChild(alertDiv);
+    
+    setTimeout(() => {
+        if (alertDiv.parentNode) {
+            alertDiv.remove();
+        }
+    }, 5000);
+}
+
+// 键盘快捷键
+document.addEventListener('keydown', function(e) {
+    // Ctrl+Enter 执行搜索
+    if (e.ctrlKey && e.key === 'Enter') {
+        e.preventDefault();
+        performSearch();
+    }
+    
+    // Escape 清空搜索
+    if (e.key === 'Escape') {
+        clearSearch();
+    }
+});
+</script>
+{% endblock %}

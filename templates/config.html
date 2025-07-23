@@ -1,0 +1,693 @@
+{% extends "base.html" %}
+
+{% block title %}配置 - OpenIssueBot{% endblock %}
+
+{% block extra_head %}
+<style>
+.config-section {
+    border-left: 4px solid #007bff;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.config-item {
+    transition: all 0.3s ease;
+}
+
+.config-item:hover {
+    background-color: #f8f9fa;
+}
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.status-success { background-color: #28a745; }
+.status-warning { background-color: #ffc107; }
+.status-danger { background-color: #dc3545; }
+
+.password-toggle {
+    cursor: pointer;
+}
+
+.config-help {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+}
+
+.test-result {
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #e7f3ff;
+    color: #0056b3;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- 配置状态概览 -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-gear"></i> 配置状态
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="status-indicator {{ 'status-success' if config_status.github_token_configured else 'status-danger' }}"></div>
+                            <strong>GitHub Token</strong>
+                            <p class="small text-muted mb-0">
+                                {{ '已配置' if config_status.github_token_configured else '未配置' }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="status-indicator {{ 'status-success' if config_status.github_repo_configured else 'status-danger' }}"></div>
+                            <strong>GitHub 仓库</strong>
+                            <p class="small text-muted mb-0">
+                                {{ '已配置' if config_status.github_repo_configured else '未配置' }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="status-indicator {{ 'status-success' if config_status.openai_configured else 'status-warning' }}"></div>
+                            <strong>OpenAI API</strong>
+                            <p class="small text-muted mb-0">
+                                {{ '已配置' if config_status.openai_configured else '未配置（可选）' }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="text-center">
+                            <div class="status-indicator {{ 'status-success' if config_status.search_engine_ready else 'status-warning' }}"></div>
+                            <strong>搜索引擎</strong>
+                            <p class="small text-muted mb-0">
+                                {{ '就绪' if config_status.search_engine_ready else '未初始化' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                {% if not config_status.all_configured %}
+                <div class="alert alert-warning mt-3" role="alert">
+                    <i class="bi bi-exclamation-triangle"></i>
+                    <strong>配置不完整！</strong>
+                    请完成必要的配置项以启用完整功能。
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 配置表单 -->
+<div class="row">
+    <div class="col-12">
+        <form id="config-form">
+            <!-- GitHub 配置 -->
+            <div class="card mb-4">
+                <div class="card-header config-section">
+                    <h5 class="mb-0">
+                        <i class="bi bi-github"></i> GitHub 配置
+                        <span class="badge bg-danger ms-2">必需</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="github-token" class="form-label">
+                                    GitHub Personal Access Token
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="github-token" 
+                                           name="github_token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
+                                           value="{{ '●' * 20 if config_status.github_token_configured else '' }}">
+                                    <button class="btn btn-outline-secondary password-toggle" type="button" 
+                                            onclick="togglePassword('github-token')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text">
+                                    需要 <code>repo</code> 权限。
+                                    <a href="https://github.com/settings/tokens" target="_blank">创建 Token</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="github-repo" class="form-label">
+                                    GitHub 仓库
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="github-repo" 
+                                       name="github_repo" placeholder="owner/repository"
+                                       value="{{ current_config.github_repo or '' }}">
+                                <div class="form-text">
+                                    格式: <code>用户名/仓库名</code>，例如: <code>microsoft/vscode</code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-outline-primary" onclick="testGitHubConnection()">
+                                <i class="bi bi-wifi"></i> 测试 GitHub 连接
+                            </button>
+                            <div id="github-test-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OpenAI 配置 -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-robot"></i> OpenAI 配置
+                        <span class="badge bg-info ms-2">可选</span>
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="openai-api-key" class="form-label">OpenAI API Key</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="openai-api-key" 
+                                           name="openai_api_key" placeholder="sk-xxxxxxxxxxxxxxxxxxxx"
+                                           value="{{ '●' * 20 if config_status.openai_configured else '' }}">
+                                    <button class="btn btn-outline-secondary password-toggle" type="button" 
+                                            onclick="togglePassword('openai-api-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text">
+                                    用于AI智能分析功能。
+                                    <a href="https://platform.openai.com/api-keys" target="_blank">获取 API Key</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="openai-model" class="form-label">OpenAI 模型</label>
+                                <select class="form-select" id="openai-model" name="openai_model">
+                                    <option value="gpt-3.5-turbo" {{ 'selected' if current_config.openai_model == 'gpt-3.5-turbo' else '' }}>GPT-3.5 Turbo</option>
+                                    <option value="gpt-4" {{ 'selected' if current_config.openai_model == 'gpt-4' else '' }}>GPT-4</option>
+                                    <option value="gpt-4-turbo" {{ 'selected' if current_config.openai_model == 'gpt-4-turbo' else '' }}>GPT-4 Turbo</option>
+                                </select>
+                                <div class="form-text">
+                                    推荐使用 GPT-3.5 Turbo，性价比更高
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-outline-primary" onclick="testOpenAIConnection()">
+                                <i class="bi bi-robot"></i> 测试 OpenAI 连接
+                            </button>
+                            <div id="openai-test-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 高级配置 -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-sliders"></i> 高级配置
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="advanced-config">
+                        <!-- 嵌入模型配置 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" 
+                                       data-bs-toggle="collapse" data-bs-target="#embedding-config">
+                                    <i class="bi bi-cpu"></i> 嵌入模型配置
+                                </button>
+                            </h2>
+                            <div id="embedding-config" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="embedding-model" class="form-label">本地嵌入模型</label>
+                                                <select class="form-select" id="embedding-model" name="embedding_model">
+                                                    <option value="all-MiniLM-L6-v2" {{ 'selected' if current_config.embedding_model == 'all-MiniLM-L6-v2' else '' }}>all-MiniLM-L6-v2 (推荐)</option>
+                                                    <option value="all-mpnet-base-v2" {{ 'selected' if current_config.embedding_model == 'all-mpnet-base-v2' else '' }}>all-mpnet-base-v2</option>
+                                                    <option value="paraphrase-MiniLM-L6-v2" {{ 'selected' if current_config.embedding_model == 'paraphrase-MiniLM-L6-v2' else '' }}>paraphrase-MiniLM-L6-v2</option>
+                                                </select>
+                                                <div class="form-text">
+                                                    本地模型，无需API费用
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="use-openai-embedding" class="form-label">使用 OpenAI 嵌入</label>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" 
+                                                           id="use-openai-embedding" name="use_openai_embedding"
+                                                           {{ 'checked' if current_config.use_openai_embedding else '' }}>
+                                                    <label class="form-check-label" for="use-openai-embedding">
+                                                        启用 OpenAI 嵌入模型
+                                                    </label>
+                                                </div>
+                                                <div class="form-text">
+                                                    更高质量，但需要API费用
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAISS 配置 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" 
+                                       data-bs-toggle="collapse" data-bs-target="#faiss-config">
+                                    <i class="bi bi-search"></i> 搜索引擎配置
+                                </button>
+                            </h2>
+                            <div id="faiss-config" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="faiss-index-type" class="form-label">FAISS 索引类型</label>
+                                                <select class="form-select" id="faiss-index-type" name="faiss_index_type">
+                                                    <option value="flat" {{ 'selected' if current_config.faiss_index_type == 'flat' else '' }}>Flat (精确搜索)</option>
+                                                    <option value="ivf" {{ 'selected' if current_config.faiss_index_type == 'ivf' else '' }}>IVF (快速搜索)</option>
+                                                    <option value="hnsw" {{ 'selected' if current_config.faiss_index_type == 'hnsw' else '' }}>HNSW (平衡)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="cache-expiry" class="form-label">缓存过期时间（小时）</label>
+                                                <input type="number" class="form-control" id="cache-expiry" 
+                                                       name="cache_expiry_hours" min="1" max="168" 
+                                                       value="{{ current_config.cache_expiry_hours or 24 }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="max-results" class="form-label">默认最大结果数</label>
+                                                <input type="number" class="form-control" id="max-results" 
+                                                       name="default_max_results" min="1" max="50" 
+                                                       value="{{ current_config.default_max_results or 5 }}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Web 服务配置 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" 
+                                       data-bs-toggle="collapse" data-bs-target="#web-config">
+                                    <i class="bi bi-globe"></i> Web 服务配置
+                                </button>
+                            </h2>
+                            <div id="web-config" class="accordion-collapse collapse">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="flask-host" class="form-label">服务器地址</label>
+                                                <input type="text" class="form-control" id="flask-host" 
+                                                       name="flask_host" value="{{ current_config.flask_host or '127.0.0.1' }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="flask-port" class="form-label">端口号</label>
+                                                <input type="number" class="form-control" id="flask-port" 
+                                                       name="flask_port" min="1000" max="65535" 
+                                                       value="{{ current_config.flask_port or 5000 }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="mb-3">
+                                                <label for="flask-debug" class="form-label">调试模式</label>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" 
+                                                           id="flask-debug" name="flask_debug"
+                                                           {{ 'checked' if current_config.flask_debug else '' }}>
+                                                    <label class="form-check-label" for="flask-debug">
+                                                        启用调试模式
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 操作按钮 -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary btn-lg me-2">
+                                <i class="bi bi-check-circle"></i> 保存配置
+                            </button>
+                            <button type="button" class="btn btn-outline-secondary" onclick="resetForm()">
+                                <i class="bi bi-arrow-clockwise"></i> 重置
+                            </button>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <button type="button" class="btn btn-outline-info me-2" onclick="exportConfig()">
+                                <i class="bi bi-download"></i> 导出配置
+                            </button>
+                            <button type="button" class="btn btn-outline-warning" onclick="clearCache()">
+                                <i class="bi bi-trash"></i> 清空缓存
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 配置帮助 -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="config-help p-4">
+            <h6><i class="bi bi-question-circle"></i> 配置帮助</h6>
+            <div class="row">
+                <div class="col-md-4">
+                    <strong>GitHub Token 权限：</strong>
+                    <ul class="mb-0 small">
+                        <li>repo - 访问仓库内容</li>
+                        <li>read:org - 读取组织信息（可选）</li>
+                        <li>read:user - 读取用户信息（可选）</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <strong>OpenAI 使用说明：</strong>
+                    <ul class="mb-0 small">
+                        <li>用于智能问题分析</li>
+                        <li>生成解决方案建议</li>
+                        <li>不配置仍可使用基础搜索</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <strong>性能优化建议：</strong>
+                    <ul class="mb-0 small">
+                        <li>大型仓库使用 IVF 索引</li>
+                        <li>小型仓库使用 Flat 索引</li>
+                        <li>定期清理过期缓存</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+// 表单提交处理
+document.getElementById('config-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    saveConfig();
+});
+
+// 保存配置
+function saveConfig() {
+    const formData = new FormData(document.getElementById('config-form'));
+    const configData = {};
+    
+    for (let [key, value] of formData.entries()) {
+        if (value.trim()) {
+            configData[key] = value;
+        }
+    }
+    
+    // 处理复选框
+    configData.use_openai_embedding = document.getElementById('use-openai-embedding').checked;
+    configData.flask_debug = document.getElementById('flask-debug').checked;
+    
+    showLoading(true);
+    
+    fetch('/api/config', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(configData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showMessage('success', '配置保存成功！');
+            setTimeout(() => {
+                location.reload();
+            }, 1500);
+        } else {
+            showMessage('danger', '配置保存失败: ' + data.error);
+        }
+    })
+    .catch(error => {
+        showMessage('danger', '配置保存失败: ' + error.message);
+        console.error('配置保存错误:', error);
+    })
+    .finally(() => {
+        showLoading(false);
+    });
+}
+
+// 测试 GitHub 连接
+function testGitHubConnection() {
+    const token = document.getElementById('github-token').value;
+    const repo = document.getElementById('github-repo').value;
+    
+    if (!token || !repo) {
+        showMessage('warning', '请先填写 GitHub Token 和仓库信息');
+        return;
+    }
+    
+    const resultDiv = document.getElementById('github-test-result');
+    resultDiv.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div>测试中...';
+    
+    fetch('/api/test-github', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            github_token: token,
+            github_repo: repo
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            resultDiv.innerHTML = `
+                <div class="test-result alert alert-success">
+                    <i class="bi bi-check-circle"></i> 连接成功！
+                    <br><small>仓库: ${data.repo_info.name} (${data.repo_info.issues_count} 个 Issues)</small>
+                </div>
+            `;
+        } else {
+            resultDiv.innerHTML = `
+                <div class="test-result alert alert-danger">
+                    <i class="bi bi-x-circle"></i> 连接失败: ${data.error}
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        resultDiv.innerHTML = `
+            <div class="test-result alert alert-danger">
+                <i class="bi bi-x-circle"></i> 测试失败: ${error.message}
+            </div>
+        `;
+    });
+}
+
+// 测试 OpenAI 连接
+function testOpenAIConnection() {
+    const apiKey = document.getElementById('openai-api-key').value;
+    const model = document.getElementById('openai-model').value;
+    
+    if (!apiKey) {
+        showMessage('warning', '请先填写 OpenAI API Key');
+        return;
+    }
+    
+    const resultDiv = document.getElementById('openai-test-result');
+    resultDiv.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div>测试中...';
+    
+    fetch('/api/test-openai', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            openai_api_key: apiKey,
+            openai_model: model
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            resultDiv.innerHTML = `
+                <div class="test-result alert alert-success">
+                    <i class="bi bi-check-circle"></i> 连接成功！
+                    <br><small>模型: ${data.model_info.model}</small>
+                </div>
+            `;
+        } else {
+            resultDiv.innerHTML = `
+                <div class="test-result alert alert-danger">
+                    <i class="bi bi-x-circle"></i> 连接失败: ${data.error}
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        resultDiv.innerHTML = `
+            <div class="test-result alert alert-danger">
+                <i class="bi bi-x-circle"></i> 测试失败: ${error.message}
+            </div>
+        `;
+    });
+}
+
+// 清空缓存
+function clearCache() {
+    if (!confirm('确定要清空所有缓存吗？这将删除已建立的索引和缓存数据。')) {
+        return;
+    }
+    
+    showLoading(true);
+    
+    fetch('/api/clear-cache', {
+        method: 'POST'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showMessage('success', '缓存清空成功！');
+        } else {
+            showMessage('danger', '缓存清空失败: ' + data.error);
+        }
+    })
+    .catch(error => {
+        showMessage('danger', '缓存清空失败: ' + error.message);
+    })
+    .finally(() => {
+        showLoading(false);
+    });
+}
+
+// 导出配置
+function exportConfig() {
+    fetch('/api/config')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const config = data.config;
+            // 移除敏感信息
+            delete config.github_token;
+            delete config.openai_api_key;
+            
+            const blob = new Blob([JSON.stringify(config, null, 2)], {
+                type: 'application/json'
+            });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'openissuebot-config.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showMessage('success', '配置导出成功！');
+        } else {
+            showMessage('danger', '配置导出失败: ' + data.error);
+        }
+    })
+    .catch(error => {
+        showMessage('danger', '配置导出失败: ' + error.message);
+    });
+}
+
+// 重置表单
+function resetForm() {
+    if (confirm('确定要重置所有配置吗？')) {
+        document.getElementById('config-form').reset();
+        document.getElementById('github-test-result').innerHTML = '';
+        document.getElementById('openai-test-result').innerHTML = '';
+    }
+}
+
+// 切换密码显示
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    const button = input.nextElementSibling;
+    const icon = button.querySelector('i');
+    
+    if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'bi bi-eye-slash';
+    } else {
+        input.type = 'password';
+        icon.className = 'bi bi-eye';
+    }
+}
+
+// 工具函数
+function showLoading(show) {
+    // 可以添加加载指示器
+}
+
+function showMessage(type, message) {
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+    alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+    document.body.appendChild(alertDiv);
+    
+    setTimeout(() => {
+        if (alertDiv.parentNode) {
+            alertDiv.remove();
+        }
+    }, 5000);
+}
+</script>
+{% endblock %}
