@@ -841,3 +841,9 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2025-07-23 23:18:56,622 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "GET /api/stats HTTP/1.1" 200 -
 2025-07-23 23:18:56,624 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:18:56] "GET /api/stats HTTP/1.1" 200 -
 2025-07-23 23:19:26,885 - werkzeug - INFO - 127.0.0.1 - - [23/Jul/2025 23:19:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-24 10:03:17,954 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-24 10:03:18,046 - faiss.loader - INFO - Successfully loaded faiss with AVX2 support.
+2025-07-24 10:03:18,159 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-24 10:03:18,167 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-24 10:03:18,167 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
