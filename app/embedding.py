@@ -15,6 +15,8 @@ from typing import List, Union, Optional, Tuple
 from sentence_transformers import SentenceTransformer
 import pickle
 import os
+import requests
+import json
 from .config import Config
 from .utils import log_info, log_error, log_warning
 
@@ -22,27 +24,41 @@ class EmbeddingService:
     """
     文本嵌入服务
     
-    支持本地模型和OpenAI API两种嵌入方式
+    支持本地模型和多种在线API嵌入方式
     """
     
-    def __init__(self, use_local: Optional[bool] = None, model_name: Optional[str] = None):
+    def __init__(self, provider: Optional[str] = None, model_name: Optional[str] = None):
         """
         初始化嵌入服务
         
         Args:
-            use_local: 是否使用本地模型
+            provider: 嵌入提供商 (local, openai, zhipu, qwen, baidu)
             model_name: 模型名称
         """
-        self.use_local = use_local if use_local is not None else Config.USE_LOCAL_EMBEDDING
+        self.provider = provider or getattr(Config, 'EMBEDDING_PROVIDER', 'local')
         self.local_model = None
         self.openai_client = None
+        self.zhipu_client = None
+        self.qwen_client = None
+        self.baidu_client = None
         
-        if self.use_local:
+        if self.provider == "local":
             self.model_name = model_name or Config.LOCAL_EMBEDDING_MODEL
             self._init_local_model()
-        else:
+        elif self.provider == "openai":
             self.model_name = model_name or Config.OPENAI_EMBEDDING_MODEL
             self._init_openai_client()
+        elif self.provider == "zhipu":
+            self.model_name = model_name or getattr(Config, 'ZHIPU_EMBEDDING_MODEL', 'embedding-2')
+            self._init_zhipu_client()
+        elif self.provider == "qwen":
+            self.model_name = model_name or getattr(Config, 'QWEN_EMBEDDING_MODEL', 'text-embedding-v1')
+            self._init_qwen_client()
+        elif self.provider == "baidu":
+            self.model_name = model_name or getattr(Config, 'BAIDU_EMBEDDING_MODEL', 'embedding-v1')
+            self._init_baidu_client()
+        else:
+            raise ValueError(f"不支持的嵌入提供商: {self.provider}")
     
     def _init_local_model(self) -> None:
         """
@@ -60,14 +76,72 @@ class EmbeddingService:
         """
         初始化OpenAI客户端
         """
-        if not Config.OPENAI_API_KEY:
-            raise ValueError("使用OpenAI嵌入需要设置OPENAI_API_KEY")
+        # 优先使用独立的嵌入模型API Key，如果没有则使用通用的API Key
+        api_key = getattr(Config, 'OPENAI_EMBEDDING_API_KEY', None) or Config.OPENAI_API_KEY
+        if not api_key:
+            raise ValueError("使用OpenAI嵌入需要设置OPENAI_API_KEY或OPENAI_EMBEDDING_API_KEY")
             
         try:
-            self.openai_client = openai.OpenAI(api_key=Config.OPENAI_API_KEY)
+            self.openai_client = openai.OpenAI(api_key=api_key)
             log_info(f"OpenAI客户端初始化成功，使用模型: {self.model_name}")
         except Exception as e:
             log_error(f"初始化OpenAI客户端失败: {e}")
+            raise
+    
+    def _init_zhipu_client(self) -> None:
+        """
+        初始化智谱AI客户端
+        """
+        # 优先使用独立的嵌入模型API Key，如果没有则使用通用的API Key
+        # 同时检查环境变量中的设置
+        api_key = (getattr(Config, 'ZHIPU_EMBEDDING_API_KEY', None) or 
+                  os.getenv('ZHIPU_EMBEDDING_API_KEY') or 
+                  getattr(Config, 'ZHIPU_API_KEY', None) or 
+                  os.getenv('ZHIPU_API_KEY'))
+        
+        if not api_key:
+            raise ValueError("使用智谱AI嵌入需要设置ZHIPU_API_KEY或ZHIPU_EMBEDDING_API_KEY")
+            
+        try:
+            self.zhipu_api_key = api_key
+            log_info(f"智谱AI客户端初始化成功，使用模型: {self.model_name}")
+        except Exception as e:
+            log_error(f"初始化智谱AI客户端失败: {e}")
+            raise
+    
+    def _init_qwen_client(self) -> None:
+        """
+        初始化通义千问客户端
+        """
+        # 优先使用独立的嵌入模型API Key，如果没有则使用通用的API Key
+        api_key = getattr(Config, 'QWEN_EMBEDDING_API_KEY', None) or getattr(Config, 'QWEN_API_KEY', None)
+        if not api_key:
+            raise ValueError("使用通义千问嵌入需要设置QWEN_API_KEY或QWEN_EMBEDDING_API_KEY")
+            
+        try:
+            self.qwen_api_key = api_key
+            log_info(f"通义千问客户端初始化成功，使用模型: {self.model_name}")
+        except Exception as e:
+            log_error(f"初始化通义千问客户端失败: {e}")
+            raise
+    
+    def _init_baidu_client(self) -> None:
+        """
+        初始化百度文心客户端
+        """
+        # 优先使用独立的嵌入模型API Key，如果没有则使用通用的API Key
+        api_key = getattr(Config, 'BAIDU_EMBEDDING_API_KEY', None) or getattr(Config, 'BAIDU_API_KEY', None)
+        secret_key = getattr(Config, 'BAIDU_EMBEDDING_SECRET_KEY', None) or getattr(Config, 'BAIDU_SECRET_KEY', None)
+        
+        if not api_key or not secret_key:
+            raise ValueError("使用百度文心嵌入需要设置BAIDU_API_KEY和BAIDU_SECRET_KEY或BAIDU_EMBEDDING_API_KEY和BAIDU_EMBEDDING_SECRET_KEY")
+            
+        try:
+            self.baidu_api_key = api_key
+            self.baidu_secret_key = secret_key
+            log_info(f"百度文心客户端初始化成功，使用模型: {self.model_name}")
+        except Exception as e:
+            log_error(f"初始化百度文心客户端失败: {e}")
             raise
     
     def get_embeddings(self, texts: Union[str, List[str]], batch_size: int = 32) -> np.ndarray:
@@ -87,10 +161,18 @@ class EmbeddingService:
         if not texts:
             return np.array([])
         
-        if self.use_local:
+        if self.provider == "local":
             return self._get_local_embeddings(texts, batch_size)
-        else:
+        elif self.provider == "openai":
             return self._get_openai_embeddings(texts, batch_size)
+        elif self.provider == "zhipu":
+            return self._get_zhipu_embeddings(texts, batch_size)
+        elif self.provider == "qwen":
+            return self._get_qwen_embeddings(texts, batch_size)
+        elif self.provider == "baidu":
+            return self._get_baidu_embeddings(texts, batch_size)
+        else:
+            raise ValueError(f"不支持的嵌入提供商: {self.provider}")
     
     def _get_local_embeddings(self, texts: List[str], batch_size: int) -> np.ndarray:
         """
@@ -166,6 +248,191 @@ class EmbeddingService:
             log_error(f"OpenAI嵌入计算失败: {e}")
             raise
     
+    def _get_zhipu_embeddings(self, texts: List[str], batch_size: int) -> np.ndarray:
+        """
+        使用智谱AI API获取嵌入向量
+        
+        Args:
+            texts: 文本列表
+            batch_size: 批处理大小
+            
+        Returns:
+            np.ndarray: 嵌入向量数组
+        """
+        try:
+            processed_texts = [self._preprocess_text(text) for text in texts]
+            all_embeddings = []
+            
+            for i in range(0, len(processed_texts), batch_size):
+                batch = processed_texts[i:i + batch_size]
+                
+                # 调用智谱AI API
+                headers = {
+                    'Authorization': f'Bearer {self.zhipu_api_key}',
+                    'Content-Type': 'application/json'
+                }
+                
+                data = {
+                    'model': self.model_name,
+                    'input': batch
+                }
+                
+                response = requests.post(
+                    'https://open.bigmodel.cn/api/paas/v4/embeddings',
+                    headers=headers,
+                    json=data
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    batch_embeddings = [item['embedding'] for item in result['data']]
+                    all_embeddings.extend(batch_embeddings)
+                else:
+                    raise Exception(f"智谱AI API调用失败: {response.text}")
+            
+            embeddings_array = np.array(all_embeddings)
+            
+            # 归一化向量
+            norms = np.linalg.norm(embeddings_array, axis=1, keepdims=True)
+            embeddings_array = embeddings_array / norms
+            
+            return embeddings_array
+            
+        except Exception as e:
+            log_error(f"智谱AI嵌入计算失败: {e}")
+            raise
+    
+    def _get_qwen_embeddings(self, texts: List[str], batch_size: int) -> np.ndarray:
+        """
+        使用通义千问API获取嵌入向量
+        
+        Args:
+            texts: 文本列表
+            batch_size: 批处理大小
+            
+        Returns:
+            np.ndarray: 嵌入向量数组
+        """
+        try:
+            processed_texts = [self._preprocess_text(text) for text in texts]
+            all_embeddings = []
+            
+            for i in range(0, len(processed_texts), batch_size):
+                batch = processed_texts[i:i + batch_size]
+                
+                # 调用通义千问API
+                headers = {
+                    'Authorization': f'Bearer {self.qwen_api_key}',
+                    'Content-Type': 'application/json'
+                }
+                
+                data = {
+                    'model': self.model_name,
+                    'input': {
+                        'texts': batch
+                    }
+                }
+                
+                response = requests.post(
+                    'https://dashscope.aliyuncs.com/api/v1/services/embeddings/text-embedding/text-embedding',
+                    headers=headers,
+                    json=data
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    batch_embeddings = [item['embedding'] for item in result['output']['embeddings']]
+                    all_embeddings.extend(batch_embeddings)
+                else:
+                    raise Exception(f"通义千问API调用失败: {response.text}")
+            
+            embeddings_array = np.array(all_embeddings)
+            
+            # 归一化向量
+            norms = np.linalg.norm(embeddings_array, axis=1, keepdims=True)
+            embeddings_array = embeddings_array / norms
+            
+            return embeddings_array
+            
+        except Exception as e:
+            log_error(f"通义千问嵌入计算失败: {e}")
+            raise
+    
+    def _get_baidu_embeddings(self, texts: List[str], batch_size: int) -> np.ndarray:
+        """
+        使用百度文心API获取嵌入向量
+        
+        Args:
+            texts: 文本列表
+            batch_size: 批处理大小
+            
+        Returns:
+            np.ndarray: 嵌入向量数组
+        """
+        try:
+            processed_texts = [self._preprocess_text(text) for text in texts]
+            all_embeddings = []
+            
+            # 获取access_token
+            access_token = self._get_baidu_access_token()
+            
+            for i in range(0, len(processed_texts), batch_size):
+                batch = processed_texts[i:i + batch_size]
+                
+                # 调用百度文心API
+                headers = {
+                    'Content-Type': 'application/json'
+                }
+                
+                data = {
+                    'input': batch
+                }
+                
+                response = requests.post(
+                    f'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/embeddings/{self.model_name}?access_token={access_token}',
+                    headers=headers,
+                    json=data
+                )
+                
+                if response.status_code == 200:
+                    result = response.json()
+                    batch_embeddings = [item['embedding'] for item in result['data']]
+                    all_embeddings.extend(batch_embeddings)
+                else:
+                    raise Exception(f"百度文心API调用失败: {response.text}")
+            
+            embeddings_array = np.array(all_embeddings)
+            
+            # 归一化向量
+            norms = np.linalg.norm(embeddings_array, axis=1, keepdims=True)
+            embeddings_array = embeddings_array / norms
+            
+            return embeddings_array
+            
+        except Exception as e:
+            log_error(f"百度文心嵌入计算失败: {e}")
+            raise
+    
+    def _get_baidu_access_token(self) -> str:
+        """
+        获取百度API的access_token
+        
+        Returns:
+            str: access_token
+        """
+        url = "https://aip.baidubce.com/oauth/2.0/token"
+        params = {
+            'grant_type': 'client_credentials',
+            'client_id': self.baidu_api_key,
+            'client_secret': self.baidu_secret_key
+        }
+        
+        response = requests.post(url, params=params)
+        if response.status_code == 200:
+            return response.json()['access_token']
+        else:
+            raise Exception(f"获取百度access_token失败: {response.text}")
+    
     def _preprocess_text(self, text: str) -> str:
         """
         预处理文本
@@ -183,7 +450,7 @@ class EmbeddingService:
         text = text.strip()
         
         # 限制长度（避免过长文本）
-        max_length = 8000 if self.use_local else 8000
+        max_length = 8000 if self.provider == "local" else 8000
         if len(text) > max_length:
             text = text[:max_length] + "..."
             
@@ -247,9 +514,9 @@ class EmbeddingService:
         Returns:
             int: 向量维度
         """
-        if self.use_local and self.local_model:
+        if self.provider == "local" and self.local_model:
             return self.local_model.get_sentence_embedding_dimension()
-        elif not self.use_local:
+        elif self.provider == "openai":
             # OpenAI模型的维度
             if "text-embedding-3-small" in self.model_name:
                 return 1536
@@ -259,8 +526,14 @@ class EmbeddingService:
                 return 1536
             else:
                 return 1536  # 默认维度
+        elif self.provider == "zhipu":
+            return 1024  # 智谱AI嵌入维度
+        elif self.provider == "qwen":
+            return 1536  # 通义千问嵌入维度
+        elif self.provider == "baidu":
+            return 384   # 百度文心嵌入维度
         else:
-            return Config.FAISS_DIMENSION
+            return getattr(Config, 'FAISS_DIMENSION', 1536)
     
     def save_embeddings(self, embeddings: np.ndarray, filepath: str) -> None:
         """
@@ -340,19 +613,19 @@ class EmbeddingService:
         return [self.extract_issue_text(issue) for issue in issues]
 
 # 便捷函数
-def create_embedding_service(use_local: Optional[bool] = None, 
+def create_embedding_service(provider: Optional[str] = None, 
                            model_name: Optional[str] = None) -> EmbeddingService:
     """
     创建嵌入服务实例
     
     Args:
-        use_local: 是否使用本地模型
+        provider: 嵌入提供商 (local, openai, zhipu, qwen, baidu)
         model_name: 模型名称
         
     Returns:
         EmbeddingService: 嵌入服务实例
     """
-    return EmbeddingService(use_local, model_name)
+    return EmbeddingService(provider, model_name)
 
 def compute_text_similarity(text1: str, text2: str, 
                           embedding_service: Optional[EmbeddingService] = None) -> float:

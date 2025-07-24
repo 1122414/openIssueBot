@@ -126,15 +126,107 @@ def get_config_status() -> Dict[str, Any]:
     Returns:
         Dict: 配置状态信息
     """
+    # 检查GitHub Token是否有效
+    github_token_valid = False
+    github_token_error = None
+    if Config.GITHUB_TOKEN:
+        try:
+            import requests
+            headers = {
+                "Authorization": f"token {Config.GITHUB_TOKEN}",
+                "Accept": "application/vnd.github.v3+json",
+                "User-Agent": "OpenIssueBot/1.0"
+            }
+            response = requests.get("https://api.github.com/user", headers=headers, timeout=10)
+            if response.status_code == 200:
+                github_token_valid = True
+            else:
+                github_token_error = f"GitHub Token无效 (HTTP {response.status_code})"
+        except Exception as e:
+            github_token_error = f"GitHub Token验证失败: {str(e)}"
+            github_token_valid = False
+    else:
+        github_token_error = "GitHub Token未配置"
+    
+    # 检查GitHub仓库格式是否有效
+    github_repo_valid = False
+    github_repo_error = None
+    if Config.GITHUB_REPO:
+        # 简单检查格式是否为 owner/repo
+        parts = Config.GITHUB_REPO.split('/')
+        if len(parts) == 2 and all(part.strip() for part in parts):
+            github_repo_valid = True
+            
+            # 如果Token有效且仓库格式正确，进一步验证仓库是否可访问
+            if github_token_valid:
+                try:
+                    import requests
+                    headers = {
+                        "Authorization": f"token {Config.GITHUB_TOKEN}",
+                        "Accept": "application/vnd.github.v3+json",
+                        "User-Agent": "OpenIssueBot/1.0"
+                    }
+                    response = requests.get(f"https://api.github.com/repos/{Config.GITHUB_REPO}", headers=headers, timeout=10)
+                    if response.status_code == 200:
+                        github_repo_valid = True
+                    else:
+                        github_repo_valid = False
+                        github_repo_error = f"仓库不存在或无访问权限 (HTTP {response.status_code})"
+                except Exception as e:
+                    github_repo_valid = False
+                    github_repo_error = f"仓库验证失败: {str(e)}"
+        else:
+            github_repo_error = "仓库格式无效，应为 owner/repo 格式"
+    else:
+        github_repo_error = "GitHub仓库未配置"
+    
+    # 检查当前LLM供应商的API Key是否有效
+    llm_provider = getattr(Config, 'LLM_PROVIDER', 'openai')
+    openai_api_valid = False
+    openai_api_error = None
+    
+    # 只有当选择OpenAI作为LLM供应商时才验证OpenAI API Key
+    if llm_provider == 'openai':
+        if Config.OPENAI_API_KEY:
+            try:
+                import openai
+                # 设置API Key
+                openai.api_key = Config.OPENAI_API_KEY
+                
+                # 尝试调用API验证
+                response = openai.models.list()
+                if response and hasattr(response, 'data'):
+                    openai_api_valid = True
+                else:
+                    openai_api_error = "OpenAI API响应异常"
+            except Exception as e:
+                openai_api_error = f"OpenAI API Key验证失败: {str(e)}"
+                openai_api_valid = False
+        else:
+            openai_api_error = "OpenAI API Key未配置"
+    else:
+        # 如果不是OpenAI供应商，则不显示OpenAI相关错误
+        openai_api_valid = True  # 设为True以避免显示错误状态
+        openai_api_error = None
+    
     return {
-        'github_token_configured': bool(Config.GITHUB_TOKEN),
-        'github_repo_configured': bool(Config.GITHUB_REPO),
-        'github_repo_valid': validate_github_repo(Config.GITHUB_REPO or ''),
-        'openai_api_key_configured': bool(Config.OPENAI_API_KEY),
+        'github_token': bool(Config.GITHUB_TOKEN),
+        'github_repo': bool(Config.GITHUB_REPO),
+        'github_token_configured': github_token_valid,
+        'github_repo_configured': github_repo_valid,
+        'github_repo_valid': github_repo_valid,
+        'openai_api_key': bool(Config.OPENAI_API_KEY),
+        'openai_configured': openai_api_valid,
+        'openai_api_key_configured': openai_api_valid,
+        'search_engine_ready': search_engine is not None and getattr(search_engine, 'is_index_loaded', False),
         'use_local_embedding': Config.USE_LOCAL_EMBEDDING,
         'cache_dir': Config.CACHE_DIR,
         'flask_host': Config.FLASK_HOST,
-        'flask_port': Config.FLASK_PORT
+        'flask_port': Config.FLASK_PORT,
+        # 错误信息
+        'github_token_error': github_token_error,
+        'github_repo_error': github_repo_error,
+        'openai_api_error': openai_api_error
     }
 
 # ==================== 路由定义 ====================
@@ -164,10 +256,32 @@ def config_page():
     
     # 获取当前配置信息
     current_config = {
+        'github_token': Config.GITHUB_TOKEN,
         'github_repo': Config.GITHUB_REPO,
+        'llm_provider': getattr(Config, 'LLM_PROVIDER', 'openai'),
+        'openai_api_key': Config.OPENAI_API_KEY,
         'openai_model': getattr(Config, 'OPENAI_MODEL', 'gpt-3.5-turbo'),
+        'zhipu_api_key': getattr(Config, 'ZHIPU_API_KEY', ''),
+        'zhipu_model': getattr(Config, 'ZHIPU_MODEL', 'glm-4'),
+        'qwen_api_key': getattr(Config, 'QWEN_API_KEY', ''),
+        'qwen_model': getattr(Config, 'QWEN_MODEL', 'qwen-turbo'),
+        'baidu_api_key': getattr(Config, 'BAIDU_API_KEY', ''),
+        'baidu_secret_key': getattr(Config, 'BAIDU_SECRET_KEY', ''),
+        'baidu_model': getattr(Config, 'BAIDU_MODEL', 'ernie-bot-turbo'),
+        'deepseek_api_key': getattr(Config, 'DEEPSEEK_API_KEY', ''),
+        'deepseek_model': getattr(Config, 'DEEPSEEK_MODEL', 'deepseek-chat'),
+        'embedding_provider': getattr(Config, 'EMBEDDING_PROVIDER', 'local'),
+        'embedding_model': getattr(Config, 'EMBEDDING_MODEL', 'all-MiniLM-L6-v2'),
+        'zhipu_embedding_model': getattr(Config, 'ZHIPU_EMBEDDING_MODEL', 'embedding-2'),
+        'zhipu_embedding_api_key': getattr(Config, 'ZHIPU_EMBEDDING_API_KEY', ''),
+        'qwen_embedding_model': getattr(Config, 'QWEN_EMBEDDING_MODEL', 'text-embedding-v1'),
+        'qwen_embedding_api_key': getattr(Config, 'QWEN_EMBEDDING_API_KEY', ''),
+        'baidu_embedding_model': getattr(Config, 'BAIDU_EMBEDDING_MODEL', 'embedding-v1'),
+        'baidu_embedding_api_key': getattr(Config, 'BAIDU_EMBEDDING_API_KEY', ''),
+        'baidu_embedding_secret_key': getattr(Config, 'BAIDU_EMBEDDING_SECRET_KEY', ''),
+        'openai_embedding_model': getattr(Config, 'OPENAI_EMBEDDING_MODEL', 'text-embedding-3-small'),
+        'openai_embedding_api_key': getattr(Config, 'OPENAI_EMBEDDING_API_KEY', ''),
         'use_local_embedding': Config.USE_LOCAL_EMBEDDING,
-        'embedding_model': getattr(Config, 'EMBEDDING_MODEL', 'paraphrase-MiniLM-L6-v2'),
         'max_issues_per_fetch': getattr(Config, 'MAX_ISSUES_PER_FETCH', 100),
         'similarity_threshold': getattr(Config, 'SIMILARITY_THRESHOLD', 0.3),
         'cache_ttl': getattr(Config, 'CACHE_TTL', 3600),
@@ -179,6 +293,10 @@ def config_page():
     # 扩展config_status以包含更多状态信息
     config_status.update({
         'openai_configured': bool(Config.OPENAI_API_KEY),
+        'zhipu_configured': bool(Config.ZHIPU_API_KEY),
+        'qwen_configured': bool(Config.QWEN_API_KEY),
+        'baidu_configured': bool(Config.BAIDU_API_KEY and Config.BAIDU_SECRET_KEY),
+        'deepseek_configured': bool(Config.DEEPSEEK_API_KEY),
         'search_engine_ready': search_engine is not None and getattr(search_engine, 'is_index_loaded', False),
         'all_configured': bool(Config.GITHUB_TOKEN) and bool(Config.GITHUB_REPO)
     })
@@ -429,12 +547,144 @@ def api_config():
                         'error': 'GitHub仓库格式无效，应为 owner/repo 格式'
                     }), 400
             
-            # 这里可以添加配置更新逻辑
-            # 注意：在生产环境中，配置更新应该更加安全和持久化
+            # 验证嵌入模型提供商
+            if 'embedding_provider' in data:
+                provider = data['embedding_provider']
+                valid_providers = ['local', 'openai', 'zhipu', 'qwen', 'baidu']
+                if provider not in valid_providers:
+                    return jsonify({
+                        'success': False,
+                        'error': f'无效的嵌入模型提供商: {provider}'
+                    }), 400
+            
+            # 验证LLM提供商
+            if 'llm_provider' in data:
+                provider = data['llm_provider']
+                valid_providers = ['openai', 'zhipu', 'qwen', 'baidu']
+                if provider not in valid_providers:
+                    return jsonify({
+                        'success': False,
+                        'error': f'无效的LLM提供商: {provider}'
+                    }), 400
+            
+            # 保存配置到.env文件
+            env_file_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), '.env')
+            
+            # 读取现有的.env文件内容
+            env_vars = {}
+            if os.path.exists(env_file_path):
+                with open(env_file_path, 'r', encoding='utf-8') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#') and '=' in line:
+                            key, value = line.split('=', 1)
+                            env_vars[key.strip()] = value.strip()
+            
+            # 更新配置
+            config_mapping = {
+                'github_token': 'GITHUB_TOKEN',
+                'github_repo': 'GITHUB_REPO',
+                'llm_provider': 'LLM_PROVIDER',
+                'openai_api_key': 'OPENAI_API_KEY',
+                'openai_model': 'OPENAI_MODEL',
+                'zhipu_api_key': 'ZHIPU_API_KEY',
+                'zhipu_model': 'ZHIPU_MODEL',
+                'qwen_api_key': 'QWEN_API_KEY',
+                'qwen_model': 'QWEN_MODEL',
+                'baidu_api_key': 'BAIDU_API_KEY',
+                'baidu_secret_key': 'BAIDU_SECRET_KEY',
+                'baidu_model': 'BAIDU_MODEL',
+                'deepseek_api_key': 'DEEPSEEK_API_KEY',
+                'deepseek_model': 'DEEPSEEK_MODEL',
+                'embedding_provider': 'EMBEDDING_PROVIDER',
+                'embedding_model': 'EMBEDDING_MODEL',
+                'openai_embedding_model': 'OPENAI_EMBEDDING_MODEL',
+                'openai_embedding_api_key': 'OPENAI_EMBEDDING_API_KEY',
+                'zhipu_embedding_model': 'ZHIPU_EMBEDDING_MODEL',
+                'zhipu_embedding_api_key': 'ZHIPU_EMBEDDING_API_KEY',
+                'qwen_embedding_model': 'QWEN_EMBEDDING_MODEL',
+                'qwen_embedding_api_key': 'QWEN_EMBEDDING_API_KEY',
+                'baidu_embedding_model': 'BAIDU_EMBEDDING_MODEL',
+                'baidu_embedding_api_key': 'BAIDU_EMBEDDING_API_KEY',
+                'baidu_embedding_secret_key': 'BAIDU_EMBEDDING_SECRET_KEY',
+                'use_local_embedding': 'USE_LOCAL_EMBEDDING',
+                'max_issues_per_fetch': 'MAX_ISSUES_PER_FETCH',
+                'similarity_threshold': 'SIMILARITY_THRESHOLD',
+                'cache_ttl': 'CACHE_TTL',
+                'flask_host': 'FLASK_HOST',
+                'flask_port': 'FLASK_PORT',
+                'flask_debug': 'FLASK_DEBUG'
+            }
+            
+            # 更新环境变量字典
+            for form_key, env_key in config_mapping.items():
+                if form_key in data:
+                    value = data[form_key]
+                    if isinstance(value, bool):
+                        env_vars[env_key] = 'true' if value else 'false'
+                    else:
+                        env_vars[env_key] = str(value)
+            
+            # 写回.env文件
+            with open(env_file_path, 'w', encoding='utf-8') as f:
+                f.write('# OpenIssueBot Configuration\n')
+                f.write('# This file is automatically generated by the web interface\n\n')
+                
+                # 按类别组织配置
+                f.write('# GitHub Configuration\n')
+                for key in ['GITHUB_TOKEN', 'GITHUB_REPO']:
+                    if key in env_vars:
+                        f.write(f'{key}={env_vars[key]}\n')
+                
+                f.write('\n# LLM Configuration\n')
+                for key in ['LLM_PROVIDER', 'OPENAI_API_KEY', 'OPENAI_MODEL', 'ZHIPU_API_KEY', 'ZHIPU_MODEL', 
+                           'QWEN_API_KEY', 'QWEN_MODEL', 'BAIDU_API_KEY', 'BAIDU_SECRET_KEY', 'BAIDU_MODEL',
+                           'DEEPSEEK_API_KEY', 'DEEPSEEK_MODEL']:
+                    if key in env_vars:
+                        f.write(f'{key}={env_vars[key]}\n')
+                
+                f.write('\n# Embedding Configuration\n')
+                for key in ['EMBEDDING_PROVIDER', 'EMBEDDING_MODEL', 'OPENAI_EMBEDDING_MODEL', 'OPENAI_EMBEDDING_API_KEY',
+                           'ZHIPU_EMBEDDING_MODEL', 'ZHIPU_EMBEDDING_API_KEY', 'QWEN_EMBEDDING_MODEL', 'QWEN_EMBEDDING_API_KEY',
+                           'BAIDU_EMBEDDING_MODEL', 'BAIDU_EMBEDDING_API_KEY', 'BAIDU_EMBEDDING_SECRET_KEY',
+                           'USE_LOCAL_EMBEDDING']:
+                    if key in env_vars:
+                        f.write(f'{key}={env_vars[key]}\n')
+                
+                f.write('\n# Search Configuration\n')
+                for key in ['MAX_ISSUES_PER_FETCH', 'SIMILARITY_THRESHOLD', 'CACHE_TTL']:
+                    if key in env_vars:
+                        f.write(f'{key}={env_vars[key]}\n')
+                
+                f.write('\n# Web Server Configuration\n')
+                for key in ['FLASK_HOST', 'FLASK_PORT', 'FLASK_DEBUG']:
+                    if key in env_vars:
+                        f.write(f'{key}={env_vars[key]}\n')
+                
+                # 写入其他未分类的配置
+                f.write('\n# Other Configuration\n')
+                for key, value in env_vars.items():
+                    if key not in ['GITHUB_TOKEN', 'GITHUB_REPO', 'LLM_PROVIDER', 'OPENAI_API_KEY', 'OPENAI_MODEL',
+                                  'ZHIPU_API_KEY', 'ZHIPU_MODEL', 'QWEN_API_KEY', 'QWEN_MODEL', 'BAIDU_API_KEY',
+                                  'BAIDU_SECRET_KEY', 'BAIDU_MODEL', 'DEEPSEEK_API_KEY', 'DEEPSEEK_MODEL',
+                                  'EMBEDDING_PROVIDER', 'EMBEDDING_MODEL', 'OPENAI_EMBEDDING_MODEL', 'OPENAI_EMBEDDING_API_KEY',
+                                  'ZHIPU_EMBEDDING_MODEL', 'ZHIPU_EMBEDDING_API_KEY', 'QWEN_EMBEDDING_MODEL', 'QWEN_EMBEDDING_API_KEY',
+                                  'BAIDU_EMBEDDING_MODEL', 'BAIDU_EMBEDDING_API_KEY', 'BAIDU_EMBEDDING_SECRET_KEY',
+                                  'USE_LOCAL_EMBEDDING', 'MAX_ISSUES_PER_FETCH', 'SIMILARITY_THRESHOLD',
+                                  'CACHE_TTL', 'FLASK_HOST', 'FLASK_PORT', 'FLASK_DEBUG']:
+                        f.write(f'{key}={value}\n')
+            
+            # 重新加载配置
+            try:
+                from .config import Config
+                Config.reload_config()
+                log_info("配置已重新加载")
+            except Exception as reload_error:
+                log_error(f"重新加载配置失败: {reload_error}")
             
             return jsonify({
                 'success': True,
-                'message': '配置更新成功（重启应用后生效）'
+                'message': '配置保存成功！页面将自动刷新以应用新配置。'
             })
             
         except Exception as e:
@@ -443,6 +693,393 @@ def api_config():
                 'success': False,
                 'error': f'配置更新失败: {str(e)}'
             }), 500
+
+@app.route('/api/test-llm', methods=['POST'])
+def api_test_llm():
+    """
+    测试LLM连接API
+    
+    Returns:
+        JSON: 测试结果
+    """
+    try:
+        data = request.get_json() or {}
+        provider = data.get('provider') or Config.LLM_PROVIDER
+        api_key = data.get('api_key')
+        model = data.get('model')
+        
+        if not provider:
+            return jsonify({
+                'success': False,
+                'error': '缺少LLM提供商参数'
+            }), 400
+        
+        # 根据提供商获取相应的API Key和模型
+        if provider == 'openai':
+            api_key = api_key or Config.OPENAI_API_KEY
+            model = model or Config.OPENAI_MODEL
+        elif provider == 'zhipu':
+            api_key = api_key or Config.ZHIPU_API_KEY
+            model = model or Config.ZHIPU_MODEL
+        elif provider == 'qwen':
+            api_key = api_key or Config.QWEN_API_KEY
+            model = model or Config.QWEN_MODEL
+        elif provider == 'baidu':
+            api_key = api_key or Config.BAIDU_API_KEY
+            model = model or Config.BAIDU_MODEL
+        else:
+            return jsonify({
+                'success': False,
+                'error': f'不支持的LLM提供商: {provider}'
+            }), 400
+        
+        if not api_key:
+            return jsonify({
+                'success': False,
+                'error': f'{provider} LLM需要API Key'
+            }), 400
+        
+        # 测试LLM连接
+        from .llm_analysis import LLMAnalyzer
+        try:
+            # 创建临时的LLM分析器进行测试
+            if provider == 'openai':
+                import openai
+                client = openai.OpenAI(api_key=api_key)
+                # 发送简单的测试请求
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=[{"role": "user", "content": "Hello"}],
+                    max_tokens=10
+                )
+                if response.choices and response.choices[0].message:
+                    return jsonify({
+                        'success': True,
+                        'message': f'{provider} LLM连接测试成功',
+                        'provider': provider,
+                        'model': model
+                    })
+            elif provider == 'zhipu':
+                # 智谱AI API测试
+                import requests
+                headers = {
+                    'Authorization': f'Bearer {api_key}',
+                    'Content-Type': 'application/json'
+                }
+                test_data = {
+                    'model': model,
+                    'messages': [{'role': 'user', 'content': 'Hello'}],
+                    'max_tokens': 10
+                }
+                response = requests.post('https://open.bigmodel.cn/api/paas/v4/chat/completions', 
+                                       headers=headers, json=test_data, timeout=10)
+                if response.status_code == 200:
+                    return jsonify({
+                        'success': True,
+                        'message': f'{provider} LLM连接测试成功',
+                        'provider': provider,
+                        'model': model
+                    })
+                else:
+                    return jsonify({
+                        'success': False,
+                        'error': f'智谱AI API验证失败: {response.text}'
+                    }), 400
+            elif provider == 'qwen':
+                # 通义千问API测试
+                import requests
+                headers = {
+                    'Authorization': f'Bearer {api_key}',
+                    'Content-Type': 'application/json'
+                }
+                test_data = {
+                    'model': model,
+                    'input': {'messages': [{'role': 'user', 'content': 'Hello'}]},
+                    'parameters': {'max_tokens': 10}
+                }
+                response = requests.post('https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation', 
+                                       headers=headers, json=test_data, timeout=10)
+                if response.status_code == 200:
+                    result = response.json()
+                    if result.get('output'):
+                        return jsonify({
+                            'success': True,
+                            'message': f'{provider} LLM连接测试成功',
+                            'provider': provider,
+                            'model': model
+                        })
+                    else:
+                        return jsonify({
+                            'success': False,
+                            'error': f'通义千问API验证失败: {result.get("message", "未知错误")}'
+                        }), 400
+                else:
+                    return jsonify({
+                        'success': False,
+                        'error': f'通义千问API验证失败: {response.text}'
+                    }), 400
+            elif provider == 'baidu':
+                # 百度文心API测试
+                import requests
+                # 首先获取access_token
+                token_url = 'https://aip.baidubce.com/oauth/2.0/token'
+                token_params = {
+                    'grant_type': 'client_credentials',
+                    'client_id': api_key,
+                    'client_secret': data.get('secret_key') or Config.BAIDU_SECRET_KEY
+                }
+                token_response = requests.post(token_url, params=token_params, timeout=10)
+                if token_response.status_code != 200:
+                    return jsonify({
+                        'success': False,
+                        'error': f'百度API Token获取失败: {token_response.text}'
+                    }), 400
+                
+                token_data = token_response.json()
+                if 'access_token' not in token_data:
+                    return jsonify({
+                        'success': False,
+                        'error': f'百度API Token获取失败: {token_data.get("error_description", "未知错误")}'
+                    }), 400
+                
+                access_token = token_data['access_token']
+                
+                # 测试聊天API
+                chat_url = f'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/{model}?access_token={access_token}'
+                chat_data = {
+                    'messages': [{'role': 'user', 'content': 'Hello'}],
+                    'max_output_tokens': 10
+                }
+                chat_response = requests.post(chat_url, json=chat_data, timeout=10)
+                if chat_response.status_code == 200:
+                    result = chat_response.json()
+                    if result.get('result'):
+                        return jsonify({
+                            'success': True,
+                            'message': f'{provider} LLM连接测试成功',
+                            'provider': provider,
+                            'model': model
+                        })
+                    else:
+                        return jsonify({
+                            'success': False,
+                            'error': f'百度API验证失败: {result.get("error_msg", "未知错误")}'
+                        }), 400
+                else:
+                    return jsonify({
+                        'success': False,
+                        'error': f'百度API验证失败: {chat_response.text}'
+                    }), 400
+            elif provider == 'deepseek':
+                # DeepSeek API测试
+                import requests
+                headers = {
+                    'Authorization': f'Bearer {api_key}',
+                    'Content-Type': 'application/json'
+                }
+                test_data = {
+                    'model': model,
+                    'messages': [{'role': 'user', 'content': 'Hello'}],
+                    'max_tokens': 10
+                }
+                response = requests.post('https://api.deepseek.com/v1/chat/completions', 
+                                       headers=headers, json=test_data, timeout=10)
+                if response.status_code == 200:
+                    result = response.json()
+                    if result.get('choices'):
+                        return jsonify({
+                            'success': True,
+                            'message': f'{provider} LLM连接测试成功',
+                            'provider': provider,
+                            'model': model
+                        })
+                    else:
+                        return jsonify({
+                            'success': False,
+                            'error': f'DeepSeek API验证失败: 响应格式异常'
+                        }), 400
+                else:
+                    return jsonify({
+                        'success': False,
+                        'error': f'DeepSeek API验证失败: {response.text}'
+                    }), 400
+            else:
+                # 对于其他提供商，返回API key格式验证
+                if len(api_key) < 10:
+                    return jsonify({
+                        'success': False,
+                        'error': f'{provider} API Key格式无效，长度过短'
+                    }), 400
+                return jsonify({
+                    'success': True,
+                    'message': f'{provider} LLM配置验证成功（基础格式检查通过）',
+                    'provider': provider,
+                    'model': model
+                })
+        except Exception as e:
+            return jsonify({
+                'success': False,
+                'error': f'LLM连接测试失败: {str(e)}'
+            }), 400
+        
+    except Exception as e:
+        log_error(f"LLM测试API错误: {e}")
+        return jsonify({
+            'success': False,
+            'error': f'LLM连接测试失败: {str(e)}'
+        }), 500
+
+@app.route('/api/test-github', methods=['POST'])
+def api_test_github():
+    """
+    测试GitHub连接API
+    
+    Returns:
+        JSON: 测试结果
+    """
+    try:
+        data = request.get_json() or {}
+        token = data.get('github_token') or data.get('token') or Config.GITHUB_TOKEN
+        repo = data.get('github_repo') or data.get('repo') or Config.GITHUB_REPO
+        
+        if not token:
+            return jsonify({
+                'success': False,
+                'error': '缺少GitHub Token'
+            }), 400
+        
+        if not repo:
+            return jsonify({
+                'success': False,
+                'error': '缺少GitHub仓库'
+            }), 400
+        
+        # 验证仓库格式
+        if not validate_github_repo(repo):
+            return jsonify({
+                'success': False,
+                'error': 'GitHub仓库格式无效，应为 owner/repo 格式'
+            }), 400
+        
+        # 测试GitHub API连接
+        from .github_api import GitHubAPI
+        github_api = GitHubAPI(token, repo)
+        
+        # 尝试获取仓库信息
+        repo_info = github_api.get_repo_info()
+        if not repo_info:
+            return jsonify({
+                'success': False,
+                'error': 'GitHub连接失败，请检查Token和仓库权限'
+            }), 400
+        
+        return jsonify({
+            'success': True,
+            'message': 'GitHub连接测试成功',
+            'repo_name': repo_info.get('name', ''),
+            'repo_description': repo_info.get('description', ''),
+            'stars': repo_info.get('stargazers_count', 0)
+        })
+        
+    except Exception as e:
+        log_error(f"GitHub测试API错误: {e}")
+        return jsonify({
+            'success': False,
+            'error': f'GitHub连接测试失败: {str(e)}'
+        }), 500
+
+@app.route('/api/test-embedding', methods=['POST'])
+def api_test_embedding():
+    """
+    测试嵌入模型连接API
+    
+    Returns:
+        JSON: 测试结果
+    """
+    try:
+        data = request.get_json() or {}
+        provider = data.get('provider') or Config.EMBEDDING_PROVIDER
+        api_key = data.get('api_key')
+        model = data.get('model')
+        
+        if not provider:
+            return jsonify({
+                'success': False,
+                'error': '缺少提供商参数'
+            }), 400
+        
+        # 根据提供商获取相应的API Key和模型
+        if provider == 'local':
+            model = model or Config.LOCAL_EMBEDDING_MODEL
+        elif provider == 'openai':
+            api_key = api_key or Config.OPENAI_API_KEY
+            model = model or Config.OPENAI_EMBEDDING_MODEL
+        elif provider == 'zhipu':
+            # 优先使用嵌入模型专用的API Key，如果没有则使用通用的API Key
+            api_key = api_key or getattr(Config, 'ZHIPU_EMBEDDING_API_KEY', None) or Config.ZHIPU_API_KEY
+            model = model or Config.ZHIPU_EMBEDDING_MODEL
+        elif provider == 'qwen':
+            api_key = api_key or Config.QWEN_API_KEY
+            model = model or Config.QWEN_EMBEDDING_MODEL
+        elif provider == 'baidu':
+            api_key = api_key or Config.BAIDU_API_KEY
+            model = model or Config.BAIDU_EMBEDDING_MODEL
+        else:
+            return jsonify({
+                'success': False,
+                'error': f'不支持的嵌入模型提供商: {provider}'
+            }), 400
+        
+        if provider != 'local' and not api_key:
+            return jsonify({
+                'success': False,
+                'error': f'{provider} 嵌入模型需要API Key'
+            }), 400
+        
+        # 测试嵌入模型连接
+        from .embedding import EmbeddingService
+        try:
+            # 根据提供商设置API Key
+            if provider == 'openai':
+                os.environ['OPENAI_API_KEY'] = api_key
+            elif provider == 'zhipu':
+                os.environ['ZHIPU_EMBEDDING_API_KEY'] = api_key
+                # 调试日志：检查API Key是否正确设置
+                log_info(f"智谱AI嵌入模型测试 - API Key长度: {len(api_key) if api_key else 0}")
+            elif provider == 'qwen':
+                os.environ['QWEN_EMBEDDING_API_KEY'] = api_key
+            elif provider == 'baidu':
+                os.environ['BAIDU_EMBEDDING_API_KEY'] = api_key
+            
+            embedding_service = EmbeddingService(provider=provider, model_name=model)
+            # 测试获取嵌入向量
+            test_embeddings = embedding_service.get_embeddings(["测试文本"])
+            # 修复数组真值判断错误：使用 test_embeddings.size > 0 而不是 len(test_embeddings) > 0
+            if test_embeddings is not None and test_embeddings.size > 0:
+                return jsonify({
+                    'success': True,
+                    'message': f'{provider} 嵌入模型连接测试成功',
+                    'provider': provider,
+                    'model': model,
+                    'dimension': len(test_embeddings[0]) if test_embeddings[0] is not None else 0
+                })
+            else:
+                return jsonify({
+                    'success': False,
+                    'error': '嵌入模型返回空结果'
+                }), 400
+        except Exception as e:
+            return jsonify({
+                'success': False,
+                'error': f'嵌入模型测试失败: {str(e)}'
+            }), 400
+        
+    except Exception as e:
+        log_error(f"嵌入模型测试API错误: {e}")
+        return jsonify({
+            'success': False,
+            'error': f'嵌入模型连接测试失败: {str(e)}'
+        }), 500
 
 # ==================== 错误处理 ====================
 

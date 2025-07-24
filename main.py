@@ -23,6 +23,10 @@ import sys
 import os
 from typing import Optional, List
 
+# 抑制TensorFlow和FAISS警告信息
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'  # 抑制TensorFlow INFO和WARNING
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'  # 禁用oneDNN优化警告
+
 # 添加项目根目录到Python路径
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,7 +45,7 @@ def print_banner():
     """
     banner = """
 ╔══════════════════════════════════════════════════════════════╗
-║                        OpenIssueBot                         ║
+║                        OpenIssueBot                          ║
 ║                                                              ║
 ║    基于RAG和大语言模型的GitHub Issue智能搜索助手              ║
 ║                                                              ║
@@ -236,7 +240,8 @@ def cmd_config(args):
         # 验证嵌入模型
         try:
             from app.embedding import EmbeddingService
-            embedding_service = EmbeddingService(use_local=Config.USE_LOCAL_EMBEDDING)
+            provider = getattr(Config, 'EMBEDDING_PROVIDER', 'local')
+            embedding_service = EmbeddingService(provider=provider)
             dimension = embedding_service.get_embedding_dimension()
             print(f"✅ 嵌入服务正常 (维度: {dimension})")
         except Exception as e:

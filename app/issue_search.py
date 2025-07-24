@@ -52,7 +52,16 @@ class IssueSearchEngine:
         
         # 初始化各个服务组件
         self.github_api = GitHubAPI(self.github_token, self.github_repo)
-        self.embedding_service = EmbeddingService(use_local=self.use_local_embedding)
+        
+        # 根据配置确定嵌入服务提供商
+        if self.use_local_embedding:
+            provider = "local"
+            model_name = Config.LOCAL_EMBEDDING_MODEL
+        else:
+            provider = Config.EMBEDDING_PROVIDER
+            model_name = Config.EMBEDDING_MODEL
+        
+        self.embedding_service = EmbeddingService(provider=provider, model_name=model_name)
         self.search_engine = FAISSSearchEngine(dimension=self.embedding_service.get_embedding_dimension())
         self.summarizer = IssueSummarizer()
         

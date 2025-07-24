@@ -164,6 +164,10 @@ function handleVisibilityChange() {
         // 页面显示时恢复状态监控
         startStatusMonitoring();
         checkSystemStatus();
+        // 如果在配置页面，也刷新配置状态
+        if (window.location.pathname === '/config') {
+            refreshConfigurationStatus();
+        }
     }
 }
 
@@ -544,10 +548,15 @@ async function saveConfiguration() {
         const data = await response.json();
         
         if (data.success) {
-            showMessage('success', '配置保存成功！');
+            showMessage('success', '配置保存成功！正在验证配置...');
+            
+            // 立即刷新配置状态
+            await refreshConfigurationStatus();
+            
+            // 延迟刷新页面以确保用户看到状态更新
             setTimeout(() => {
                 location.reload();
-            }, 1500);
+            }, 2000);
         } else {
             showMessage('danger', `配置保存失败: ${data.error}`);
         }
@@ -565,14 +574,19 @@ async function saveConfiguration() {
  */
 async function checkSystemStatus() {
     try {
-        const response = await fetch('/api/status');
+        const response = await fetch('/api/stats');
         const data = await response.json();
         
         updateStatusIndicators(data);
         
     } catch (error) {
         console.error('状态检查错误:', error);
-        updateStatusIndicators({ success: false, error: error.message });
+        // 网络错误时显示离线状态
+        const statusIndicator = document.getElementById('status-indicator');
+        if (statusIndicator) {
+            statusIndicator.innerHTML = '<i class="bi bi-circle-fill text-danger"></i> 离线';
+            statusIndicator.className = 'badge bg-danger';
+        }
     }
 }
 
@@ -582,15 +596,18 @@ async function checkSystemStatus() {
 function updateStatusIndicators(statusData) {
     const statusIndicator = document.getElementById('status-indicator');
     if (statusIndicator) {
-        if (statusData.success && statusData.status) {
-            const status = statusData.status;
-            statusIndicator.className = `status-indicator ${
-                status.all_configured ? 'status-online' : 'status-warning'
-            }`;
-            statusIndicator.title = status.all_configured ? '系统正常' : '配置不完整';
+        if (statusData.success && statusData.stats) {
+            const stats = statusData.stats;
+            if (stats.is_initialized) {
+                statusIndicator.innerHTML = '<i class="bi bi-circle-fill text-success"></i> 就绪';
+                statusIndicator.className = 'badge bg-success';
+            } else {
+                statusIndicator.innerHTML = '<i class="bi bi-circle-fill text-warning"></i> 未初始化';
+                statusIndicator.className = 'badge bg-warning';
+            }
         } else {
-            statusIndicator.className = 'status-indicator status-offline';
-            statusIndicator.title = '系统离线';
+            statusIndicator.innerHTML = '<i class="bi bi-circle-fill text-danger"></i> 错误';
+            statusIndicator.className = 'badge bg-danger';
         }
     }
 }
@@ -652,6 +669,132 @@ function updateStatisticsDisplay(stats) {
             element.textContent = value;
         }
     });
+}
+
+/**
+ * 刷新配置状态（供按钮调用）
+ */
+async function refreshConfigStatus() {
+    await refreshConfigurationStatus();
+    showMessage('info', '配置状态已刷新');
+}
+
+/**
+ * 刷新配置状态
+ */
+async function refreshConfigurationStatus() {
+    try {
+        const response = await fetch('/api/config', {
+            method: 'GET'
+        });
+        
+        const data = await response.json();
+        
+        if (data.success && data.config) {
+            updateConfigurationStatusDisplay(data.config);
+        }
+        
+    } catch (error) {
+        console.error('刷新配置状态错误:', error);
+    }
+}
+
+/**
+ * 更新配置状态显示
+ */
+function updateConfigurationStatusDisplay(configStatus) {
+    // 更新GitHub Token状态
+    updateStatusIndicator('github-token', configStatus.github_token_configured, configStatus.github_token_error);
+    
+    // 更新GitHub仓库状态
+    updateStatusIndicator('github-repo', configStatus.github_repo_configured, configStatus.github_repo_error);
+    
+    // 更新OpenAI API状态
+    updateStatusIndicator('openai-api', configStatus.openai_api_key_configured, configStatus.openai_api_error);
+    
+    // 更新搜索引擎状态
+    updateStatusIndicator('search-engine', configStatus.search_engine_ready);
+    
+    // 更新配置不完整警告
+    const warningAlert = document.querySelector('.alert-warning');
+    if (warningAlert) {
+        const allConfigured = configStatus.github_token_configured && 
+                            configStatus.github_repo_configured;
+        warningAlert.style.display = allConfigured ? 'none' : 'block';
+    }
+    
+    // 显示验证结果消息
+    if (configStatus.github_token_error && !configStatus.github_token_configured) {
+        showMessage('danger', `GitHub Token: ${configStatus.github_token_error}`);
+    }
+    if (configStatus.github_repo_error && !configStatus.github_repo_configured) {
+        showMessage('danger', `GitHub 仓库: ${configStatus.github_repo_error}`);
+    }
+    if (configStatus.openai_api_error && !configStatus.openai_api_key_configured) {
+        showMessage('warning', `OpenAI API: ${configStatus.openai_api_error}`);
+    }
+}
+
+/**
+ * 更新单个状态指示器
+ */
+function updateStatusIndicator(type, isConfigured, errorMessage = null) {
+    // 查找对应的状态指示器和文本
+    const indicators = document.querySelectorAll('.status-indicator');
+    const statusTexts = document.querySelectorAll('.small.text-muted');
+    
+    let targetIndex = -1;
+    switch(type) {
+        case 'github-token':
+            targetIndex = 0;
+            break;
+        case 'github-repo':
+            targetIndex = 1;
+            break;
+        case 'openai-api':
+            targetIndex = 2;
+            break;
+        case 'search-engine':
+            targetIndex = 3;
+            break;
+    }
+    
+    if (targetIndex >= 0 && indicators[targetIndex] && statusTexts[targetIndex]) {
+        const indicator = indicators[targetIndex];
+        const statusText = statusTexts[targetIndex];
+        
+        // 清除所有状态类
+        indicator.classList.remove('status-success', 'status-warning', 'status-danger');
+        
+        // 设置新的状态类和文本
+        if (isConfigured) {
+            indicator.classList.add('status-success');
+            if (type === 'openai-api') {
+                statusText.textContent = '已配置';
+            } else {
+                statusText.textContent = type === 'search-engine' ? '就绪' : '已配置';
+            }
+            // 移除错误提示
+            indicator.removeAttribute('title');
+        } else {
+            if (type === 'openai-api' || type === 'search-engine') {
+                indicator.classList.add('status-warning');
+                statusText.textContent = type === 'openai-api' ? '未配置（可选）' : '未初始化';
+            } else {
+                indicator.classList.add('status-danger');
+                statusText.textContent = '未配置';
+            }
+            
+            // 添加错误提示到title属性
+            if (errorMessage) {
+                indicator.setAttribute('title', errorMessage);
+                // 如果是必需的配置项，显示具体错误
+                if (type !== 'openai-api' && type !== 'search-engine') {
+                    statusText.textContent = '配置错误';
+                }
+            }
+        }
+    }
 }
 
 /**
@@ -885,3 +1028,5 @@ window.addEventListener('offline', function() {
     showMessage('warning', '网络连接已断开');
     stopStatusMonitoring();
 });
+
+// 文件更新时间: 2025-07-24 21:40:56

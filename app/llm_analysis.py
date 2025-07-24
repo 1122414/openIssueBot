@@ -12,37 +12,90 @@ LLM 分析模块
 import openai
 from typing import List, Dict, Optional, Any
 import json
+import requests
 from .config import Config
 from .utils import log_info, log_error, log_warning
 
 class LLMAnalyzer:
     """
-    大语言模型分析器
+    大语言模型分析器，支持多种LLM提供商
     
     提供基于LLM的问题分析和解决方案生成功能
     """
     
-    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
+    def __init__(self, config: Config):
         """
         初始化LLM分析器
         
         Args:
-            api_key: OpenAI API密钥
-            model: 使用的模型名称
+            config: 配置对象
         """
-        self.api_key = api_key or Config.OPENAI_API_KEY
-        self.model = model or Config.OPENAI_MODEL
+        self.config = config
+        self.provider = getattr(config, 'LLM_PROVIDER', 'openai')
+        self.client = None
         
-        if not self.api_key:
-            raise ValueError("需要设置OPENAI_API_KEY才能使用LLM分析功能")
-            
-        # 初始化OpenAI客户端
-        self.client = openai.OpenAI(api_key=self.api_key)
+        # 根据提供商设置模型和初始化客户端
+        if self.provider == 'openai':
+            self.model = config.OPENAI_MODEL
+            self._init_openai_client()
+        elif self.provider == 'zhipu':
+            self.model = getattr(config, 'ZHIPU_MODEL', 'glm-4')
+            self._init_zhipu_client()
+        elif self.provider == 'qwen':
+            self.model = getattr(config, 'QWEN_MODEL', 'qwen-turbo')
+            self._init_qwen_client()
+        elif self.provider == 'baidu':
+            self.model = getattr(config, 'BAIDU_MODEL', 'ernie-bot-turbo')
+            self._init_baidu_client()
+        else:
+            raise ValueError(f"不支持的LLM提供商: {self.provider}")
         
         # 系统提示词模板
         self.system_prompt = self._create_system_prompt()
         
         log_info(f"LLM分析器初始化完成，使用模型: {self.model}")
+    
+    def _init_openai_client(self):
+        """初始化OpenAI客户端"""
+        try:
+            if not self.config.OPENAI_API_KEY:
+                raise ValueError("OpenAI API Key未配置")
+            
+            self.client = openai.OpenAI(api_key=self.config.OPENAI_API_KEY)
+            log_info(f"OpenAI客户端初始化成功，使用模型: {self.model}")
+        except Exception as e:
+            log_error(f"OpenAI客户端初始化失败: {e}")
+            raise
+    
+    def _init_zhipu_client(self):
+        """初始化智谱AI客户端"""
+        try:
+            if not getattr(self.config, 'ZHIPU_API_KEY', None):
+                raise ValueError("智谱AI API Key未配置")
+            log_info(f"智谱AI客户端初始化成功，使用模型: {self.model}")
+        except Exception as e:
+            log_error(f"智谱AI客户端初始化失败: {e}")
+            raise
+    
+    def _init_qwen_client(self):
+        """初始化通义千问客户端"""
+        try:
+            if not getattr(self.config, 'QWEN_API_KEY', None):
+                raise ValueError("通义千问 API Key未配置")
+            log_info(f"通义千问客户端初始化成功，使用模型: {self.model}")
+        except Exception as e:
+            log_error(f"通义千问客户端初始化失败: {e}")
+            raise
+    
+    def _init_baidu_client(self):
+        """初始化百度文心客户端"""
+        try:
+            if not getattr(self.config, 'BAIDU_API_KEY', None) or not getattr(self.config, 'BAIDU_SECRET_KEY', None):
+                raise ValueError("百度文心 API Key或Secret Key未配置")
+            log_info(f"百度文心客户端初始化成功，使用模型: {self.model}")
+        except Exception as e:
+            log_error(f"百度文心客户端初始化失败: {e}")
+            raise
     
     def _create_system_prompt(self) -> str:
         """
@@ -96,34 +149,29 @@ class LLMAnalyzer:
             # 构建用户提示词
             user_prompt = self._build_user_prompt(query, context)
             
-            log_info(f"开始LLM分析，查询长度: {len(query)}")
+            log_info(f"开始LLM分析，查询长度: {len(query)}，提供商: {self.provider}")
             
-            # 调用OpenAI API
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
-                    {"role": "system", "content": self.system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                max_tokens=max_tokens,
-                temperature=0.7,
-                top_p=0.9
-            )
+            # 根据提供商调用相应的API
+            if self.provider == 'openai':
+                result = self._call_openai_api(user_prompt, max_tokens)
+            elif self.provider == 'zhipu':
+                result = self._call_zhipu_api(user_prompt, max_tokens)
+            elif self.provider == 'qwen':
+                result = self._call_qwen_api(user_prompt, max_tokens)
+            elif self.provider == 'baidu':
+                result = self._call_baidu_api(user_prompt, max_tokens)
+            else:
+                raise ValueError(f"不支持的LLM提供商: {self.provider}")
             
-            # 提取回答
-            answer = response.choices[0].message.content
-            
-            # 构建结果
-            result = {
-                "success": True,
-                "answer": answer,
+            # 添加通用信息
+            result.update({
                 "model": self.model,
-                "tokens_used": response.usage.total_tokens if response.usage else 0,
+                "provider": self.provider,
                 "context_provided": context is not None,
                 "query_length": len(query)
-            }
+            })
             
-            log_info(f"LLM分析完成，使用tokens: {result['tokens_used']}")
+            log_info(f"LLM分析完成，使用tokens: {result.get('tokens_used', 0)}")
             
             return result
             
@@ -134,6 +182,146 @@ class LLMAnalyzer:
                 "error": str(e),
                 "answer": self._generate_fallback_response(query)
             }
+    
+    def _call_openai_api(self, user_prompt: str, max_tokens: int) -> Dict[str, Any]:
+        """调用OpenAI API"""
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {"role": "system", "content": self.system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            max_tokens=max_tokens,
+            temperature=0.7,
+            top_p=0.9
+        )
+        
+        return {
+            "success": True,
+            "answer": response.choices[0].message.content,
+            "tokens_used": response.usage.total_tokens if response.usage else 0
+        }
+    
+    def _call_zhipu_api(self, user_prompt: str, max_tokens: int) -> Dict[str, Any]:
+        """调用智谱AI API"""
+        headers = {
+            'Authorization': f'Bearer {getattr(self.config, "ZHIPU_API_KEY", "")}',
+            'Content-Type': 'application/json'
+        }
+        
+        data = {
+            'model': self.model,
+            'messages': [
+                {"role": "system", "content": self.system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            'max_tokens': max_tokens,
+            'temperature': 0.7,
+            'top_p': 0.9
+        }
+        
+        response = requests.post(
+            'https://open.bigmodel.cn/api/paas/v4/chat/completions',
+            headers=headers,
+            json=data
+        )
+        
+        if response.status_code == 200:
+            result = response.json()
+            return {
+                "success": True,
+                "answer": result['choices'][0]['message']['content'],
+                "tokens_used": result.get('usage', {}).get('total_tokens', 0)
+            }
+        else:
+            raise Exception(f"智谱AI API调用失败: {response.text}")
+    
+    def _call_qwen_api(self, user_prompt: str, max_tokens: int) -> Dict[str, Any]:
+        """调用通义千问API"""
+        headers = {
+            'Authorization': f'Bearer {getattr(self.config, "QWEN_API_KEY", "")}',
+            'Content-Type': 'application/json'
+        }
+        
+        data = {
+            'model': self.model,
+            'input': {
+                'messages': [
+                    {"role": "system", "content": self.system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ]
+            },
+            'parameters': {
+                'max_tokens': max_tokens,
+                'temperature': 0.7,
+                'top_p': 0.9
+            }
+        }
+        
+        response = requests.post(
+            'https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation',
+            headers=headers,
+            json=data
+        )
+        
+        if response.status_code == 200:
+            result = response.json()
+            return {
+                "success": True,
+                "answer": result['output']['text'],
+                "tokens_used": result.get('usage', {}).get('total_tokens', 0)
+            }
+        else:
+            raise Exception(f"通义千问API调用失败: {response.text}")
+    
+    def _call_baidu_api(self, user_prompt: str, max_tokens: int) -> Dict[str, Any]:
+        """调用百度文心API"""
+        # 获取access_token
+        access_token = self._get_baidu_access_token()
+        
+        headers = {
+            'Content-Type': 'application/json'
+        }
+        
+        data = {
+            'messages': [
+                {"role": "user", "content": f"{self.system_prompt}\n\n{user_prompt}"}
+            ],
+            'max_output_tokens': max_tokens,
+            'temperature': 0.7,
+            'top_p': 0.9
+        }
+        
+        response = requests.post(
+            f'https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/{self.model}?access_token={access_token}',
+            headers=headers,
+            json=data
+        )
+        
+        if response.status_code == 200:
+            result = response.json()
+            return {
+                "success": True,
+                "answer": result['result'],
+                "tokens_used": result.get('usage', {}).get('total_tokens', 0)
+            }
+        else:
+            raise Exception(f"百度文心API调用失败: {response.text}")
+    
+    def _get_baidu_access_token(self) -> str:
+        """获取百度API的access_token"""
+        url = "https://aip.baidubce.com/oauth/2.0/token"
+        params = {
+            'grant_type': 'client_credentials',
+            'client_id': getattr(self.config, 'BAIDU_API_KEY', ''),
+            'client_secret': getattr(self.config, 'BAIDU_SECRET_KEY', '')
+        }
+        
+        response = requests.post(url, params=params)
+        if response.status_code == 200:
+            return response.json()['access_token']
+        else:
+            raise Exception(f"获取百度access_token失败: {response.text}")
     
     def _build_user_prompt(self, query: str, context: Optional[Dict] = None) -> str:
         """

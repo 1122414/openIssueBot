@@ -57,14 +57,17 @@
 <div class="row mb-4">
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header d-flex justify-content-between align-items-center">
                 <h5 class="mb-0">
                     <i class="bi bi-gear"></i> 配置状态
                 </h5>
+                <button class="btn btn-sm btn-outline-primary" onclick="refreshConfigStatus()">
+                    <i class="bi bi-arrow-clockwise"></i> 刷新
+                </button>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="text-center">
                             <div class="status-indicator {{ 'status-success' if config_status.github_token_configured else 'status-danger' }}"></div>
                             <strong>GitHub Token</strong>
@@ -73,7 +76,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="text-center">
                             <div class="status-indicator {{ 'status-success' if config_status.github_repo_configured else 'status-danger' }}"></div>
                             <strong>GitHub 仓库</strong>
@@ -82,16 +85,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="text-center">
-                            <div class="status-indicator {{ 'status-success' if config_status.openai_configured else 'status-warning' }}"></div>
-                            <strong>OpenAI API</strong>
-                            <p class="small text-muted mb-0">
-                                {{ '已配置' if config_status.openai_configured else '未配置（可选）' }}
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="text-center">
                             <div class="status-indicator {{ 'status-success' if config_status.search_engine_ready else 'status-warning' }}"></div>
                             <strong>搜索引擎</strong>
@@ -137,7 +131,7 @@
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="github-token" 
                                            name="github_token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"
-                                           value="{{ '●' * 20 if config_status.github_token_configured else '' }}">
+                                           value="{{ current_config.github_token or '' }}">
                                     <button class="btn btn-outline-secondary password-toggle" type="button" 
                                             onclick="togglePassword('github-token')">
                                         <i class="bi bi-eye"></i>
@@ -176,11 +170,11 @@
                 </div>
             </div>
             
-            <!-- OpenAI 配置 -->
+            <!-- LLM 配置 -->
             <div class="card mb-4">
                 <div class="card-header">
                     <h5 class="mb-0">
-                        <i class="bi bi-robot"></i> OpenAI 配置
+                        <i class="bi bi-robot"></i> LLM 配置
                         <span class="badge bg-info ms-2">可选</span>
                     </h5>
                 </div>
@@ -188,11 +182,30 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
+                                <label for="llm-provider" class="form-label">LLM 提供商</label>
+                                <select class="form-select" id="llm-provider" name="llm_provider" onchange="toggleLLMConfig()">
+                                    <option value="openai" {{ 'selected' if current_config.llm_provider == 'openai' else '' }}>OpenAI</option>
+                                    <option value="zhipu" {{ 'selected' if current_config.llm_provider == 'zhipu' else '' }}>智谱AI</option>
+                                    <option value="qwen" {{ 'selected' if current_config.llm_provider == 'qwen' else '' }}>通义千问</option>
+                                    <option value="baidu" {{ 'selected' if current_config.llm_provider == 'baidu' else '' }}>百度文心</option>
+                                    <option value="deepseek" {{ 'selected' if current_config.llm_provider == 'deepseek' else '' }}>DeepSeek</option>
+                                </select>
+                                <div class="form-text">
+                                    选择您要使用的LLM服务提供商
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- OpenAI 配置 -->
+                    <div id="openai-config" class="llm-config row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
                                 <label for="openai-api-key" class="form-label">OpenAI API Key</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="openai-api-key" 
                                            name="openai_api_key" placeholder="sk-xxxxxxxxxxxxxxxxxxxx"
-                                           value="{{ '●' * 20 if config_status.openai_configured else '' }}">
+                                           value="{{ current_config.openai_api_key or '' }}">
                                     <button class="btn btn-outline-secondary password-toggle" type="button" 
                                             onclick="togglePassword('openai-api-key')">
                                         <i class="bi bi-eye"></i>
@@ -211,6 +224,7 @@
                                     <option value="gpt-3.5-turbo" {{ 'selected' if current_config.openai_model == 'gpt-3.5-turbo' else '' }}>GPT-3.5 Turbo</option>
                                     <option value="gpt-4" {{ 'selected' if current_config.openai_model == 'gpt-4' else '' }}>GPT-4</option>
                                     <option value="gpt-4-turbo" {{ 'selected' if current_config.openai_model == 'gpt-4-turbo' else '' }}>GPT-4 Turbo</option>
+                                    <option value="gpt-4o" {{ 'selected' if current_config.openai_model == 'gpt-4o' else '' }}>GPT-4o</option>
                                 </select>
                                 <div class="form-text">
                                     推荐使用 GPT-3.5 Turbo，性价比更高
@@ -219,10 +233,170 @@
                         </div>
                     </div>
                     
+                    <!-- 智谱AI 配置 -->
+                    <div id="zhipu-config" class="llm-config row" style="display: none;">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="zhipu-api-key" class="form-label">智谱AI API Key</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="zhipu-api-key" 
+                                           name="zhipu_api_key" placeholder="请输入智谱AI API Key"
+                                           value="{{ current_config.zhipu_api_key or '' }}">
+                                    <button class="btn btn-outline-secondary password-toggle" type="button" 
+                                            onclick="togglePassword('zhipu-api-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text">
+                                    <a href="https://open.bigmodel.cn/" target="_blank">获取智谱AI API Key</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="zhipu-model" class="form-label">智谱AI 模型</label>
+                                <select class="form-select" id="zhipu-model" name="zhipu_model">
+                                    <option value="glm-4" {{ 'selected' if current_config.zhipu_model == 'glm-4' else '' }}>GLM-4</option>
+                                    <option value="glm-4-plus" {{ 'selected' if current_config.zhipu_model == 'glm-4-plus' else '' }}>GLM-4 Plus</option>
+                                    <option value="glm-4-air" {{ 'selected' if current_config.zhipu_model == 'glm-4-air' else '' }}>GLM-4 Air</option>
+                                    <option value="glm-4-airx" {{ 'selected' if current_config.zhipu_model == 'glm-4-airx' else '' }}>GLM-4 AirX</option>
+                                    <option value="glm-4-flash" {{ 'selected' if current_config.zhipu_model == 'glm-4-flash' else '' }}>GLM-4 Flash</option>
+                                    <option value="glm-4v" {{ 'selected' if current_config.zhipu_model == 'glm-4v' else '' }}>GLM-4V</option>
+                                    <option value="glm-3-turbo" {{ 'selected' if current_config.zhipu_model == 'glm-3-turbo' else '' }}>GLM-3 Turbo</option>
+                                </select>
+                                <div class="form-text">
+                                    推荐使用 GLM-4，性能更好
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 通义千问 配置 -->
+                    <div id="qwen-config" class="llm-config row" style="display: none;">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="qwen-api-key" class="form-label">通义千问 API Key</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="qwen-api-key" 
+                                           name="qwen_api_key" placeholder="请输入通义千问 API Key"
+                                           value="{{ current_config.qwen_api_key or '' }}">
+                                    <button class="btn btn-outline-secondary password-toggle" type="button" 
+                                            onclick="togglePassword('qwen-api-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text">
+                                    <a href="https://dashscope.aliyun.com/" target="_blank">获取通义千问 API Key</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="qwen-model" class="form-label">通义千问 模型</label>
+                                <select class="form-select" id="qwen-model" name="qwen_model">
+                                    <option value="qwen-turbo" {{ 'selected' if current_config.qwen_model == 'qwen-turbo' else '' }}>Qwen Turbo</option>
+                                    <option value="qwen-plus" {{ 'selected' if current_config.qwen_model == 'qwen-plus' else '' }}>Qwen Plus</option>
+                                    <option value="qwen-max" {{ 'selected' if current_config.qwen_model == 'qwen-max' else '' }}>Qwen Max</option>
+                                    <option value="qwen2.5-72b-instruct" {{ 'selected' if current_config.qwen_model == 'qwen2.5-72b-instruct' else '' }}>Qwen2.5-72B-Instruct</option>
+                                    <option value="qwen2.5-32b-instruct" {{ 'selected' if current_config.qwen_model == 'qwen2.5-32b-instruct' else '' }}>Qwen2.5-32B-Instruct</option>
+                                    <option value="qwen2.5-14b-instruct" {{ 'selected' if current_config.qwen_model == 'qwen2.5-14b-instruct' else '' }}>Qwen2.5-14B-Instruct</option>
+                                    <option value="qwen2.5-7b-instruct" {{ 'selected' if current_config.qwen_model == 'qwen2.5-7b-instruct' else '' }}>Qwen2.5-7B-Instruct</option>
+                                </select>
+                                <div class="form-text">
+                                    推荐使用 Qwen Plus，平衡性能和成本
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 百度文心 配置 -->
+                    <div id="baidu-config" class="llm-config row" style="display: none;">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="baidu-api-key" class="form-label">百度 API Key</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="baidu-api-key" 
+                                           name="baidu_api_key" placeholder="请输入百度 API Key"
+                                           value="{{ current_config.baidu_api_key or '' }}">
+                                    <button class="btn btn-outline-secondary password-toggle" type="button" 
+                                            onclick="togglePassword('baidu-api-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-text">
+                                    <a href="https://console.bce.baidu.com/qianfan/" target="_blank">获取百度 API Key</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="baidu-secret-key" class="form-label">百度 Secret Key</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="baidu-secret-key" 
+                                           name="baidu_secret_key" placeholder="请输入百度 Secret Key"
+                                           value="{{ current_config.baidu_secret_key or '' }}">
+                                    <button class="btn btn-outline-secondary password-toggle" type="button" 
+                                            onclick="togglePassword('baidu-secret-key')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="baidu-model" class="form-label">百度文心 模型</label>
+                                <select class="form-select" id="baidu-model" name="baidu_model">
+                                    <option value="ernie-bot-turbo" {{ 'selected' if current_config.baidu_model == 'ernie-bot-turbo' else '' }}>ERNIE Bot Turbo</option>
+                                    <option value="ernie-bot" {{ 'selected' if current_config.baidu_model == 'ernie-bot' else '' }}>ERNIE Bot</option>
+                                    <option value="ernie-bot-4" {{ 'selected' if current_config.baidu_model == 'ernie-bot-4' else '' }}>ERNIE Bot 4.0</option>
+                                </select>
+                                <div class="form-text">
+                                    推荐使用 ERNIE Bot Turbo，响应更快
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- DeepSeek 配置 -->
+                    <div id="deepseek-config" class="llm-config" style="display: none;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="deepseek-api-key" class="form-label">DeepSeek API Key</label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="deepseek-api-key" 
+                                           name="deepseek_api_key" placeholder="请输入DeepSeek API Key"
+                                           value="{{ current_config.deepseek_api_key or '' }}">
+                                        <button class="btn btn-outline-secondary password-toggle" type="button" 
+                                                onclick="togglePassword('deepseek-api-key')">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="deepseek-model" class="form-label">DeepSeek 模型</label>
+                                    <select class="form-select" id="deepseek-model" name="deepseek_model">
+                                        <optgroup label="LLM 模型">
+                                            <option value="deepseek-chat" {{ 'selected' if current_config.deepseek_model == 'deepseek-chat' else '' }}>DeepSeek Chat</option>
+                                            <option value="deepseek-coder" {{ 'selected' if current_config.deepseek_model == 'deepseek-coder' else '' }}>DeepSeek Coder</option>
+                                            <option value="deepseek-v2" {{ 'selected' if current_config.deepseek_model == 'deepseek-v2' else '' }}>DeepSeek V2</option>
+                                            <option value="deepseek-v2.5" {{ 'selected' if current_config.deepseek_model == 'deepseek-v2.5' else '' }}>DeepSeek V2.5</option>
+                                        </optgroup>
+                                    </select>
+                                    <div class="form-text">
+                                        推荐使用 DeepSeek Chat，性价比高
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="row">
                         <div class="col-12">
-                            <button type="button" class="btn btn-outline-primary" onclick="testOpenAIConnection()">
-                                <i class="bi bi-robot"></i> 测试 OpenAI 连接
+                            <button type="button" class="btn btn-outline-primary me-2" onclick="testLLMConnection()">
+                                <i class="bi bi-robot"></i> 测试 LLM 连接
                             </button>
                             <div id="openai-test-result"></div>
                         </div>
@@ -252,32 +426,211 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mb-3">
-                                                <label for="embedding-model" class="form-label">本地嵌入模型</label>
-                                                <select class="form-select" id="embedding-model" name="embedding_model">
-                                                    <option value="all-MiniLM-L6-v2" {{ 'selected' if current_config.embedding_model == 'all-MiniLM-L6-v2' else '' }}>all-MiniLM-L6-v2 (推荐)</option>
-                                                    <option value="all-mpnet-base-v2" {{ 'selected' if current_config.embedding_model == 'all-mpnet-base-v2' else '' }}>all-mpnet-base-v2</option>
-                                                    <option value="paraphrase-MiniLM-L6-v2" {{ 'selected' if current_config.embedding_model == 'paraphrase-MiniLM-L6-v2' else '' }}>paraphrase-MiniLM-L6-v2</option>
+                                                <label for="embedding-provider" class="form-label">嵌入模型提供商</label>
+                                                <select class="form-select" id="embedding-provider" name="embedding_provider" onchange="toggleEmbeddingConfig()">
+                                                    <option value="local" {{ 'selected' if current_config.embedding_provider == 'local' else '' }}>本地模型</option>
+                                                    <option value="openai" {{ 'selected' if current_config.embedding_provider == 'openai' else '' }}>OpenAI</option>
+                                                    <option value="zhipu" {{ 'selected' if current_config.embedding_provider == 'zhipu' else '' }}>智谱AI</option>
+                                                    <option value="qwen" {{ 'selected' if current_config.embedding_provider == 'qwen' else '' }}>通义千问</option>
+                                                    <option value="baidu" {{ 'selected' if current_config.embedding_provider == 'baidu' else '' }}>百度文心</option>
                                                 </select>
-                                                <div class="form-text">
-                                                    本地模型，无需API费用
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 本地嵌入模型配置 -->
+                                    <div id="local-embedding-config" class="embedding-config">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="embedding-model" class="form-label">本地嵌入模型</label>
+                                                    <select class="form-select" id="embedding-model" name="embedding_model">
+                                                        <option value="all-MiniLM-L6-v2" {{ 'selected' if current_config.embedding_model == 'all-MiniLM-L6-v2' else '' }}>all-MiniLM-L6-v2 (推荐)</option>
+                                                        <option value="all-mpnet-base-v2" {{ 'selected' if current_config.embedding_model == 'all-mpnet-base-v2' else '' }}>all-mpnet-base-v2</option>
+                                                        <option value="paraphrase-MiniLM-L6-v2" {{ 'selected' if current_config.embedding_model == 'paraphrase-MiniLM-L6-v2' else '' }}>paraphrase-MiniLM-L6-v2</option>
+                                                        <option value="sentence-transformers/all-MiniLM-L12-v2" {{ 'selected' if current_config.embedding_model == 'sentence-transformers/all-MiniLM-L12-v2' else '' }}>all-MiniLM-L12-v2</option>
+                                                    </select>
+                                                    <div class="form-text">
+                                                        本地模型无需API费用，但效果可能不如在线模型
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="use-openai-embedding" class="form-label">使用 OpenAI 嵌入</label>
-                                                <div class="form-check form-switch">
-                                                    <input class="form-check-input" type="checkbox" 
-                                                           id="use-openai-embedding" name="use_openai_embedding"
-                                                           {{ 'checked' if current_config.use_openai_embedding else '' }}>
-                                                    <label class="form-check-label" for="use-openai-embedding">
-                                                        启用 OpenAI 嵌入模型
-                                                    </label>
-                                                </div>
-                                                <div class="form-text">
-                                                    更高质量，但需要API费用
+                                    </div>
+                                    
+                                    <!-- OpenAI 嵌入模型配置 -->
+                                    <div id="openai-embedding-config" class="embedding-config" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="openai-embedding-api-key" class="form-label">OpenAI API Key (嵌入模型)</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="openai-embedding-api-key" 
+                                                               name="openai_embedding_api_key" 
+                                                               value="{{ current_config.openai_embedding_api_key or '' }}"
+                                                               placeholder="sk-...">
+                                                        <button class="btn btn-outline-secondary" type="button" 
+                                                                onclick="togglePassword('openai-embedding-api-key')">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="form-text">
+                                                        可以与LLM使用不同的API Key，留空则使用LLM的API Key
+                                                    </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="openai-embedding-model" class="form-label">OpenAI 嵌入模型</label>
+                                                    <select class="form-select" id="openai-embedding-model" name="openai_embedding_model">
+                                                        <option value="text-embedding-3-small" {{ 'selected' if current_config.openai_embedding_model == 'text-embedding-3-small' else '' }}>text-embedding-3-small (推荐)</option>
+                                                        <option value="text-embedding-3-large" {{ 'selected' if current_config.openai_embedding_model == 'text-embedding-3-large' else '' }}>text-embedding-3-large</option>
+                                                        <option value="text-embedding-ada-002" {{ 'selected' if current_config.openai_embedding_model == 'text-embedding-ada-002' else '' }}>text-embedding-ada-002</option>
+                                                    </select>
+                                                    <div class="form-text">
+                                                        使用OpenAI API Key，效果好但需要消耗额度
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 智谱AI 嵌入模型配置 -->
+                                    <div id="zhipu-embedding-config" class="embedding-config" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="zhipu-embedding-api-key" class="form-label">智谱AI API Key (嵌入模型)</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="zhipu-embedding-api-key" 
+                                                               name="zhipu_embedding_api_key" 
+                                                               value="{{ current_config.zhipu_embedding_api_key or '' }}"
+                                                               placeholder="...">
+                                                        <button class="btn btn-outline-secondary" type="button" 
+                                                                onclick="togglePassword('zhipu-embedding-api-key')">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="form-text">
+                                                        可以与LLM使用不同的API Key，留空则使用LLM的API Key
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="zhipu-embedding-model" class="form-label">智谱AI 嵌入模型</label>
+                                                    <select class="form-select" id="zhipu-embedding-model" name="zhipu_embedding_model">
+                                        <option value="embedding-2" {{ 'selected' if current_config.zhipu_embedding_model == 'embedding-2' else '' }}>embedding-2 (推荐)</option>
+                                        <option value="embedding-3" {{ 'selected' if current_config.zhipu_embedding_model == 'embedding-3' else '' }}>embedding-3</option>
+                                        <option value="embedding-1" {{ 'selected' if current_config.zhipu_embedding_model == 'embedding-1' else '' }}>embedding-1</option>
+                                    </select>
+                                                    <div class="form-text">
+                                                        使用智谱AI API Key，支持中文效果好
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 通义千问 嵌入模型配置 -->
+                                    <div id="qwen-embedding-config" class="embedding-config" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="qwen-embedding-api-key" class="form-label">通义千问 API Key (嵌入模型)</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="qwen-embedding-api-key" 
+                                                               name="qwen_embedding_api_key" 
+                                                               value="{{ current_config.qwen_embedding_api_key or '' }}"
+                                                               placeholder="sk-...">
+                                                        <button class="btn btn-outline-secondary" type="button" 
+                                                                onclick="togglePassword('qwen-embedding-api-key')">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="form-text">
+                                                        可以与LLM使用不同的API Key，留空则使用LLM的API Key
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="qwen-embedding-model" class="form-label">通义千问 嵌入模型</label>
+                                                    <select class="form-select" id="qwen-embedding-model" name="qwen_embedding_model">
+                                        <option value="text-embedding-v1" {{ 'selected' if current_config.qwen_embedding_model == 'text-embedding-v1' else '' }}>text-embedding-v1 (推荐)</option>
+                                        <option value="text-embedding-v2" {{ 'selected' if current_config.qwen_embedding_model == 'text-embedding-v2' else '' }}>text-embedding-v2</option>
+                                        <option value="text-embedding-v3" {{ 'selected' if current_config.qwen_embedding_model == 'text-embedding-v3' else '' }}>text-embedding-v3</option>
+                                        <option value="text-embedding-v4" {{ 'selected' if current_config.qwen_embedding_model == 'text-embedding-v4' else '' }}>text-embedding-v4</option>
+                                    </select>
+                                                    <div class="form-text">
+                                                        使用通义千问API Key，中文支持优秀
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 百度文心 嵌入模型配置 -->
+                                    <div id="baidu-embedding-config" class="embedding-config" style="display: none;">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="baidu-embedding-api-key" class="form-label">百度 API Key (嵌入模型)</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="baidu-embedding-api-key" 
+                                                               name="baidu_embedding_api_key" 
+                                                               value="{{ current_config.baidu_embedding_api_key or '' }}"
+                                                               placeholder="API Key">
+                                                        <button class="btn btn-outline-secondary" type="button" 
+                                                                onclick="togglePassword('baidu-embedding-api-key')">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="form-text">
+                                                        可以与LLM使用不同的API Key，留空则使用LLM的API Key
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="baidu-embedding-secret-key" class="form-label">百度 Secret Key (嵌入模型)</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="baidu-embedding-secret-key" 
+                                                               name="baidu_embedding_secret_key" 
+                                                               value="{{ current_config.baidu_embedding_secret_key or '' }}"
+                                                               placeholder="Secret Key">
+                                                        <button class="btn btn-outline-secondary" type="button" 
+                                                                onclick="togglePassword('baidu-embedding-secret-key')">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="form-text">
+                                                        可以与LLM使用不同的Secret Key，留空则使用LLM的Secret Key
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="baidu-embedding-model" class="form-label">百度文心 嵌入模型</label>
+                                                    <select class="form-select" id="baidu-embedding-model" name="baidu_embedding_model">
+                                                        <option value="embedding-v1" {{ 'selected' if current_config.baidu_embedding_model == 'embedding-v1' else '' }}>embedding-v1 (推荐)</option>
+                                                        <option value="bge-large-zh" {{ 'selected' if current_config.baidu_embedding_model == 'bge-large-zh' else '' }}>bge-large-zh</option>
+                                                    </select>
+                                                    <div class="form-text">
+                                                        使用百度API Key，中文语义理解强
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 测试嵌入模型连接按钮 -->
+                                    <div class="row mt-3">
+                                        <div class="col-12">
+                                            <button type="button" class="btn btn-outline-info" onclick="testEmbeddingConnection()">
+                                                <i class="bi bi-cpu"></i> 测试嵌入模型连接
+                                            </button>
+                                            <div id="embedding-test-result"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -456,8 +809,24 @@ function saveConfig() {
     }
     
     // 处理复选框
-    configData.use_openai_embedding = document.getElementById('use-openai-embedding').checked;
     configData.flask_debug = document.getElementById('flask-debug').checked;
+    
+    // 处理嵌入模型配置
+    const embeddingProvider = document.getElementById('embedding-provider').value;
+    configData.embedding_provider = embeddingProvider;
+    
+    // 根据选择的提供商添加相应的配置
+    if (embeddingProvider === 'local') {
+        configData.local_embedding_model = document.getElementById('embedding-model').value;
+    } else if (embeddingProvider === 'openai') {
+        configData.openai_embedding_model = document.getElementById('openai-embedding-model').value;
+    } else if (embeddingProvider === 'zhipu') {
+        configData.zhipu_embedding_model = document.getElementById('zhipu-embedding-model').value;
+    } else if (embeddingProvider === 'qwen') {
+        configData.qwen_embedding_model = document.getElementById('qwen-embedding-model').value;
+    } else if (embeddingProvider === 'baidu') {
+        configData.baidu_embedding_model = document.getElementById('baidu-embedding-model').value;
+    }
     
     showLoading(true);
     
@@ -517,7 +886,7 @@ function testGitHubConnection() {
             resultDiv.innerHTML = `
                 <div class="test-result alert alert-success">
                     <i class="bi bi-check-circle"></i> 连接成功！
-                    <br><small>仓库: ${data.repo_info.name} (${data.repo_info.issues_count} 个 Issues)</small>
+                    <br><small>仓库: ${data.repo_name || '未知'} (Stars: ${data.stars || 0})</small>
                 </div>
             `;
         } else {
@@ -537,28 +906,81 @@ function testGitHubConnection() {
     });
 }
 
-// 测试 OpenAI 连接
-function testOpenAIConnection() {
-    const apiKey = document.getElementById('openai-api-key').value;
-    const model = document.getElementById('openai-model').value;
+// 切换 LLM 配置
+function toggleLLMConfig() {
+    const provider = document.getElementById('llm-provider').value;
+    const configs = document.querySelectorAll('.llm-config');
     
+    configs.forEach(config => {
+        config.style.display = 'none';
+    });
+    
+    const targetConfig = document.getElementById(`${provider}-config`);
+    if (targetConfig) {
+        targetConfig.style.display = 'block';
+    }
+}
+
+// 测试 LLM 连接
+function testLLMConnection() {
+    const provider = document.getElementById('llm-provider').value;
+    let apiKey, model, secretKey;
+    
+    if (provider === 'openai') {
+        apiKey = document.getElementById('openai-api-key').value;
+        model = document.getElementById('openai-model').value;
+    } else if (provider === 'zhipu') {
+        apiKey = document.getElementById('zhipu-api-key').value;
+        model = document.getElementById('zhipu-model').value;
+    } else if (provider === 'qwen') {
+        apiKey = document.getElementById('qwen-api-key').value;
+        model = document.getElementById('qwen-model').value;
+    } else if (provider === 'baidu') {
+        apiKey = document.getElementById('baidu-api-key').value;
+        secretKey = document.getElementById('baidu-secret-key').value;
+        model = document.getElementById('baidu-model').value;
+    } else if (provider === 'deepseek') {
+        apiKey = document.getElementById('deepseek-api-key').value;
+        model = document.getElementById('deepseek-model').value;
+    }
+    
+    // 验证API Key格式和有效性
     if (!apiKey) {
-        showMessage('warning', '请先填写 OpenAI API Key');
+        showMessage('warning', '请先填写有效的 API Key');
+        return;
+    }
+    
+    // 百度需要额外验证Secret Key
+    if (provider === 'baidu' && !secretKey) {
+        showMessage('warning', '请先填写有效的 Secret Key');
+        return;
+    }
+    
+    // 验证API Key格式
+    if (provider === 'zhipu' && !apiKey.includes('.')) {
+        showMessage('warning', '智谱AI API Key格式不正确，应包含点号');
         return;
     }
     
     const resultDiv = document.getElementById('openai-test-result');
     resultDiv.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div>测试中...';
     
-    fetch('/api/test-openai', {
+    const requestBody = {
+        provider: provider,
+        api_key: apiKey,
+        model: model
+    };
+    
+    if (provider === 'baidu') {
+        requestBody.secret_key = secretKey;
+    }
+    
+    fetch('/api/test-llm', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            openai_api_key: apiKey,
-            openai_model: model
-        })
+        body: JSON.stringify(requestBody)
     })
     .then(response => response.json())
     .then(data => {
@@ -566,7 +988,7 @@ function testOpenAIConnection() {
             resultDiv.innerHTML = `
                 <div class="test-result alert alert-success">
                     <i class="bi bi-check-circle"></i> 连接成功！
-                    <br><small>模型: ${data.model_info.model}</small>
+                    <br><small>提供商: ${provider}, 模型: ${model}</small>
                 </div>
             `;
         } else {
@@ -580,6 +1002,99 @@ function testOpenAIConnection() {
     .catch(error => {
         resultDiv.innerHTML = `
             <div class="test-result alert alert-danger">
+                <i class="bi bi-x-circle"></i> 测试失败: ${error.message}
+            </div>
+        `;
+    });
+}
+
+// 测试嵌入模型连接
+function testEmbeddingConnection() {
+    const provider = document.getElementById('embedding-provider').value;
+    let apiKey, model, secretKey;
+    
+    if (provider === 'local') {
+        model = document.getElementById('embedding-model').value;
+        apiKey = ''; // 本地模型不需要API Key
+    } else if (provider === 'openai') {
+        // 优先使用嵌入模型专用的API Key，如果没有则使用LLM的API Key
+        apiKey = document.getElementById('openai-embedding-api-key').value || document.getElementById('openai-api-key').value;
+        model = document.getElementById('openai-embedding-model').value;
+    } else if (provider === 'zhipu') {
+        // 优先使用嵌入模型专用的API Key，如果没有则使用LLM的API Key
+        const embeddingApiKey = document.getElementById('zhipu-embedding-api-key')?.value?.trim();
+        const llmApiKey = document.getElementById('zhipu-api-key')?.value?.trim();
+        apiKey = embeddingApiKey || llmApiKey;
+        model = document.getElementById('zhipu-embedding-model').value;
+    } else if (provider === 'qwen') {
+        // 优先使用嵌入模型专用的API Key，如果没有则使用LLM的API Key
+        apiKey = document.getElementById('qwen-embedding-api-key').value || document.getElementById('qwen-api-key').value;
+        model = document.getElementById('qwen-embedding-model').value;
+    } else if (provider === 'baidu') {
+        // 优先使用嵌入模型专用的API Key，如果没有则使用LLM的API Key
+        apiKey = document.getElementById('baidu-embedding-api-key').value || document.getElementById('baidu-api-key').value;
+        secretKey = document.getElementById('baidu-embedding-secret-key').value || document.getElementById('baidu-secret-key').value;
+        model = document.getElementById('baidu-embedding-model').value;
+    }
+    
+    if (provider !== 'local' && !apiKey) {
+        showMessage('warning', '请先填写有效的 API Key');
+        return;
+    }
+    
+    // 百度需要额外验证Secret Key
+    if (provider === 'baidu' && !secretKey) {
+        showMessage('warning', '请先填写有效的 Secret Key');
+        return;
+    }
+    
+    // 创建测试结果显示区域（如果不存在）
+    let resultDiv = document.getElementById('embedding-test-result');
+    if (!resultDiv) {
+        resultDiv = document.createElement('div');
+        resultDiv.id = 'embedding-test-result';
+        document.querySelector('.text-center.mt-4').appendChild(resultDiv);
+    }
+    
+    resultDiv.innerHTML = '<div class="spinner-border spinner-border-sm me-2"></div>测试中...';
+    
+    const requestBody = {
+        provider: provider,
+        api_key: apiKey,
+        model: model
+    };
+    
+    if (provider === 'baidu') {
+        requestBody.secret_key = secretKey;
+    }
+    
+    fetch('/api/test-embedding', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            resultDiv.innerHTML = `
+                <div class="test-result alert alert-success mt-3">
+                    <i class="bi bi-check-circle"></i> 嵌入模型连接成功！
+                    <br><small>提供商: ${provider}, 模型: ${model}</small>
+                </div>
+            `;
+        } else {
+            resultDiv.innerHTML = `
+                <div class="test-result alert alert-danger mt-3">
+                    <i class="bi bi-x-circle"></i> 连接失败: ${data.error}
+                </div>
+            `;
+        }
+    })
+    .catch(error => {
+        resultDiv.innerHTML = `
+            <div class="test-result alert alert-danger mt-3">
                 <i class="bi bi-x-circle"></i> 测试失败: ${error.message}
             </div>
         `;
@@ -668,26 +1183,27 @@ function togglePassword(inputId) {
     }
 }
 
-// 工具函数
-function showLoading(show) {
-    // 可以添加加载指示器
+// 切换嵌入模型配置
+function toggleEmbeddingConfig() {
+    const provider = document.getElementById('embedding-provider').value;
+    const configs = document.querySelectorAll('.embedding-config');
+    
+    configs.forEach(config => {
+        config.style.display = 'none';
+    });
+    
+    const targetConfig = document.getElementById(`${provider}-embedding-config`);
+    if (targetConfig) {
+        targetConfig.style.display = 'block';
+    }
 }
 
-function showMessage(type, message) {
-    const alertDiv = document.createElement('div');
-    alertDiv.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
-    alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
-    alertDiv.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
-    document.body.appendChild(alertDiv);
-    
-    setTimeout(() => {
-        if (alertDiv.parentNode) {
-            alertDiv.remove();
-        }
-    }, 5000);
-}
+// 页面加载时初始化配置
+document.addEventListener('DOMContentLoaded', function() {
+    toggleLLMConfig();
+    toggleEmbeddingConfig();
+});
+
+// 工具函数已在app.js中定义
 </script>
 {% endblock %}

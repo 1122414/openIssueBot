@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配置管理 - OpenIssueBot</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #555;
+        }
+        input[type="text"], input[type="password"], input[type="number"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            background-color: #fafafa;
+        }
+        .section h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #007cba;
+            padding-bottom: 10px;
+        }
+        .btn {
+            background-color: #007cba;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #005a87;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-error {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .btn-test {
+            background-color: #28a745;
+            font-size: 14px;
+            padding: 8px 16px;
+        }
+        .btn-test:hover {
+            background-color: #218838;
+        }
+        .test-result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .test-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .test-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .provider-config {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .provider-config.active {
+            display: block;
+        }
+        .embedding-config {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        .embedding-config.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>配置管理</h1>
+        
+        {% if message %}
+            <div class="alert alert-{{ 'success' if success else 'error' }}">
+                {{ message }}
+            </div>
+        {% endif %}
+        
+        <form method="POST">
+            <!-- GitHub 配置 -->
+            <div class="section">
+                <h3>GitHub 配置</h3>
+                <div class="form-group">
+                    <label for="github_token">GitHub Token:</label>
+                    <input type="password" id="github_token" name="github_token" value="{{ current_config.github_token or '' }}" placeholder="输入您的 GitHub Personal Access Token">
+                    <button type="button" class="btn btn-secondary" onclick="testGitHub()" style="margin-top: 5px;">测试 GitHub 连接</button>
+                </div>
+                <div class="form-group">
+                    <label for="github_repo">GitHub 仓库:</label>
+                    <input type="text" id="github_repo" name="github_repo" value="{{ current_config.github_repo or '' }}" placeholder="例如: owner/repo-name">
+                </div>
+            </div>
+            
+            <!-- LLM 配置 -->
+            <div class="section">
+                <h3>大语言模型配置</h3>
+                <div class="form-group">
+                    <label for="llm_provider">LLM 提供商:</label>
+                    <select id="llm_provider" name="llm_provider" onchange="toggleProviderConfig()">
+                        <option value="openai" {{ 'selected' if current_config.llm_provider == 'openai' else '' }}>OpenAI</option>
+                        <option value="zhipu" {{ 'selected' if current_config.llm_provider == 'zhipu' else '' }}>智谱AI</option>
+                        <option value="qwen" {{ 'selected' if current_config.llm_provider == 'qwen' else '' }}>通义千问</option>
+                        <option value="baidu" {{ 'selected' if current_config.llm_provider == 'baidu' else '' }}>百度文心</option>
+                        <option value="deepseek" {{ 'selected' if current_config.llm_provider == 'deepseek' else '' }}>DeepSeek</option>
+                    </select>
+                </div>
+                
+                <!-- OpenAI 配置 -->
+                <div id="openai-config" class="provider-config">
+                    <div class="form-group">
+                        <label for="openai_api_key">OpenAI API Key:</label>
+                        <input type="password" id="openai_api_key" name="openai_api_key" value="{{ current_config.openai_api_key or '' }}">
+                        <button type="button" class="btn btn-secondary" onclick="testLLM('openai')" style="margin-top: 5px;">测试 LLM 连接</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="openai_model">OpenAI 模型:</label>
+                        <select id="openai_model" name="openai_model">
+                            <option value="gpt-3.5-turbo" {{ 'selected' if current_config.openai_model == 'gpt-3.5-turbo' else '' }}>GPT-3.5 Turbo</option>
+                            <option value="gpt-4" {{ 'selected' if current_config.openai_model == 'gpt-4' else '' }}>GPT-4</option>
+                            <option value="gpt-4-turbo" {{ 'selected' if current_config.openai_model == 'gpt-4-turbo' else '' }}>GPT-4 Turbo</option>
+                            <option value="gpt-4o" {{ 'selected' if current_config.openai_model == 'gpt-4o' else '' }}>GPT-4o</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 智谱AI 配置 -->
+                <div id="zhipu-config" class="provider-config">
+                    <div class="form-group">
+                        <label for="zhipu_api_key">智谱AI API Key:</label>
+                        <input type="password" id="zhipu_api_key" name="zhipu_api_key" value="{{ current_config.zhipu_api_key or '' }}">
+                        <button type="button" class="btn btn-secondary" onclick="testLLM('zhipu')" style="margin-top: 5px;">测试 LLM 连接</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="zhipu_model">智谱AI 模型:</label>
+                        <select id="zhipu_model" name="zhipu_model">
+                            <option value="glm-4" {{ 'selected' if current_config.zhipu_model == 'glm-4' else '' }}>GLM-4</option>
+                            <option value="glm-4-plus" {{ 'selected' if current_config.zhipu_model == 'glm-4-plus' else '' }}>GLM-4-Plus</option>
+                            <option value="glm-4-air" {{ 'selected' if current_config.zhipu_model == 'glm-4-air' else '' }}>GLM-4-Air</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 通义千问 配置 -->
+                <div id="qwen-config" class="provider-config">
+                    <div class="form-group">
+                        <label for="qwen_api_key">通义千问 API Key:</label>
+                        <input type="password" id="qwen_api_key" name="qwen_api_key" value="{{ current_config.qwen_api_key or '' }}">
+                        <button type="button" class="btn btn-secondary" onclick="testLLM('qwen')" style="margin-top: 5px;">测试 LLM 连接</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="qwen_model">通义千问 模型:</label>
+                        <select id="qwen_model" name="qwen_model">
+                            <option value="qwen-turbo" {{ 'selected' if current_config.qwen_model == 'qwen-turbo' else '' }}>Qwen Turbo</option>
+                            <option value="qwen-plus" {{ 'selected' if current_config.qwen_model == 'qwen-plus' else '' }}>Qwen Plus</option>
+                            <option value="qwen-max" {{ 'selected' if current_config.qwen_model == 'qwen-max' else '' }}>Qwen Max</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 百度文心 配置 -->
+                <div id="baidu-config" class="provider-config">
+                    <div class="form-group">
+                        <label for="baidu_api_key">百度文心 API Key:</label>
+                        <input type="password" id="baidu_api_key" name="baidu_api_key" value="{{ current_config.baidu_api_key or '' }}">
+                        <button type="button" class="btn btn-secondary" onclick="testLLM('baidu')" style="margin-top: 5px;">测试 LLM 连接</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="baidu_secret_key">百度文心 Secret Key:</label>
+                        <input type="password" id="baidu_secret_key" name="baidu_secret_key" value="{{ current_config.baidu_secret_key or '' }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="baidu_model">百度文心 模型:</label>
+                        <select id="baidu_model" name="baidu_model">
+                            <option value="ernie-bot-turbo" {{ 'selected' if current_config.baidu_model == 'ernie-bot-turbo' else '' }}>ERNIE-Bot-turbo</option>
+                            <option value="ernie-bot" {{ 'selected' if current_config.baidu_model == 'ernie-bot' else '' }}>ERNIE-Bot</option>
+                            <option value="ernie-bot-4" {{ 'selected' if current_config.baidu_model == 'ernie-bot-4' else '' }}>ERNIE-Bot-4</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- DeepSeek 配置 -->
+                <div id="deepseek-config" class="provider-config">
+                    <div class="form-group">
+                        <label for="deepseek_api_key">DeepSeek API Key:</label>
+                        <input type="password" id="deepseek_api_key" name="deepseek_api_key" value="{{ current_config.deepseek_api_key or '' }}">
+                        <button type="button" class="btn btn-secondary" onclick="testLLM('deepseek')" style="margin-top: 5px;">测试 LLM 连接</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="deepseek_model">DeepSeek 模型:</label>
+                        <select id="deepseek_model" name="deepseek_model">
+                            <option value="deepseek-chat" {{ 'selected' if current_config.deepseek_model == 'deepseek-chat' else '' }}>DeepSeek Chat</option>
+                            <option value="deepseek-coder" {{ 'selected' if current_config.deepseek_model == 'deepseek-coder' else '' }}>DeepSeek Coder</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 嵌入模型配置 -->
+            <div class="section">
+                <h3>嵌入模型配置</h3>
+                <div class="form-group">
+                    <label for="embedding_provider">嵌入模型提供商:</label>
+                    <select id="embedding_provider" name="embedding_provider" onchange="toggleEmbeddingConfig()">
+                        <option value="local" {{ 'selected' if current_config.embedding_provider == 'local' else '' }}>本地模型</option>
+                        <option value="openai" {{ 'selected' if current_config.embedding_provider == 'openai' else '' }}>OpenAI</option>
+                        <option value="zhipu" {{ 'selected' if current_config.embedding_provider == 'zhipu' else '' }}>智谱AI</option>
+                        <option value="qwen" {{ 'selected' if current_config.embedding_provider == 'qwen' else '' }}>通义千问</option>
+                        <option value="baidu" {{ 'selected' if current_config.embedding_provider == 'baidu' else '' }}>百度文心</option>
+                    </select>
+                </div>
+                
+                <!-- 本地嵌入模型配置 -->
+                <div id="local-embedding-config" class="embedding-config">
+                    <div class="form-group">
+                        <label for="embedding_model">本地嵌入模型:</label>
+                        <input type="text" id="embedding_model" name="embedding_model" value="{{ current_config.embedding_model or 'all-MiniLM-L6-v2' }}" placeholder="例如: all-MiniLM-L6-v2">
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="use_local_embedding" name="use_local_embedding" {{ 'checked' if current_config.use_local_embedding else '' }}>
+                            <label for="use_local_embedding">使用本地嵌入模型</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- OpenAI 嵌入模型配置 -->
+                <div id="openai-embedding-config" class="embedding-config">
+                    <div class="form-group">
+                        <label for="openai_embedding_api_key">OpenAI 嵌入模型 API Key:</label>
+                        <input type="password" id="openai_embedding_api_key" name="openai_embedding_api_key" value="{{ current_config.openai_embedding_api_key or '' }}" placeholder="留空则使用上面的 OpenAI API Key">
+                    </div>
+                    <div class="form-group">
+                        <label for="openai_embedding_model">OpenAI 嵌入模型:</label>
+                        <select id="openai_embedding_model" name="openai_embedding_model">
+                            <option value="text-embedding-3-small" {{ 'selected' if current_config.openai_embedding_model == 'text-embedding-3-small' else '' }}>text-embedding-3-small</option>
+                            <option value="text-embedding-3-large" {{ 'selected' if current_config.openai_embedding_model == 'text-embedding-3-large' else '' }}>text-embedding-3-large</option>
+                            <option value="text-embedding-ada-002" {{ 'selected' if current_config.openai_embedding_model == 'text-embedding-ada-002' else '' }}>text-embedding-ada-002</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 智谱AI 嵌入模型配置 -->
+                <div id="zhipu-embedding-config" class="embedding-config">
+                    <div class="form-group">
+                        <label for="zhipu_embedding_api_key">智谱AI 嵌入模型 API Key:</label>
+                        <input type="password" id="zhipu_embedding_api_key" name="zhipu_embedding_api_key" value="{{ current_config.zhipu_embedding_api_key or '' }}" placeholder="留空则使用上面的智谱AI API Key">
+                    </div>
+                    <div class="form-group">
+                        <label for="zhipu_embedding_model">智谱AI 嵌入模型:</label>
+                        <select id="zhipu_embedding_model" name="zhipu_embedding_model">
+                            <option value="embedding-2" {{ 'selected' if current_config.zhipu_embedding_model == 'embedding-2' else '' }}>embedding-2</option>
+                            <option value="embedding-3" {{ 'selected' if current_config.zhipu_embedding_model == 'embedding-3' else '' }}>embedding-3</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 通义千问 嵌入模型配置 -->
+                <div id="qwen-embedding-config" class="embedding-config">
+                    <div class="form-group">
+                        <label for="qwen_embedding_api_key">通义千问 嵌入模型 API Key:</label>
+                        <input type="password" id="qwen_embedding_api_key" name="qwen_embedding_api_key" value="{{ current_config.qwen_embedding_api_key or '' }}" placeholder="留空则使用上面的通义千问 API Key">
+                    </div>
+                    <div class="form-group">
+                        <label for="qwen_embedding_model">通义千问 嵌入模型:</label>
+                        <select id="qwen_embedding_model" name="qwen_embedding_model">
+                            <option value="text-embedding-v1" {{ 'selected' if current_config.qwen_embedding_model == 'text-embedding-v1' else '' }}>text-embedding-v1</option>
+                            <option value="text-embedding-v2" {{ 'selected' if current_config.qwen_embedding_model == 'text-embedding-v2' else '' }}>text-embedding-v2</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- 百度文心 嵌入模型配置 -->
+                <div id="baidu-embedding-config" class="embedding-config">
+                    <div class="form-group">
+                        <label for="baidu_embedding_api_key">百度文心 嵌入模型 API Key:</label>
+                        <input type="password" id="baidu_embedding_api_key" name="baidu_embedding_api_key" value="{{ current_config.baidu_embedding_api_key or '' }}" placeholder="留空则使用上面的百度文心 API Key">
+                    </div>
+                    <div class="form-group">
+                        <label for="baidu_embedding_secret_key">百度文心 嵌入模型 Secret Key:</label>
+                        <input type="password" id="baidu_embedding_secret_key" name="baidu_embedding_secret_key" value="{{ current_config.baidu_embedding_secret_key or '' }}" placeholder="留空则使用上面的百度文心 Secret Key">
+                    </div>
+                    <div class="form-group">
+                        <label for="baidu_embedding_model">百度文心 嵌入模型:</label>
+                        <select id="baidu_embedding_model" name="baidu_embedding_model">
+                            <option value="embedding-v1" {{ 'selected' if current_config.baidu_embedding_model == 'embedding-v1' else '' }}>embedding-v1</option>
+                            <option value="bge-large-zh" {{ 'selected' if current_config.baidu_embedding_model == 'bge-large-zh' else '' }}>bge-large-zh</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 系统配置 -->
+            <div class="section">
+                <h3>系统配置</h3>
+                <div class="form-group">
+                    <label for="max_issues_per_fetch">每次获取的最大 Issue 数量:</label>
+                    <input type="number" id="max_issues_per_fetch" name="max_issues_per_fetch" value="{{ current_config.max_issues_per_fetch or 100 }}" min="1" max="1000">
+                </div>
+                <div class="form-group">
+                    <label for="similarity_threshold">相似度阈值:</label>
+                    <input type="number" id="similarity_threshold" name="similarity_threshold" value="{{ current_config.similarity_threshold or 0.3 }}" min="0" max="1" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="cache_ttl">缓存过期时间 (秒):</label>
+                    <input type="number" id="cache_ttl" name="cache_ttl" value="{{ current_config.cache_ttl or 3600 }}" min="60">
+                </div>
+            </div>
+            
+            <!-- Flask 配置 -->
+            <div class="section">
+                <h3>Flask 服务配置</h3>
+                <div class="form-group">
+                    <label for="flask_host">主机地址:</label>
+                    <input type="text" id="flask_host" name="flask_host" value="{{ current_config.flask_host or '0.0.0.0' }}">
+                </div>
+                <div class="form-group">
+                    <label for="flask_port">端口:</label>
+                    <input type="number" id="flask_port" name="flask_port" value="{{ current_config.flask_port or 5000 }}" min="1" max="65535">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="flask_debug" name="flask_debug" {{ 'checked' if current_config.flask_debug else '' }}>
+                        <label for="flask_debug">调试模式</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <button type="submit" class="btn">保存配置</button>
+                <a href="/" class="btn btn-secondary">返回首页</a>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function toggleProviderConfig() {
+            const provider = document.getElementById('llm_provider').value;
+            const configs = document.querySelectorAll('.provider-config');
+            configs.forEach(config => config.classList.remove('active'));
+            
+            const activeConfig = document.getElementById(provider + '-config');
+            if (activeConfig) {
+                activeConfig.classList.add('active');
+            }
+        }
+        
+        function toggleEmbeddingConfig() {
+            const provider = document.getElementById('embedding_provider').value;
+            const configs = document.querySelectorAll('.embedding-config');
+            configs.forEach(config => config.classList.remove('active'));
+            
+            const activeConfig = document.getElementById(provider + '-embedding-config');
+            if (activeConfig) {
+                activeConfig.classList.add('active');
+            }
+        }
+        
+        function showTestResult(elementId, success, message) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                element.remove();
+            }
+            
+            const resultDiv = document.createElement('div');
+            resultDiv.id = elementId;
+            resultDiv.className = 'test-result ' + (success ? 'test-success' : 'test-error');
+            resultDiv.textContent = message;
+            
+            return resultDiv;
+        }
+        
+        function testLLM(provider) {
+            const apiKeyField = document.getElementById(provider + '_api_key');
+            const modelField = document.getElementById(provider + '_model');
+            const button = event.target;
+            
+            if (!apiKeyField || !apiKeyField.value.trim()) {
+                const resultDiv = showTestResult('test-result-' + provider, false, '请先输入 API Key');
+                button.parentNode.appendChild(resultDiv);
+                return;
+            }
+            
+            button.disabled = true;
+            button.textContent = '测试中...';
+            
+            const data = {
+                provider: provider,
+                api_key: apiKeyField.value.trim(),
+                model: modelField ? modelField.value : null
+            };
+            
+            fetch('/api/test-llm', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                const resultDiv = showTestResult('test-result-' + provider, result.success, result.message || result.error);
+                button.parentNode.appendChild(resultDiv);
+            })
+            .catch(error => {
+                const resultDiv = showTestResult('test-result-' + provider, false, '测试失败: ' + error.message);
+                button.parentNode.appendChild(resultDiv);
+            })
+            .finally(() => {
+                button.disabled = false;
+                button.textContent = '测试 LLM 连接';
+            });
+        }
+        
+        function testGitHub() {
+            const tokenField = document.getElementById('github_token');
+            const repoField = document.getElementById('github_repo');
+            const button = event.target;
+            
+            if (!tokenField || !tokenField.value.trim()) {
+                const resultDiv = showTestResult('test-result-github', false, '请先输入 GitHub Token');
+                button.parentNode.appendChild(resultDiv);
+                return;
+            }
+            
+            if (!repoField || !repoField.value.trim()) {
+                const resultDiv = showTestResult('test-result-github', false, '请先输入 GitHub 仓库');
+                button.parentNode.appendChild(resultDiv);
+                return;
+            }
+            
+            button.disabled = true;
+            button.textContent = '测试中...';
+            
+            const data = {
+                github_token: tokenField.value.trim(),
+                github_repo: repoField.value.trim()
+            };
+            
+            fetch('/api/test-github', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                let message = result.message || result.error;
+                if (result.success && result.repo_name) {
+                    message += ` (仓库: ${result.repo_name})`;
+                }
+                const resultDiv = showTestResult('test-result-github', result.success, message);
+                button.parentNode.appendChild(resultDiv);
+            })
+            .catch(error => {
+                const resultDiv = showTestResult('test-result-github', false, '测试失败: ' + error.message);
+                button.parentNode.appendChild(resultDiv);
+            })
+            .finally(() => {
+                button.disabled = false;
+                button.textContent = '测试 GitHub 连接';
+            });
+        }
+        
+        // 拦截表单提交，使用AJAX保存配置
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleProviderConfig();
+            toggleEmbeddingConfig();
+            
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(form);
+                const data = {};
+                
+                // 获取所有表单元素
+                const formElements = form.querySelectorAll('input, select, textarea');
+                
+                // 处理所有表单元素
+                formElements.forEach(element => {
+                    const name = element.name;
+                    if (!name) return;
+                    
+                    if (element.type === 'checkbox') {
+                        data[name] = element.checked;
+                    } else if (element.type === 'radio') {
+                        if (element.checked) {
+                            data[name] = element.value;
+                        }
+                    } else {
+                        data[name] = element.value || '';
+                    }
+                });
+                
+                const submitButton = form.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = '保存中...';
+                
+                fetch('/api/config', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        // 显示成功消息
+                        const alertDiv = document.createElement('div');
+                        alertDiv.className = 'alert alert-success';
+                        alertDiv.textContent = result.message;
+                        
+                        const container = document.querySelector('.container');
+                        const existingAlert = container.querySelector('.alert');
+                        if (existingAlert) {
+                            existingAlert.remove();
+                        }
+                        container.insertBefore(alertDiv, container.firstChild.nextSibling);
+                        
+                        // 3秒后刷新页面以应用新配置
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        throw new Error(result.error || '保存失败');
+                    }
+                })
+                .catch(error => {
+                    const alertDiv = document.createElement('div');
+                    alertDiv.className = 'alert alert-error';
+                    alertDiv.textContent = '保存失败: ' + error.message;
+                    
+                    const container = document.querySelector('.container');
+                    const existingAlert = container.querySelector('.alert');
+                    if (existingAlert) {
+                        existingAlert.remove();
+                    }
+                    container.insertBefore(alertDiv, container.firstChild.nextSibling);
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = '保存配置';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
