@@ -306,11 +306,13 @@ class IssueSummarizer:
                 return True
                 
         # 检查标题和内容
-        title = issue.get('title', '').lower()
-        body = issue.get('body', '').lower()
+        title = issue.get('title') or ''
+        body = issue.get('body') or ''
+        title_lower = title.lower() if title else ''
+        body_lower = body.lower() if body else ''
         
         for keyword in self.solution_keywords:
-            if keyword in title or keyword in body:
+            if keyword in title_lower or keyword in body_lower:
                 return True
                 
         return False
@@ -325,10 +327,17 @@ class IssueSummarizer:
         Returns:
             str: 问题类型
         """
-        title = issue.get('title', '').lower()
-        body = issue.get('body', '').lower()
-        labels = [label.get('name', '').lower() if isinstance(label, dict) else str(label).lower() 
-                 for label in issue.get('labels', [])]
+        title = issue.get('title') or ''
+        body = issue.get('body') or ''
+        title_lower = title.lower() if title else ''
+        body_lower = body.lower() if body else ''
+        labels = []
+        for label in issue.get('labels', []):
+            if isinstance(label, dict):
+                name = label.get('name') or ''
+                labels.append(name.lower() if name else '')
+            else:
+                labels.append(str(label).lower() if label else '')
         
         # 检查标签
         for label in labels:
@@ -342,7 +351,7 @@ class IssueSummarizer:
                 return 'documentation'
                 
         # 检查标题和内容
-        text = title + ' ' + body
+        text = title_lower + ' ' + body_lower
         
         if any(keyword in text for keyword in ['error', 'exception', 'crash', 'fail', 'bug']):
             return 'bug'

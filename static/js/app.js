@@ -243,6 +243,7 @@ function buildSearchData(query) {
         search_type: document.getElementById('search-type')?.value || 'vector',
         max_results: parseInt(document.getElementById('max-results')?.value || '5'),
         similarity_threshold: parseFloat(document.getElementById('similarity-threshold')?.value || '0.3'),
+        recall_threshold: parseFloat(document.getElementById('recall-threshold')?.value || '0.2'),
         include_llm_analysis: document.getElementById('include-llm')?.checked || false,
         search_id: currentSearchId
     };
@@ -270,21 +271,30 @@ function displaySearchResults(data, searchTime) {
     
     if (results.length === 0) {
         displayNoResults();
+        // 当没有搜索结果时，使用AI自己的能力进行回答
+        const includeLLM = document.getElementById('include-llm')?.checked;
+        if (includeLLM) {
+            performDirectAIAnswer(document.getElementById('query').value);
+        } else {
+            hideLLMAnalysis();
+        }
     } else {
         displayResultsList(results);
+        // 有搜索结果时，进行RAG检索增强回答
+        const includeLLM = document.getElementById('include-llm')?.checked;
+        if (includeLLM) {
+            performRAGAnalysis(document.getElementById('query').value, results);
+        } else if (data.llm_analysis || data.llm_enhancement) {
+            displayLLMAnalysis(data.llm_analysis || data.llm_enhancement);
+        } else {
+            hideLLMAnalysis();
+        }
     }
     
     // 显示结果容器
     if (resultsContainer) {
         resultsContainer.style.display = 'block';
         resultsContainer.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    // 显示AI分析结果
-    if (data.llm_analysis || data.llm_enhancement) {
-        displayLLMAnalysis(data.llm_analysis || data.llm_enhancement);
-    } else {
-        hideLLMAnalysis();
     }
 }
 
@@ -1029,4 +1039,264 @@ window.addEventListener('offline', function() {
     stopStatusMonitoring();
 });
 
-// 文件更新时间: 2025-07-24 21:40:56
+/**
+ * AI分析相关函数
+ */
+
+/**
+ * 执行直接AI回答（无搜索结果时）
+ */
+async function performDirectAIAnswer(query) {
+    try {
+        // 显示加载状态
+        showLLMAnalysisLoading();
+        showMessage('info', '正在使用AI回答您的问题...');
+        
+        const response = await fetch('/api/direct_ai_answer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                query: query
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            displayLLMAnalysis({
+                ...data,
+                analysis: data.answer || data.analysis,
+                mode: 'direct'
+            });
+            showMessage('success', 'AI回答完成');
+        } else {
+            throw new Error(data.error || '回答失败');
+        }
+        
+    } catch (error) {
+        console.error('直接AI回答错误:', error);
+        showMessage('danger', `AI回答失败: ${error.message}`);
+        displayLLMAnalysisError(error.message);
+    }
+}
+
+/**
+ * 执行RAG检索增强回答（有搜索结果时）
+ */
+async function performRAGAnalysis(query, results) {
+    try {
+        // 显示加载状态
+        showLLMAnalysisLoading();
+        showMessage('info', '正在进行RAG检索增强分析...');
+        
+        const response = await fetch('/api/rag_analysis', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                query: query,
+                results: results
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            displayLLMAnalysis({
+                ...data,
+                analysis: data.answer || data.analysis,
+                mode: 'rag'
+            });
+            showMessage('success', 'RAG分析完成');
+        } else {
+            throw new Error(data.error || '分析失败');
+        }
+        
+    } catch (error) {
+        console.error('RAG分析错误:', error);
+        showMessage('danger', `RAG分析失败: ${error.message}`);
+        displayLLMAnalysisError(error.message);
+    }
+}
+
+/**
+ * 执行LLM分析（兼容旧版本）
+ */
+async function performLLMAnalysis(query, results) {
+    // 根据是否有结果选择不同的分析模式
+    if (!results || results.length === 0) {
+        return performDirectAIAnswer(query);
+    } else {
+        return performRAGAnalysis(query, results);
+    }
+}
+
+// 显示AI分析结果
+function displayLLMAnalysis(data) {
+    const container = document.getElementById('llm-analysis-container');
+    const content = document.getElementById('llm-analysis-content');
+    
+    if (!container || !content) return;
+    
+    const analysis = data.analysis || data.answer || '';
+    const provider = data.provider || 'AI';
+    const model = data.model || '';
+    const tokensUsed = data.tokens_used || 0;
+    const mode = data.mode || 'unknown';
+    const contextResults = data.context_results || 0;
+    
+    // 根据模式显示不同的标识
+    let modeInfo = '';
+    if (mode === 'direct') {
+        modeInfo = '<span class="badge bg-warning me-2"><i class="bi bi-lightbulb"></i> 直接回答</span>';
+    } else if (mode === 'rag') {
+        modeInfo = `<span class="badge bg-primary me-2"><i class="bi bi-search"></i> RAG增强 (${contextResults}个结果)</span>`;
+    }
+    
+    content.innerHTML = `
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <span class="badge bg-success me-2">${provider}</span>
+                ${model ? `<span class="badge bg-info me-2">${model}</span>` : ''}
+                ${modeInfo}
+                ${tokensUsed > 0 ? `<span class="badge bg-secondary">${tokensUsed} tokens</span>` : ''}
+            </div>
+            <div>
+                <button class="btn btn-sm btn-outline-success me-2" onclick="copyAnalysis()" title="复制分析结果">
+                    <i class="bi bi-clipboard"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-success" onclick="regenerateAnalysis()" title="重新生成分析">
+                    <i class="bi bi-arrow-clockwise"></i>
+                </button>
+            </div>
+        </div>
+        <div class="analysis-content">
+            ${formatAnalysisContent(analysis)}
+        </div>
+    `;
+    
+    container.style.display = 'block';
+    container.scrollIntoView({ behavior: 'smooth' });
+}
+
+// 显示AI分析加载状态
+function showLLMAnalysisLoading() {
+    const container = document.getElementById('llm-analysis-container');
+    const content = document.getElementById('llm-analysis-content');
+    
+    if (!container || !content) return;
+    
+    content.innerHTML = `
+        <div class="text-center py-4">
+            <div class="spinner-border text-success mb-3" role="status">
+                <span class="visually-hidden">AI分析中...</span>
+            </div>
+            <h6 class="text-success">AI正在分析中...</h6>
+            <p class="text-muted mb-0">请稍候，正在基于搜索结果生成智能分析</p>
+        </div>
+    `;
+    
+    container.style.display = 'block';
+}
+
+// 显示AI分析错误
+function displayLLMAnalysisError(errorMessage) {
+    const container = document.getElementById('llm-analysis-container');
+    const content = document.getElementById('llm-analysis-content');
+    
+    if (!container || !content) return;
+    
+    content.innerHTML = `
+        <div class="alert alert-danger" role="alert">
+            <i class="bi bi-exclamation-triangle"></i>
+            <strong>AI分析失败</strong>
+            <p class="mb-2">${errorMessage}</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="regenerateAnalysis()">
+                <i class="bi bi-arrow-clockwise"></i> 重试
+            </button>
+        </div>
+    `;
+    
+    container.style.display = 'block';
+}
+
+// 隐藏AI分析结果
+function hideLLMAnalysis() {
+    const container = document.getElementById('llm-analysis-container');
+    if (container) {
+        container.style.display = 'none';
+    }
+}
+
+// 格式化分析内容
+function formatAnalysisContent(content) {
+    if (!content) return '';
+    
+    // 将Markdown格式转换为HTML
+    let formatted = content
+        // 标题
+        .replace(/^### (.*$)/gm, '<h5>$1</h5>')
+        .replace(/^## (.*$)/gm, '<h4>$1</h4>')
+        .replace(/^# (.*$)/gm, '<h3>$1</h3>')
+        // 代码块
+        .replace(/```([\s\S]*?)```/g, '<pre class="bg-light p-3 rounded"><code>$1</code></pre>')
+        // 行内代码
+        .replace(/`([^`]+)`/g, '<code class="bg-light px-1 rounded">$1</code>')
+        // 粗体
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        // 斜体
+        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+        // 链接
+        .replace(/\[([^\]]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
+        // 换行
+        .replace(/\n/g, '<br>');
+    
+    return formatted;
+}
+
+// 重新生成分析
+function regenerateAnalysis() {
+    const query = document.getElementById('query')?.value?.trim();
+    const results = getCurrentSearchResults();
+    
+    if (query && results.length > 0) {
+        performLLMAnalysis(query, results);
+    } else {
+        showMessage('warning', '请先进行搜索');
+    }
+}
+
+// 获取当前搜索结果
+function getCurrentSearchResults() {
+    const resultElements = document.querySelectorAll('.search-result-item');
+    const results = [];
+    
+    resultElements.forEach(element => {
+        const titleElement = element.querySelector('a');
+        const similarityElement = element.querySelector('.similarity-bar');
+        
+        if (titleElement && similarityElement) {
+            results.push({
+                title: titleElement.textContent.replace(/^#\d+\s*/, ''),
+                url: titleElement.href,
+                similarity_score: parseFloat(similarityElement.style.width) / 100,
+                body_summary: element.querySelector('.code-block')?.textContent || ''
+            });
+        }
+    });
+    
+    return results;
+ }
+ 
+ // 文件更新时间: 2025-07-24 21:40:56

@@ -62,11 +62,14 @@ class FAISSSearchEngine:
                 
             elif self.index_type == "hnsw":
                 # 分层导航小世界图，快速且精确
+                # 注意：HNSW默认使用L2距离，需要特殊处理来支持内积
                 M = 16  # 连接数
+                # 使用L2距离的HNSW，但我们会在搜索时处理内积
                 self.index = faiss.IndexHNSWFlat(self.dimension, M)
                 self.index.hnsw.efConstruction = 200
                 self.index.hnsw.efSearch = 50
                 self.is_trained = True
+                log_warning("HNSW索引使用L2距离，相似度计算可能不准确，建议使用flat或ivf索引")
                 
             else:
                 raise ValueError(f"不支持的索引类型: {self.index_type}")
@@ -209,14 +212,29 @@ class FAISSSearchEngine:
         转换分数到相似度
         
         Args:
-            scores: 原始分数（内积）
+            scores: 原始分数（内积或L2距离）
             
         Returns:
             np.ndarray: 相似度分数 [0, 1]
         """
-        # 内积分数已经在[-1, 1]范围内（归一化向量）
-        # 转换到[0, 1]范围
-        return (scores + 1) / 2
+        # 调试信息：记录原始分数
+        log_info(f"原始FAISS分数: {scores[:5] if len(scores) > 5 else scores}")
+        log_info(f"索引类型: {self.index_type}")
+        
+        if self.index_type == "hnsw":
+            # HNSW使用L2距离，距离越小相似度越高
+            # L2距离范围是[0, +∞)，我们需要转换为相似度[0, 1]
+            # 使用公式: similarity = 1 / (1 + distance)
+            converted_scores = 1.0 / (1.0 + scores)
+        else:
+            # flat和ivf索引使用内积，分数已经在[-1, 1]范围内（归一化向量）
+            # 转换到[0, 1]范围
+            converted_scores = (scores + 1) / 2
+        
+        # 调试信息：记录转换后的分数
+        log_info(f"转换后的相似度分数: {converted_scores[:5] if len(converted_scores) > 5 else converted_scores}")
+        
+        return converted_scores
     
     def save_index(self, filepath: str) -> None:
         """

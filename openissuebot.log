@@ -3256,3 +3256,1494 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2025-07-25 00:24:38,499 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 00:24:38] "GET /api/config HTTP/1.1" 200 -
 2025-07-25 00:24:41,633 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 00:24:41] "GET /api/stats HTTP/1.1" 200 -
 2025-07-25 00:24:43,727 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 00:24:43] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 00:28:01,913 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 00:28:01] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 00:28:02,062 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 00:28:02] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 00:28:08,082 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 00:28:08] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 00:28:10,490 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 00:28:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:43:43,981 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:43:43,981 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:43:43,982 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:43:44,102 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:43:44,287 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 22:43:44,305 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 22:43:44,306 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 22:44:01,625 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:01] "GET / HTTP/1.1" 200 -
+2025-07-25 22:44:01,823 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:44:01,824 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:01] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:44:01,917 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: 1122414/my_item
+2025-07-25 22:44:01,917 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 22:44:02,031 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 22:44:02,031 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 22:44:02,301 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-25 22:44:07,933 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 22:44:07,933 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 22:44:07,933 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 22:44:07,933 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 22:44:07,934 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 22:44:07,934 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: 1122414/my_item
+2025-07-25 22:44:07,934 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 22:44:09,784 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:12,453 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:14,667 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:16,799 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:45,193 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:47,169 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:47,833 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:47] "GET /config HTTP/1.1" 200 -
+2025-07-25 22:44:47,859 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:44:47,860 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:47] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:44:49,945 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:52,392 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:54,250 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:54] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:44:54,350 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:44:54,603 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:44:55,657 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:44:55] "POST /api/test-github HTTP/1.1" 200 -
+2025-07-25 22:45:02,347 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:45:02] "POST /api/test-llm HTTP/1.1" 200 -
+2025-07-25 22:45:05,548 - OpenIssueBot - INFO - 智谱AI嵌入模型测试 - API Key长度: 49
+2025-07-25 22:45:05,548 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-25 22:45:05,922 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:45:05] "POST /api/test-embedding HTTP/1.1" 200 -
+2025-07-25 22:45:14,102 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:45:14] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:45:14,138 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:45:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:45:14,139 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:45:14] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:45:16,874 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:45:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:45:19,262 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:45:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:45:57,046 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:45:57,046 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:45:57,046 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:45:57,064 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:45:57,196 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: 1122414/my_item
+2025-07-25 22:45:57,196 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 22:45:57,229 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 22:45:57,229 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 22:46:03,198 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 22:46:03,199 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 22:46:03,199 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 22:46:03,199 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 22:46:03,199 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 22:46:03,199 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: 1122414/my_item
+2025-07-25 22:46:03,199 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 22:46:03,200 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-25 22:46:03,200 - OpenIssueBot - INFO - 从缓存加载数据: issues_1122414_my_item_all
+2025-07-25 22:46:03,200 - OpenIssueBot - INFO - 开始获取 1122414/my_item 的Issues (状态: all)
+2025-07-25 22:46:07,796 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/repos/1122414/my_item/issues, 错误: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/1122414/my_item/issues?state=all&per_page=100&page=1&sort=updated&direction=desc (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-07-25 22:46:07,797 - OpenIssueBot - INFO - 总共获取 0 个Issues
+2025-07-25 22:46:07,798 - OpenIssueBot - INFO - 数据已缓存: issues_1122414_my_item_all
+2025-07-25 22:46:07,798 - OpenIssueBot - ERROR - 未能获取到Issues数据
+2025-07-25 22:46:07,798 - OpenIssueBot - INFO - 初始化 执行时间: 4.60秒
+2025-07-25 22:47:28,551 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:47:28,551 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:47:28,552 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:47:28,569 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:47:28,700 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 22:47:28,730 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 22:47:28,730 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 22:47:38,589 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:38] "GET / HTTP/1.1" 200 -
+2025-07-25 22:47:38,787 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:38] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:47:38,793 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:47:38,921 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: 1122414/my_item
+2025-07-25 22:47:38,922 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 22:47:38,947 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 22:47:38,947 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 22:47:42,099 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:42] "GET /config HTTP/1.1" 200 -
+2025-07-25 22:47:42,114 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:47:42,116 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:42] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:47:45,405 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:45] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:47:45,503 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 22:47:45,503 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 22:47:45,504 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 22:47:45,504 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 22:47:45,504 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 22:47:45,504 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: 1122414/my_item
+2025-07-25 22:47:45,504 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 22:47:48,518 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:47:48,607 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:48] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:47:50,547 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:47:52,380 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:47:54,068 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:47:54,199 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:54] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:47:55,342 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:47:55,357 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:47:56,540 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:47:57,800 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:47:57] "POST /api/test-github HTTP/1.1" 200 -
+2025-07-25 22:48:00,096 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:00] "POST /api/test-llm HTTP/1.1" 200 -
+2025-07-25 22:48:01,607 - OpenIssueBot - INFO - 智谱AI嵌入模型测试 - API Key长度: 49
+2025-07-25 22:48:01,608 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-25 22:48:01,829 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:01] "POST /api/test-embedding HTTP/1.1" 200 -
+2025-07-25 22:48:04,543 - OpenIssueBot - INFO - 配置已重新加载
+2025-07-25 22:48:04,543 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:04] "POST /api/config HTTP/1.1" 200 -
+2025-07-25 22:48:04,549 - OpenIssueBot - INFO - 配置已重新加载
+2025-07-25 22:48:04,550 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:04] "POST /api/config HTTP/1.1" 200 -
+2025-07-25 22:48:07,261 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:07] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:48:08,115 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:08] "GET /config HTTP/1.1" 200 -
+2025-07-25 22:48:08,133 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:48:08,134 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:08] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:48:12,197 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:48:16,159 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:48:20,201 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:48:20,543 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:20] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:48:22,669 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:22] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:48:22,696 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:48:22,698 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:22] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:48:25,105 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:25] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:48:25,986 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 22:48:25,986 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 22:48:25,988 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-25 22:48:25,988 - OpenIssueBot - INFO - 从缓存加载数据: issues_1122414_my_item_all
+2025-07-25 22:48:25,989 - OpenIssueBot - INFO - 开始获取 1122414/my_item 的Issues (状态: all)
+2025-07-25 22:48:27,310 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:27] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:48:27,689 - OpenIssueBot - INFO - 总共获取 0 个Issues
+2025-07-25 22:48:27,690 - OpenIssueBot - INFO - 数据已缓存: issues_1122414_my_item_all
+2025-07-25 22:48:27,691 - OpenIssueBot - ERROR - 未能获取到Issues数据
+2025-07-25 22:48:27,691 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:48:27] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:49:15,315 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:49:15,316 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:49:15,317 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:49:15,336 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:49:15,477 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:49:15,478 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 22:49:15,502 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 22:49:15,503 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 22:49:20,447 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 22:49:20,447 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 22:49:20,447 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 22:49:20,448 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 22:49:20,448 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 22:49:20,448 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:49:20,448 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 22:49:20,448 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-25 22:49:20,449 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-25 22:49:24,125 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-25 22:49:26,453 - OpenIssueBot - INFO - 获取第 2 页，共 100 个Issues
+2025-07-25 22:49:29,608 - OpenIssueBot - INFO - 获取第 3 页，共 100 个Issues
+2025-07-25 22:49:32,188 - OpenIssueBot - INFO - 获取第 4 页，共 100 个Issues
+2025-07-25 22:49:34,279 - OpenIssueBot - INFO - 获取第 5 页，共 100 个Issues
+2025-07-25 22:49:36,721 - OpenIssueBot - INFO - 获取第 6 页，共 100 个Issues
+2025-07-25 22:49:38,614 - OpenIssueBot - INFO - 获取第 7 页，共 100 个Issues
+2025-07-25 22:49:40,686 - OpenIssueBot - INFO - 获取第 8 页，共 100 个Issues
+2025-07-25 22:49:43,148 - OpenIssueBot - INFO - 获取第 9 页，共 100 个Issues
+2025-07-25 22:49:44,861 - OpenIssueBot - INFO - 获取第 10 页，共 100 个Issues
+2025-07-25 22:49:46,442 - OpenIssueBot - INFO - 获取第 11 页，共 100 个Issues
+2025-07-25 22:49:48,060 - OpenIssueBot - INFO - 获取第 12 页，共 100 个Issues
+2025-07-25 22:49:49,961 - OpenIssueBot - INFO - 获取第 13 页，共 100 个Issues
+2025-07-25 22:49:51,648 - OpenIssueBot - INFO - 获取第 14 页，共 100 个Issues
+2025-07-25 22:49:53,744 - OpenIssueBot - INFO - 获取第 15 页，共 100 个Issues
+2025-07-25 22:49:55,595 - OpenIssueBot - INFO - 获取第 16 页，共 100 个Issues
+2025-07-25 22:49:57,583 - OpenIssueBot - INFO - 获取第 17 页，共 100 个Issues
+2025-07-25 22:49:59,671 - OpenIssueBot - INFO - 获取第 18 页，共 100 个Issues
+2025-07-25 22:50:01,536 - OpenIssueBot - INFO - 获取第 19 页，共 100 个Issues
+2025-07-25 22:50:03,680 - OpenIssueBot - INFO - 获取第 20 页，共 100 个Issues
+2025-07-25 22:50:03,781 - OpenIssueBot - INFO - 总共获取 2000 个Issues
+2025-07-25 22:50:03,997 - OpenIssueBot - INFO - 数据已缓存: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-25 22:50:03,998 - OpenIssueBot - INFO - 开始构建索引，共 2000 个Issues
+2025-07-25 22:50:04,003 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-25 22:50:12,357 - OpenIssueBot - INFO - 成功添加 2000 个向量到索引
+2025-07-25 22:50:12,357 - OpenIssueBot - INFO - 索引构建完成，包含 2000 个Issues
+2025-07-25 22:50:12,368 - OpenIssueBot - INFO - 索引已保存到: ./data/cache\index_chatchat-space_Langchain-Chatchat
+2025-07-25 22:50:12,624 - OpenIssueBot - INFO - 索引缓存保存成功
+2025-07-25 22:50:12,625 - OpenIssueBot - INFO - 索引构建并缓存成功
+2025-07-25 22:50:12,625 - OpenIssueBot - INFO - 初始化 执行时间: 52.18秒
+2025-07-25 22:50:36,031 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:50:36,033 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:50:36,033 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:50:36,050 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:50:36,180 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 22:50:36,197 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 22:50:36,197 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 22:50:57,129 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:50:57,129 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 22:50:57,156 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 22:50:57,156 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 22:50:59,835 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:50:59] "GET / HTTP/1.1" 200 -
+2025-07-25 22:51:00,146 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:00] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:51:00,150 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:51:00,229 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:51:00,230 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 22:51:00,235 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 22:51:00,236 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 22:51:04,580 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 22:51:04,580 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 22:51:04,580 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 22:51:04,580 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 22:51:04,580 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 22:51:04,580 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:51:04,580 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 22:51:04,692 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:04] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:51:04,729 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:51:04,730 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:04] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:51:05,046 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 22:51:05,046 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 22:51:05,047 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 22:51:05,047 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 22:51:05,047 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 22:51:05,047 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:51:05,047 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 22:51:06,369 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:07,110 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:08,732 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:08] "GET /config HTTP/1.1" 200 -
+2025-07-25 22:51:08,764 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:51:08,764 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:08] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:51:09,950 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:12,262 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:13,829 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:13] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:51:14,107 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:16,606 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:16,845 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:51:17,823 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:17] "POST /api/test-github HTTP/1.1" 200 -
+2025-07-25 22:51:18,735 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:21,736 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:27,793 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:27] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:29,006 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:29] "GET /api/config HTTP/1.1" 200 -
+2025-07-25 22:51:29,919 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:29] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:51:29,946 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:51:29,948 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:29] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:51:33,637 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:36,537 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:51:44,799 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 22:51:44,799 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 22:51:44,803 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 22:51:44,926 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 22:51:44,926 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 22:51:44,926 - OpenIssueBot - INFO - 开始搜索: 向量库出错...
+2025-07-25 22:51:49,871 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:51:49,871 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:51:49,872 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:51:49,872 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:51:49,873 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:51:49,873 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:51:49,873 - OpenIssueBot - INFO - 搜索完成: 向量库出错... -> 5 个结果
+2025-07-25 22:51:49,874 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:51:49] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:52:02,071 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:02] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:52:20,854 - OpenIssueBot - INFO - 开始搜索: 可以使用zilliz吗...
+2025-07-25 22:52:20,864 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-25 22:52:20,864 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:20,865 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:20,865 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:20,866 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:20,866 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:20,867 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:20,867 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-25 22:52:20,867 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 22:52:20,867 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:20] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:52:27,489 - OpenIssueBot - INFO - 开始搜索: 可以使用zilliz吗...
+2025-07-25 22:52:27,520 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-25 22:52:27,520 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:27,520 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:27,520 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:27,521 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:27,521 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:27,522 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:27,522 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-25 22:52:27,522 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 22:52:27,522 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:27] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:52:34,773 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:34] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:52:36,612 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:52:37,910 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:37] "GET / HTTP/1.1" 200 -
+2025-07-25 22:52:37,950 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:52:37,953 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:37] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:52:40,166 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:52:41,214 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:41] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:52:41,242 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:52:41,243 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:41] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:52:42,086 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:52:45,572 - OpenIssueBot - INFO - 开始搜索: 向量库...
+2025-07-25 22:52:45,649 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:52:45,649 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:45,649 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:45,650 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:45,650 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:45,650 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:52:45,650 - OpenIssueBot - INFO - 搜索完成: 向量库... -> 5 个结果
+2025-07-25 22:52:45,651 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:45] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:52:49,214 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:52:52,921 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:52:53,105 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 22:52:53,127 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:52:53,128 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:53,129 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:52:53,129 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:52:53,129 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 22:52:53,129 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:53] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:52:55,531 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:52:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:53:02,175 - OpenIssueBot - INFO - 开始搜索: 报错...
+2025-07-25 22:53:02,184 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:53:02,185 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:02,185 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:02,185 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:02,185 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:02,185 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:53:02,185 - OpenIssueBot - INFO - 搜索完成: 报错... -> 5 个结果
+2025-07-25 22:53:02,186 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:53:02] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:53:19,490 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:53:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:53:19,705 - OpenIssueBot - INFO - 开始搜索: 多线程...
+2025-07-25 22:53:19,710 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:53:19,710 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:19,710 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:19,711 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:19,711 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:19,711 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:53:19,711 - OpenIssueBot - INFO - 搜索完成: 多线程... -> 5 个结果
+2025-07-25 22:53:19,713 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:53:19] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:53:31,020 - OpenIssueBot - INFO - 开始搜索: 多线程...
+2025-07-25 22:53:31,044 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:53:31,044 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:31,044 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:31,045 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:31,045 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:31,045 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:53:31,045 - OpenIssueBot - INFO - 搜索完成: 多线程... -> 5 个结果
+2025-07-25 22:53:31,046 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:53:31] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:53:43,094 - OpenIssueBot - INFO - 开始搜索: 多线程...
+2025-07-25 22:53:43,134 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-25 22:53:43,135 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:43,135 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:43,135 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:43,135 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:43,136 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:43,136 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:43,136 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-25 22:53:43,136 - OpenIssueBot - INFO - 搜索完成: 多线程... -> 10 个结果
+2025-07-25 22:53:43,137 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:53:43] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:53:49,182 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:53:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:53:55,014 - OpenIssueBot - INFO - 开始搜索: 千问...
+2025-07-25 22:53:55,122 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-25 22:53:55,122 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:55,123 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:55,123 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:55,123 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:55,123 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:55,124 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:53:55,124 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-25 22:53:55,124 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 22:53:55,124 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:53:55] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:55:49,499 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:55:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:55:57,281 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:55:57] "GET /config HTTP/1.1" 200 -
+2025-07-25 22:55:57,310 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:55:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:55:57,313 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:55:57] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:55:59,439 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:55:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:56:01,473 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:01] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:56:01,816 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:01] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:56:01,846 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:56:01,846 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:01] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:56:04,420 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:56:07,568 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:56:21,082 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 22:56:21,111 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:56:21,111 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:56:21,111 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:56:21,112 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:56:21,112 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 22:56:21,112 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:21] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:56:25,942 - OpenIssueBot - INFO - 开始搜索: 数据...
+2025-07-25 22:56:25,973 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:56:25,974 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:56:25,974 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:56:25,974 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:56:25,974 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:56:25,975 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:56:25,975 - OpenIssueBot - INFO - 搜索完成: 数据... -> 5 个结果
+2025-07-25 22:56:25,975 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:25] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:56:33,727 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:56:35,148 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:56:35,149 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:56:35,149 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:56:35,171 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:56:35,747 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/search/issues, 错误: 422 Client Error: Unprocessable Entity for url: https://api.github.com/search/issues?q=%E6%95%B0%E6%8D%AE+repo%3Achatchat-space%2FLangchain-Chatchat&sort=updated&order=desc&per_page=5
+2025-07-25 22:56:35,749 - OpenIssueBot - INFO - 搜索完成: 数据... -> 0 个结果
+2025-07-25 22:56:35,749 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:35] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:56:40,847 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/search/issues, 错误: 422 Client Error: Unprocessable Entity for url: https://api.github.com/search/issues?q=zilliz+repo%3Achatchat-space%2FLangchain-Chatchat&sort=updated&order=desc&per_page=5
+2025-07-25 22:56:40,848 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 0 个结果
+2025-07-25 22:56:40,848 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:40] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:56:45,083 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/search/issues, 错误: 422 Client Error: Unprocessable Entity for url: https://api.github.com/search/issues?q=word+repo%3Achatchat-space%2FLangchain-Chatchat&sort=updated&order=desc&per_page=5
+2025-07-25 22:56:45,085 - OpenIssueBot - INFO - 搜索完成: word... -> 0 个结果
+2025-07-25 22:56:45,085 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:56:45] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 22:57:01,450 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:57:01,450 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:57:01,450 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:57:01,471 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:57:01,614 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 22:57:01,648 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 22:57:01,648 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 22:57:15,114 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:15] "GET /?ide_webview_request_time=1753455431963 HTTP/1.1" 200 -
+2025-07-25 22:57:15,124 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:15] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-25 22:57:15,134 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:15] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-25 22:57:16,341 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:16] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 22:57:18,085 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:57:19,892 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:57:21,701 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:57:27,723 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:27] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:57:28,423 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:28] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:57:28,446 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:57:28,448 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:28] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:57:30,486 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:30] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:57:32,658 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:32] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:57:36,249 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 22:57:36,315 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:57:36,316 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:57:36,316 - OpenIssueBot - ERROR - 提取Issue摘要失败: 'NoneType' object has no attribute 'lower'
+2025-07-25 22:57:36,316 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:57:36,316 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 22:57:36,318 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:36] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:57:45,428 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:57:47,864 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:57:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:58:17,518 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 22:58:17,519 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 22:58:17,519 - faiss.loader - INFO - Loading faiss.
+2025-07-25 22:58:17,540 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 22:58:17,690 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 22:58:17,710 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 22:58:17,710 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 22:59:04,807 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:04] "GET / HTTP/1.1" 200 -
+2025-07-25 22:59:05,034 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:59:05,040 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:05] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:59:05,155 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:59:05,156 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 22:59:05,197 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 22:59:05,197 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 22:59:10,879 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:10] "GET /search HTTP/1.1" 200 -
+2025-07-25 22:59:10,911 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 22:59:10,911 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:10] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 22:59:11,111 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 22:59:11,112 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 22:59:11,112 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 22:59:11,112 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 22:59:11,112 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 22:59:11,112 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 22:59:11,112 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 22:59:12,825 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:59:15,477 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:59:15,788 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 22:59:15,788 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 22:59:15,792 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 22:59:15,908 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 22:59:15,908 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 22:59:15,908 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 22:59:17,657 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:59:19,431 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:59:20,851 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:59:20,853 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:59:20,853 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 22:59:20,853 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:20] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 22:59:21,119 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:59:53,027 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 22:59:58,812 - OpenIssueBot - INFO - 开始搜索: 初始化...
+2025-07-25 22:59:58,887 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 22:59:58,887 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 22:59:58,887 - OpenIssueBot - INFO - 搜索完成: 初始化... -> 5 个结果
+2025-07-25 22:59:58,888 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 22:59:58] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:00:56,309 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:00:56,310 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:00:56,310 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:00:56,331 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:00:56,511 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:00:56,554 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 23:00:56,555 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:00:56,559 - werkzeug - INFO -  * Restarting with stat
+2025-07-25 23:01:08,645 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:01:08,646 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:01:08,646 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:01:08,666 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:01:08,837 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:01:08,854 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 23:01:08,886 - werkzeug - INFO -  * Debugger PIN: 652-603-707
+2025-07-25 23:01:27,317 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:01:27,318 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:01:27,318 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:01:27,338 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:01:27,493 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:01:27,517 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 23:01:27,518 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:01:27,522 - werkzeug - INFO -  * Restarting with stat
+2025-07-25 23:01:39,124 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:01:39,124 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:01:39,124 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:01:39,143 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:01:39,278 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:01:39,291 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 23:01:39,317 - werkzeug - INFO -  * Debugger PIN: 652-603-707
+2025-07-25 23:01:43,802 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:01:43] "GET /?ide_webview_request_time=1753455701962 HTTP/1.1" 200 -
+2025-07-25 23:01:44,026 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:01:44] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:01:44,029 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:01:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:01:44,116 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:01:44,117 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:01:44,151 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:01:44,151 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:01:44,168 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:01:44] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:01:50,146 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:01:50,146 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:01:50,147 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:01:50,147 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:01:50,147 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:01:50,147 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:01:50,147 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:01:52,119 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:01:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:01:54,370 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:01:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:01:56,438 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:01:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:02:16,046 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:02:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:02:48,022 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:02:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:02:59,790 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:02:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:10,242 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:15,662 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:15] "GET /?ide_webview_request_time=1753455793682 HTTP/1.1" 200 -
+2025-07-25 23:03:15,672 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:03:15,673 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:15] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:03:15,828 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:15] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:03:17,551 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:19,413 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:21,496 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:22,925 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:48,493 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:48,950 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:03:53,943 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 23:03:53,943 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 23:03:53,949 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 23:03:54,088 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 23:03:54,089 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 23:03:54,089 - OpenIssueBot - INFO - 开始搜索: 智谱...
+2025-07-25 23:03:59,718 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:03:59,719 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:03:59,719 - OpenIssueBot - ERROR - 搜索API错误: 'str' object has no attribute 'get'
+2025-07-25 23:03:59,719 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:03:59] "[35m[1mPOST /api/search HTTP/1.1[0m" 500 -
+2025-07-25 23:04:12,979 - werkzeug - INFO -  * Detected change in 'E:\\GitHub\\Repositories\\openIssueBot\\app\\web_app.py', reloading
+2025-07-25 23:04:14,809 - werkzeug - INFO -  * Restarting with stat
+2025-07-25 23:04:31,699 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:04:31,699 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:04:31,700 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:04:31,725 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:04:31,907 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:04:31,929 - werkzeug - WARNING -  * Debugger is active!
+2025-07-25 23:04:31,966 - werkzeug - INFO -  * Debugger PIN: 652-603-707
+2025-07-25 23:04:32,011 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:04:32,011 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:04:32,012 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:04:32,012 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:04:32,044 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:04:32,045 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:04:32,046 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:04:32,047 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:04:37,369 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:04:37,369 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:04:37,369 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:04:37,369 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:04:37,369 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:04:37,369 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:04:37,370 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:04:38,827 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:04:38,829 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:04:38,829 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:04:38,829 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:04:38,829 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:04:38,829 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:04:38,829 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:04:39,271 - werkzeug - INFO -  * Detected change in 'E:\\GitHub\\Repositories\\openIssueBot\\app\\web_app.py', reloading
+2025-07-25 23:04:40,860 - werkzeug - INFO -  * Restarting with stat
+2025-07-25 23:05:10,699 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:05:10,701 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:05:10,701 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:05:10,727 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:05:40,272 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:05:40,272 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:05:40,273 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:05:40,298 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:05:40,465 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:05:40,488 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 23:05:40,488 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:05:42,061 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:05:42,062 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:05:42,091 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:05:42,091 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:05:45,423 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:05:45] "GET /?ide_webview_request_time=1753455942108 HTTP/1.1" 200 -
+2025-07-25 23:05:45,542 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:05:45] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-25 23:05:45,734 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:05:45] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-25 23:05:46,045 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:05:46,045 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:05:46,049 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:05:46,049 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:05:46,062 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:05:46] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:05:47,099 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-25 23:05:49,814 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:05:49,814 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:05:49,814 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:05:49,814 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:05:49,814 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:05:49,815 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:05:49,815 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:05:52,189 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:05:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:05:52,723 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:05:52,723 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:05:52,724 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:05:52,724 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:05:52,724 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:05:52,724 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:05:52,724 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:05:56,077 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:05:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:05:58,803 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:05:58] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:06:01,272 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:01] "GET /?ide_webview_request_time=1753455958794 HTTP/1.1" 200 -
+2025-07-25 23:06:01,281 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:06:01,283 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:01] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:06:01,409 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:01] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:06:02,153 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:02] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:06:07,949 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:06:09,703 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:06:13,039 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:06:34,271 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:06:34] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:06:56,683 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:06:56,683 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:06:56,684 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:06:56,702 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:06:56,844 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:06:56,845 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:06:56,875 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:06:56,875 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:07:02,674 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:07:02,675 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:07:02,675 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:07:02,675 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:07:02,675 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:07:02,675 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:07:02,675 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 23:07:02,680 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 23:07:02,798 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 23:07:02,798 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 23:07:02,798 - OpenIssueBot - INFO - 开始搜索: error...
+2025-07-25 23:07:03,029 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:07:03] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:07:07,568 - OpenIssueBot - INFO - 搜索完成，返回 6 个结果
+2025-07-25 23:07:07,570 - OpenIssueBot - INFO - 搜索完成，找到 3 个相关结果
+2025-07-25 23:07:07,570 - OpenIssueBot - INFO - 搜索 执行时间: 10.73秒
+2025-07-25 23:07:28,944 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:07:28,945 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:07:28,945 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:07:28,963 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:07:29,108 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:07:29,108 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:07:29,137 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:07:29,138 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:07:34,050 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:07:34] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:07:35,977 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:07:35,978 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:07:35,978 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:07:35,978 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:07:35,978 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:07:35,979 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:07:35,979 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 23:07:35,983 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 23:07:36,095 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 23:07:36,095 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 23:07:36,095 - OpenIssueBot - INFO - 开始搜索: error...
+2025-07-25 23:07:40,825 - OpenIssueBot - INFO - 搜索完成，返回 6 个结果
+2025-07-25 23:07:40,827 - OpenIssueBot - INFO - 搜索完成，找到 3 个相关结果
+2025-07-25 23:07:40,833 - OpenIssueBot - INFO - 搜索 执行时间: 11.73秒
+2025-07-25 23:07:58,695 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 23:07:58,695 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 23:07:58,699 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 23:07:58,812 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 23:07:58,812 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 23:07:59,726 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/search/issues, 错误: 422 Client Error: Unprocessable Entity for url: https://api.github.com/search/issues?q=error+repo%3Achatchat-space%2FLangchain-Chatchat&sort=updated&order=desc&per_page=3
+2025-07-25 23:07:59,727 - OpenIssueBot - INFO - keyword搜索原始结果类型: <class 'list'>, 长度: 0
+2025-07-25 23:07:59,727 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'search_strategy', 'timestamp']
+2025-07-25 23:07:59,727 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 0
+2025-07-25 23:07:59,727 - OpenIssueBot - INFO - 搜索完成: error... -> 0 个结果
+2025-07-25 23:07:59,728 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:07:59] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:08:04,395 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:08:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:08:34,845 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:08:34] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:09:20,354 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:09:20,354 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:09:20,354 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:09:20,375 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:09:20,523 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:09:20,555 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 23:09:20,555 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:09:23,183 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:09:23,183 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:09:23,214 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:09:23,214 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:09:27,084 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:27] "GET /?ide_webview_request_time=1753456163216 HTTP/1.1" 200 -
+2025-07-25 23:09:27,241 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:09:27,399 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:27] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:09:27,712 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:09:27,712 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:09:27,716 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:09:27,716 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:09:27,730 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:27] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:09:28,399 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:09:28,399 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:09:28,400 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:09:28,400 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:09:28,400 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:09:28,400 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:09:28,400 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:09:30,351 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:30] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:09:33,088 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:09:33,088 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:09:33,088 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:09:33,088 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:09:33,088 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:09:33,088 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:09:33,088 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:09:35,568 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:09:37,972 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:09:40,251 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:09:49,683 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 23:09:49,683 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 23:09:49,687 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 23:09:49,808 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 23:09:49,808 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 23:09:49,808 - OpenIssueBot - INFO - 开始搜索: error...
+2025-07-25 23:09:54,955 - OpenIssueBot - INFO - 搜索完成，返回 6 个结果
+2025-07-25 23:09:54,957 - OpenIssueBot - INFO - 搜索完成，找到 3 个相关结果
+2025-07-25 23:09:54,957 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:09:54,957 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 3
+2025-07-25 23:09:54,957 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2441941144, 'number': 4665, 'title': '调用文生图功能时报错ValidationError: Caught exception: 1 validation error for text2imagesSchema prompt   str type expected (type=type_error.str)', 'state': 'closed',
+2025-07-25 23:09:54,958 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2441941144, 'number': 4665, 'title': '调用文生图功能时报错ValidationError: Caught exception: 1 validation error for text2imagesSchema prompt   str type expected (type=type_error.str)', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4665', 'created_at': '2024-08-01 09:18', 'updated_at': '2025-03-05 04:16', 'closed_at': '2024-10-05 21:31', 'author': {'login': 'GoGo-UpUp', 'url': 'https://github.com/GoGo-UpUp', 'avatar_url': 'https://avatars.githubusercontent.com/u/177207792?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 3, 'body_summary': '使用0.3.1版本文生图功能，模型调用的是xinference部署的glm-4-9b-chat使用文生图功能时会报错 !image 查看日志发现报错内容 !image 有大佬知道是哪里出了问题吗', 'priority_score': 0.45999999999999996, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.7428311109542847, 'rank_score': 0.7351324443817139}
+2025-07-25 23:09:54,958 - OpenIssueBot - ERROR - 格式化第1个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2291923812, 'number': 4001, 'title': "ERROR: RPC error: [batch_insert], <ParamError: (code=1, message=expect string input, got: <class 'int'>)>, <Time:{'RPC start': '2024-05-13 01:07:12.372386', 'RPC error': '2024-05-13 01:07:12.372994'}>", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4001', 'created_at': '2024-05-13 06:21', 'updated_at': '2024-06-19 14:03', 'closed_at': '2024-06-19 14:03', 'author': {'login': 'zmwstu', 'url': 'https://github.com/zmwstu', 'avatar_url': 'https://avatars.githubusercontent.com/u/153530377?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 2, 'body_summary': "2024-05-13 01:07:12,373 - decorators. py[line:146] - ERROR: RPC error: [batch_insert], <ParamError: (code=1, message=expect string input, got: <class 'int'>)>, <Time:{'RPC start': '2024-05-13 01:07:12. 372386', 'RPC error': '2024-05-13 01:07:12. 372994'}> 2024-05-13 01:07:12,373 - milvus....", 'priority_score': 0.43999999999999995, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.7470924854278564, 'rank_score': 0.7308369941711425}
+2025-07-25 23:09:54,958 - OpenIssueBot - ERROR - 格式化第2个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2399779169, 'number': 4455, 'title': 'pydantic.v1.error_wrappers.ValidationError: 1 validation error for search_internetSchema', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4455', 'created_at': '2024-07-10 05:22', 'updated_at': '2024-07-15 06:38', 'closed_at': '2024-07-12 16:37', 'author': {'login': 'Modas-Li', 'url': 'https://github.com/Modas-Li', 'avatar_url': 'https://avatars.githubusercontent.com/u/40042370?v=4'}, 'labels': ['bug'], 'comments_count': 2, 'body_summary': '模型：glm-4-9b-chat agent功能：知识库、网络检索 报错详情： ```2024-07-09 17:38:50,778 root 82445 ERROR 1 validation error for search_internetSchema query str type expected (type=type_error. str) Traceback (most recent call last): File "/data/anaconda3/envs/chatchat/lib/python3....', 'priority_score': 0.43999999999999995, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.7379223108291626, 'rank_score': 0.7271689243316649}
+2025-07-25 23:09:54,958 - OpenIssueBot - INFO - 搜索完成: error... -> 3 个结果
+2025-07-25 23:09:54,958 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:54] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:09:59,987 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:09:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:10:14,571 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:14] "GET /?ide_webview_request_time=1753456211512 HTTP/1.1" 200 -
+2025-07-25 23:10:14,883 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:10:14,884 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:14] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:10:15,205 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:15] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:10:17,623 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:10:19,692 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:10:22,000 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:10:47,723 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:10:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:11:05,811 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:05] "GET /search HTTP/1.1" 200 -
+2025-07-25 23:11:06,121 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:11:06,123 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:06] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:11:06,461 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:06] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:11:08,159 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:11:09,943 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:11:13,311 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:11:13,318 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:11:13,319 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:11:13,319 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:11:13,320 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:11:13,320 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:11:13,320 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08', 'updated_at': '2024-11-10 03:17', 'closed_at': '2023-09-26 08:07', 'author': {'login': 'tendrillion', 'url': 'https://github.com/tendrillion', 'avatar_url': 'https://avatars.githubusercontent.com/u/33444336?v=4'}, 'labels': ['bug'], 'comments_count': 8, 'body_summary': "问题描述 / Problem Description 参见 开发环境准备，完成环境搭建，确保已经安装了zhipuai. 新建py文件，import zhipuai，一切正常. 运行:python server/llm_api. py，也是执行了import zhipuai，一切正常. 但是运行：python startup. py -a 或者 streamlit run webui. py 报错：No module named 'zhipuai' 项目版本：v0. 2....", 'priority_score': 0.5599999999999999, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6770073771476746, 'rank_score': 0.7388029508590698}
+2025-07-25 23:11:13,320 - OpenIssueBot - ERROR - 格式化第1个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205514, 'number': 5158, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5158', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-07-08 01:30', 'closed_at': '2024-12-26 02:51', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 4, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.48, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7080167474746705}
+2025-07-25 23:11:13,320 - OpenIssueBot - ERROR - 格式化第2个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205503, 'number': 5157, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5157', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-03-03 21:31', 'closed_at': '2025-03-03 21:31', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 3, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.45999999999999996, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7020167474746705}
+2025-07-25 23:11:13,320 - OpenIssueBot - ERROR - 格式化第3个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2462636663, 'number': 4786, 'title': '图文对话报错', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4786', 'created_at': '2024-08-13 07:42', 'updated_at': '2024-08-14 07:31', 'closed_at': '2024-08-14 07:31', 'author': {'login': 'weiwuxian1998', 'url': 'https://github.com/weiwuxian1998', 'avatar_url': 'https://avatars.githubusercontent.com/u/84005658?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': 'qwen-vl图文对话报错，后端的xinference中拿不到前端上传的图片，在测试时， 上传图片产生的临时url例如"http://127. 0. 0. 1:7866/v1/files/YXNzaXN0YW50cy8yMDI0LTA4LTEzL-S8geS4muW-ruS_oeaIquWbvl8xNzIzMTkwNTk0NjQzNy5wbmc=/content“ 在服务器的环境中使用代码测试报404错误， import requests from PIL import Image image_path = "http://127. 0. 0....', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6652584671974182, 'rank_score': 0.6921033868789673}
+2025-07-25 23:11:13,322 - OpenIssueBot - ERROR - 格式化第4个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205486, 'number': 5156, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5156', 'created_at': '2024-12-26 02:50', 'updated_at': '2024-12-26 02:56', 'closed_at': '2024-12-26 02:56', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.6900167474746705}
+2025-07-25 23:11:13,322 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:11:13,322 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:13] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:11:24,153 - OpenIssueBot - INFO - 开始搜索: 初始化...
+2025-07-25 23:11:24,160 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:11:24,160 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:11:24,161 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:11:24,161 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:11:24,161 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1663500564, 'number': 60, 'title': '支持word，那word里面的图片正常显示吗？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/60', 'created_at': '2023-04-12 01:26', 'upda
+2025-07-25 23:11:24,161 - OpenIssueBot - INFO - 搜索完成: 初始化... -> 5 个结果
+2025-07-25 23:11:24,161 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:24] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:11:32,646 - OpenIssueBot - INFO - 开始搜索: 向量库...
+2025-07-25 23:11:32,656 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:11:32,658 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:11:32,658 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:11:32,658 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:11:32,658 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1663500564, 'number': 60, 'title': '支持word，那word里面的图片正常显示吗？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/60', 'created_at': '2023-04-12 01:26', 'upda
+2025-07-25 23:11:32,659 - OpenIssueBot - INFO - 搜索完成: 向量库... -> 5 个结果
+2025-07-25 23:11:32,659 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:32] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:11:39,491 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:11:40,486 - OpenIssueBot - INFO - 开始搜索: 智谱...
+2025-07-25 23:11:40,496 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:11:40,496 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:11:40,497 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:11:40,497 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:11:40,497 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2227041216, 'number': 3639, 'title': '比有道QAnything部署简单，不知道准确率相比如何？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/3639', 'created_at': '2024-04-05 04:5
+2025-07-25 23:11:40,497 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2227041216, 'number': 3639, 'title': '比有道QAnything部署简单，不知道准确率相比如何？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/3639', 'created_at': '2024-04-05 04:58', 'updated_at': '2024-05-10 08:24', 'closed_at': '2024-05-07 02:44', 'author': {'login': 'ILG2021', 'url': 'https://github.com/ILG2021', 'avatar_url': 'https://avatars.githubusercontent.com/u/93691919?v=4'}, 'labels': ['bug'], 'comments_count': 5, 'body_summary': '', 'priority_score': 0.5, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.8186571598052979, 'rank_score': 0.7774628639221192}
+2025-07-25 23:11:40,498 - OpenIssueBot - INFO - 搜索完成: 智谱... -> 5 个结果
+2025-07-25 23:11:40,498 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:40] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:11:50,988 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:11:51,015 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:11:51,016 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:11:51,016 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:11:51,017 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:11:51,017 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:11:51,017 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08', 'updated_at': '2024-11-10 03:17', 'closed_at': '2023-09-26 08:07', 'author': {'login': 'tendrillion', 'url': 'https://github.com/tendrillion', 'avatar_url': 'https://avatars.githubusercontent.com/u/33444336?v=4'}, 'labels': ['bug'], 'comments_count': 8, 'body_summary': "问题描述 / Problem Description 参见 开发环境准备，完成环境搭建，确保已经安装了zhipuai. 新建py文件，import zhipuai，一切正常. 运行:python server/llm_api. py，也是执行了import zhipuai，一切正常. 但是运行：python startup. py -a 或者 streamlit run webui. py 报错：No module named 'zhipuai' 项目版本：v0. 2....", 'priority_score': 0.5599999999999999, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6770073771476746, 'rank_score': 0.7388029508590698}
+2025-07-25 23:11:51,017 - OpenIssueBot - ERROR - 格式化第1个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205514, 'number': 5158, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5158', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-07-08 01:30', 'closed_at': '2024-12-26 02:51', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 4, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.48, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7080167474746705}
+2025-07-25 23:11:51,017 - OpenIssueBot - ERROR - 格式化第2个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205503, 'number': 5157, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5157', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-03-03 21:31', 'closed_at': '2025-03-03 21:31', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 3, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.45999999999999996, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7020167474746705}
+2025-07-25 23:11:51,017 - OpenIssueBot - ERROR - 格式化第3个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2462636663, 'number': 4786, 'title': '图文对话报错', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4786', 'created_at': '2024-08-13 07:42', 'updated_at': '2024-08-14 07:31', 'closed_at': '2024-08-14 07:31', 'author': {'login': 'weiwuxian1998', 'url': 'https://github.com/weiwuxian1998', 'avatar_url': 'https://avatars.githubusercontent.com/u/84005658?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': 'qwen-vl图文对话报错，后端的xinference中拿不到前端上传的图片，在测试时， 上传图片产生的临时url例如"http://127. 0. 0. 1:7866/v1/files/YXNzaXN0YW50cy8yMDI0LTA4LTEzL-S8geS4muW-ruS_oeaIquWbvl8xNzIzMTkwNTk0NjQzNy5wbmc=/content“ 在服务器的环境中使用代码测试报404错误， import requests from PIL import Image image_path = "http://127. 0. 0....', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6652584671974182, 'rank_score': 0.6921033868789673}
+2025-07-25 23:11:51,017 - OpenIssueBot - ERROR - 格式化第4个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205486, 'number': 5156, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5156', 'created_at': '2024-12-26 02:50', 'updated_at': '2024-12-26 02:56', 'closed_at': '2024-12-26 02:56', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.6900167474746705}
+2025-07-25 23:11:51,018 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:11:51,018 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:11:51] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:12:08,642 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:12:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:12:38,711 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:12:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:12:54,477 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:12:54,486 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:12:54,486 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:12:54,486 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:12:54,486 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:12:54,486 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:12:54,486 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08', 'updated_at': '2024-11-10 03:17', 'closed_at': '2023-09-26 08:07', 'author': {'login': 'tendrillion', 'url': 'https://github.com/tendrillion', 'avatar_url': 'https://avatars.githubusercontent.com/u/33444336?v=4'}, 'labels': ['bug'], 'comments_count': 8, 'body_summary': "问题描述 / Problem Description 参见 开发环境准备，完成环境搭建，确保已经安装了zhipuai. 新建py文件，import zhipuai，一切正常. 运行:python server/llm_api. py，也是执行了import zhipuai，一切正常. 但是运行：python startup. py -a 或者 streamlit run webui. py 报错：No module named 'zhipuai' 项目版本：v0. 2....", 'priority_score': 0.5599999999999999, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6770073771476746, 'rank_score': 0.7388029508590698}
+2025-07-25 23:12:54,487 - OpenIssueBot - ERROR - 格式化第1个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205514, 'number': 5158, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5158', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-07-08 01:30', 'closed_at': '2024-12-26 02:51', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 4, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.48, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7080167474746705}
+2025-07-25 23:12:54,487 - OpenIssueBot - ERROR - 格式化第2个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205503, 'number': 5157, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5157', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-03-03 21:31', 'closed_at': '2025-03-03 21:31', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 3, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.45999999999999996, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7020167474746705}
+2025-07-25 23:12:54,487 - OpenIssueBot - ERROR - 格式化第3个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2462636663, 'number': 4786, 'title': '图文对话报错', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4786', 'created_at': '2024-08-13 07:42', 'updated_at': '2024-08-14 07:31', 'closed_at': '2024-08-14 07:31', 'author': {'login': 'weiwuxian1998', 'url': 'https://github.com/weiwuxian1998', 'avatar_url': 'https://avatars.githubusercontent.com/u/84005658?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': 'qwen-vl图文对话报错，后端的xinference中拿不到前端上传的图片，在测试时， 上传图片产生的临时url例如"http://127. 0. 0. 1:7866/v1/files/YXNzaXN0YW50cy8yMDI0LTA4LTEzL-S8geS4muW-ruS_oeaIquWbvl8xNzIzMTkwNTk0NjQzNy5wbmc=/content“ 在服务器的环境中使用代码测试报404错误， import requests from PIL import Image image_path = "http://127. 0. 0....', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6652584671974182, 'rank_score': 0.6921033868789673}
+2025-07-25 23:12:54,487 - OpenIssueBot - ERROR - 格式化第4个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205486, 'number': 5156, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5156', 'created_at': '2024-12-26 02:50', 'updated_at': '2024-12-26 02:56', 'closed_at': '2024-12-26 02:56', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.6900167474746705}
+2025-07-25 23:12:54,487 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:12:54,488 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:12:54] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:12:58,136 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:12:58,146 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:12:58,148 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:12:58,148 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:12:58,148 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:12:58,148 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:12:58,148 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08', 'updated_at': '2024-11-10 03:17', 'closed_at': '2023-09-26 08:07', 'author': {'login': 'tendrillion', 'url': 'https://github.com/tendrillion', 'avatar_url': 'https://avatars.githubusercontent.com/u/33444336?v=4'}, 'labels': ['bug'], 'comments_count': 8, 'body_summary': "问题描述 / Problem Description 参见 开发环境准备，完成环境搭建，确保已经安装了zhipuai. 新建py文件，import zhipuai，一切正常. 运行:python server/llm_api. py，也是执行了import zhipuai，一切正常. 但是运行：python startup. py -a 或者 streamlit run webui. py 报错：No module named 'zhipuai' 项目版本：v0. 2....", 'priority_score': 0.5599999999999999, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6770073771476746, 'rank_score': 0.7388029508590698}
+2025-07-25 23:12:58,148 - OpenIssueBot - ERROR - 格式化第1个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205514, 'number': 5158, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5158', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-07-08 01:30', 'closed_at': '2024-12-26 02:51', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 4, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.48, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7080167474746705}
+2025-07-25 23:12:58,148 - OpenIssueBot - ERROR - 格式化第2个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205503, 'number': 5157, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5157', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-03-03 21:31', 'closed_at': '2025-03-03 21:31', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 3, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.45999999999999996, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7020167474746705}
+2025-07-25 23:12:58,150 - OpenIssueBot - ERROR - 格式化第3个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2462636663, 'number': 4786, 'title': '图文对话报错', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4786', 'created_at': '2024-08-13 07:42', 'updated_at': '2024-08-14 07:31', 'closed_at': '2024-08-14 07:31', 'author': {'login': 'weiwuxian1998', 'url': 'https://github.com/weiwuxian1998', 'avatar_url': 'https://avatars.githubusercontent.com/u/84005658?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': 'qwen-vl图文对话报错，后端的xinference中拿不到前端上传的图片，在测试时， 上传图片产生的临时url例如"http://127. 0. 0. 1:7866/v1/files/YXNzaXN0YW50cy8yMDI0LTA4LTEzL-S8geS4muW-ruS_oeaIquWbvl8xNzIzMTkwNTk0NjQzNy5wbmc=/content“ 在服务器的环境中使用代码测试报404错误， import requests from PIL import Image image_path = "http://127. 0. 0....', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6652584671974182, 'rank_score': 0.6921033868789673}
+2025-07-25 23:12:58,150 - OpenIssueBot - ERROR - 格式化第4个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205486, 'number': 5156, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5156', 'created_at': '2024-12-26 02:50', 'updated_at': '2024-12-26 02:56', 'closed_at': '2024-12-26 02:56', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.6900167474746705}
+2025-07-25 23:12:58,150 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:12:58,150 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:12:58] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:13:05,877 - OpenIssueBot - INFO - 开始搜索: 知识库...
+2025-07-25 23:13:05,888 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:13:05,888 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:13:05,888 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:13:05,888 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:13:05,888 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1663500564, 'number': 60, 'title': '支持word，那word里面的图片正常显示吗？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/60', 'created_at': '2023-04-12 01:26', 'upda
+2025-07-25 23:13:05,888 - OpenIssueBot - INFO - 搜索完成: 知识库... -> 5 个结果
+2025-07-25 23:13:05,888 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:13:05] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:13:08,233 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:13:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:13:16,409 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:13:16,425 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:13:16,426 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:13:16,426 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:13:16,426 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:13:16,426 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:13:16,426 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08', 'updated_at': '2024-11-10 03:17', 'closed_at': '2023-09-26 08:07', 'author': {'login': 'tendrillion', 'url': 'https://github.com/tendrillion', 'avatar_url': 'https://avatars.githubusercontent.com/u/33444336?v=4'}, 'labels': ['bug'], 'comments_count': 8, 'body_summary': "问题描述 / Problem Description 参见 开发环境准备，完成环境搭建，确保已经安装了zhipuai. 新建py文件，import zhipuai，一切正常. 运行:python server/llm_api. py，也是执行了import zhipuai，一切正常. 但是运行：python startup. py -a 或者 streamlit run webui. py 报错：No module named 'zhipuai' 项目版本：v0. 2....", 'priority_score': 0.5599999999999999, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6770073771476746, 'rank_score': 0.7388029508590698}
+2025-07-25 23:13:16,426 - OpenIssueBot - ERROR - 格式化第1个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205514, 'number': 5158, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5158', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-07-08 01:30', 'closed_at': '2024-12-26 02:51', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 4, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.48, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7080167474746705}
+2025-07-25 23:13:16,426 - OpenIssueBot - ERROR - 格式化第2个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205503, 'number': 5157, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5157', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-03-03 21:31', 'closed_at': '2025-03-03 21:31', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 3, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.45999999999999996, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7020167474746705}
+2025-07-25 23:13:16,428 - OpenIssueBot - ERROR - 格式化第3个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2462636663, 'number': 4786, 'title': '图文对话报错', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4786', 'created_at': '2024-08-13 07:42', 'updated_at': '2024-08-14 07:31', 'closed_at': '2024-08-14 07:31', 'author': {'login': 'weiwuxian1998', 'url': 'https://github.com/weiwuxian1998', 'avatar_url': 'https://avatars.githubusercontent.com/u/84005658?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': 'qwen-vl图文对话报错，后端的xinference中拿不到前端上传的图片，在测试时， 上传图片产生的临时url例如"http://127. 0. 0. 1:7866/v1/files/YXNzaXN0YW50cy8yMDI0LTA4LTEzL-S8geS4muW-ruS_oeaIquWbvl8xNzIzMTkwNTk0NjQzNy5wbmc=/content“ 在服务器的环境中使用代码测试报404错误， import requests from PIL import Image image_path = "http://127. 0. 0....', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6652584671974182, 'rank_score': 0.6921033868789673}
+2025-07-25 23:13:16,428 - OpenIssueBot - ERROR - 格式化第4个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205486, 'number': 5156, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5156', 'created_at': '2024-12-26 02:50', 'updated_at': '2024-12-26 02:56', 'closed_at': '2024-12-26 02:56', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.6900167474746705}
+2025-07-25 23:13:16,428 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:13:16,428 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:13:16] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:13:37,912 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:13:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:14:08,289 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:14:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:14:38,364 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:14:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:15:08,333 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:15:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:15:37,854 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:15:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:16:08,407 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:16:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:16:38,531 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:16:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:17:08,910 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:17:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:17:38,085 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:17:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:18:08,231 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:18:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:18:38,108 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:18:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:19:08,136 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:19:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:19:38,256 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:19:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:20:08,308 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:20:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:20:37,864 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:20:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:21:08,220 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:21:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:21:39,162 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:21:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:22:08,680 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:22:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:22:38,031 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:22:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:23:09,125 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:23:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:23:38,035 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:23:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:24:08,588 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:24:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:24:38,067 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:24:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:25:08,185 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:25:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:25:38,395 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:25:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:26:08,268 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:26:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:26:38,297 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:26:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:27:08,348 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:27:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:27:37,918 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:27:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:08,580 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:11,096 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:28:11,108 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:28:11,109 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:28:11,109 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:28:11,109 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:28:11,110 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:28:11,110 - OpenIssueBot - ERROR - 格式化第0个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08', 'updated_at': '2024-11-10 03:17', 'closed_at': '2023-09-26 08:07', 'author': {'login': 'tendrillion', 'url': 'https://github.com/tendrillion', 'avatar_url': 'https://avatars.githubusercontent.com/u/33444336?v=4'}, 'labels': ['bug'], 'comments_count': 8, 'body_summary': "问题描述 / Problem Description 参见 开发环境准备，完成环境搭建，确保已经安装了zhipuai. 新建py文件，import zhipuai，一切正常. 运行:python server/llm_api. py，也是执行了import zhipuai，一切正常. 但是运行：python startup. py -a 或者 streamlit run webui. py 报错：No module named 'zhipuai' 项目版本：v0. 2....", 'priority_score': 0.5599999999999999, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6770073771476746, 'rank_score': 0.7388029508590698}
+2025-07-25 23:28:11,110 - OpenIssueBot - ERROR - 格式化第1个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205514, 'number': 5158, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5158', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-07-08 01:30', 'closed_at': '2024-12-26 02:51', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 4, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.48, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7080167474746705}
+2025-07-25 23:28:11,110 - OpenIssueBot - ERROR - 格式化第2个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205503, 'number': 5157, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5157', 'created_at': '2024-12-26 02:50', 'updated_at': '2025-03-03 21:31', 'closed_at': '2025-03-03 21:31', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug', 'stale'], 'comments_count': 3, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.45999999999999996, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.7020167474746705}
+2025-07-25 23:28:11,111 - OpenIssueBot - ERROR - 格式化第3个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2462636663, 'number': 4786, 'title': '图文对话报错', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4786', 'created_at': '2024-08-13 07:42', 'updated_at': '2024-08-14 07:31', 'closed_at': '2024-08-14 07:31', 'author': {'login': 'weiwuxian1998', 'url': 'https://github.com/weiwuxian1998', 'avatar_url': 'https://avatars.githubusercontent.com/u/84005658?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': 'qwen-vl图文对话报错，后端的xinference中拿不到前端上传的图片，在测试时， 上传图片产生的临时url例如"http://127. 0. 0. 1:7866/v1/files/YXNzaXN0YW50cy8yMDI0LTA4LTEzL-S8geS4muW-ruS_oeaIquWbvl8xNzIzMTkwNTk0NjQzNy5wbmc=/content“ 在服务器的环境中使用代码测试报404错误， import requests from PIL import Image image_path = "http://127. 0. 0....', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.6652584671974182, 'rank_score': 0.6921033868789673}
+2025-07-25 23:28:11,111 - OpenIssueBot - ERROR - 格式化第4个结果时出错: 'str' object has no attribute 'get', 原始数据: {'id': 2759205486, 'number': 5156, 'title': '结果排序不准确，有些问答匹配结果甚至跑到第七八条了', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/5156', 'created_at': '2024-12-26 02:50', 'updated_at': '2024-12-26 02:56', 'closed_at': '2024-12-26 02:56', 'author': {'login': '15927566740', 'url': 'https://github.com/15927566740', 'avatar_url': 'https://avatars.githubusercontent.com/u/48681680?v=4'}, 'labels': ['bug'], 'comments_count': 1, 'body_summary': '有人知道结果排序不准确怎么处理吗，有些问答匹配结果甚至跑到第七八条了，我看源码里rerank相关代码都注释掉了。 用的xinference:v1.1.0+chatchat0.3.1.3，Qwen2.5-14B-Instruct，bge-large-zh-v1.5，bge-reranker-larger。 score从0.1到2.0都试了个遍。', 'priority_score': 0.42000000000000004, 'has_solution': True, 'problem_type': 'bug', 'solution_summary': None, 'similarity_score': 0.660041868686676, 'rank_score': 0.6900167474746705}
+2025-07-25 23:28:11,111 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:28:11,111 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:11] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:28:32,133 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:28:32,134 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:28:32,134 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:28:32,153 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:28:32,301 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:28:32,330 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 23:28:32,330 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:28:35,833 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:28:35,833 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:28:35,862 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:28:35,863 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:28:37,534 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:37] "GET /?ide_webview_request_time=1753457315522 HTTP/1.1" 200 -
+2025-07-25 23:28:37,663 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:28:37,845 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:37] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-25 23:28:38,156 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:28:38,156 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:28:38,160 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:28:38,160 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:28:38,172 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:38] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:28:38,288 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:38] "GET / HTTP/1.1" 200 -
+2025-07-25 23:28:38,316 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:28:38,319 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:38] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-25 23:28:38,645 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:28:38,645 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:28:38,650 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:28:38,650 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:28:41,040 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:28:41,041 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:28:41,041 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:28:41,041 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:28:41,041 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:28:41,041 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:28:41,041 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:28:42,782 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:42,870 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:28:42,872 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:28:42,872 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:28:42,872 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:28:42,873 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:28:42,873 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:28:42,873 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:28:43,011 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:28:43,012 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:28:43,012 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:28:43,012 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:28:43,012 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:28:43,012 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:28:43,012 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:28:43,063 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:43] "GET /search HTTP/1.1" 200 -
+2025-07-25 23:28:43,382 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:28:43,384 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:43] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:28:43,705 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:43] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:28:44,915 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:45,719 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:46,041 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:47,693 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:48,011 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:49,423 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 23:28:49,423 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 23:28:49,428 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 23:28:49,536 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 23:28:49,536 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 23:28:49,536 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:28:51,223 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:28:54,326 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:28:54,327 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:28:54,328 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:28:54,328 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:28:54,328 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:28:54,328 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:28:54,329 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:54] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:28:54,339 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-airx
+2025-07-25 23:28:54,339 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-airx
+2025-07-25 23:28:54,339 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 6，提供商: zhipu
+2025-07-25 23:28:58,897 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1074
+2025-07-25 23:28:58,897 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:28:58] "POST /api/chat HTTP/1.1" 200 -
+2025-07-25 23:29:11,724 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:29:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:29:16,311 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:29:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:29:19,089 - OpenIssueBot - INFO - 开始搜索: 向量库导入失败...
+2025-07-25 23:29:19,101 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:29:19,101 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:29:19,101 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:29:19,102 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:29:19,102 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1663500564, 'number': 60, 'title': '支持word，那word里面的图片正常显示吗？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/60', 'created_at': '2023-04-12 01:26', 'upda
+2025-07-25 23:29:19,102 - OpenIssueBot - INFO - 搜索完成: 向量库导入失败... -> 5 个结果
+2025-07-25 23:29:19,103 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:29:19] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:29:19,428 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-airx
+2025-07-25 23:29:19,428 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-airx
+2025-07-25 23:29:19,428 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 7，提供商: zhipu
+2025-07-25 23:29:23,903 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 846
+2025-07-25 23:29:23,904 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:29:23] "POST /api/chat HTTP/1.1" 200 -
+2025-07-25 23:29:40,747 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:29:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:29:45,286 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:29:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:30:10,521 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:30:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:30:17,369 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:30:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:30:40,600 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:30:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:30:46,487 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:30:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:31:10,716 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:31:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:31:17,008 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:31:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:31:42,890 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:31:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:31:45,694 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:31:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:32:10,678 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:32:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:32:15,757 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:32:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:32:41,362 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:32:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:32:45,162 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:32:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:33:12,308 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:33:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:33:16,613 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:33:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:33:40,171 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:33:40] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:33:46,432 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:33:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:34:15,644 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:34:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:34:45,535 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:34:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:35:15,508 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:35:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:35:45,413 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:35:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:36:15,862 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:36:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:36:45,734 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:36:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:37:16,288 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:37:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:37:46,933 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:37:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:38:09,464 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:38:09,464 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:38:09,464 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:38:09,491 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:38:15,493 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:38:35,820 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:38:35,820 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:38:35,821 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:38:35,846 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:38:36,050 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:38:36,081 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 23:38:36,082 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:38:45,719 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:45] "GET /?ide_webview_request_time=1753457923917 HTTP/1.1" 200 -
+2025-07-25 23:38:45,731 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:38:45,732 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:45] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-25 23:38:45,920 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:45] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:38:46,443 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:38:48,187 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:38:50,556 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:38:53,119 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:38:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:39:17,872 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:39:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:39:48,662 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:39:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:04,996 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:04] "GET / HTTP/1.1" 200 -
+2025-07-25 23:40:05,231 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:40:05,236 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:05] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-25 23:40:05,382 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:40:05,382 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-25 23:40:05,413 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-25 23:40:05,413 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-25 23:40:09,874 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-25 23:40:09,875 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-25 23:40:09,875 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-25 23:40:09,875 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-25 23:40:09,875 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-25 23:40:09,875 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-25 23:40:09,875 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-25 23:40:12,669 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:14,592 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:16,607 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:17,641 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:26,668 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:26] "GET /search HTTP/1.1" 200 -
+2025-07-25 23:40:26,715 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:40:26,717 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:26] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:40:29,751 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:29] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:31,806 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:31] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:35,867 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-25 23:40:35,867 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-25 23:40:35,872 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-25 23:40:36,011 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-25 23:40:36,011 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-25 23:40:36,011 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:40:42,175 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:40:42,176 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:40:42,178 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:40:42,178 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:40:42,178 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:40:42,178 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:42,179 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:42,179 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:42,179 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:42,179 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:42,179 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:40:42,179 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:42] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:40:42,185 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:40:42,185 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:42] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:40:49,649 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:40:52,305 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:40:52,316 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:52,317 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:40:52,319 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:40:52,319 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:52] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:40:52,324 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:40:52,324 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:52] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:40:58,662 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:40:58] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:41:00,118 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:41:00,126 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:41:00,128 - OpenIssueBot - INFO - 搜索完成，找到 0 个相关结果
+2025-07-25 23:41:00,128 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:41:00,128 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 0
+2025-07-25 23:41:00,129 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 0 个结果
+2025-07-25 23:41:00,129 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:00] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:41:00,135 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:41:00,136 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:00] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:41:02,458 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:41:02,468 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:41:02,469 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:41:02,469 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:41:02,469 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:41:02,469 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:41:02,469 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:02,469 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:02,469 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:02,470 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:02,470 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:02,470 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:41:02,470 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:02] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:41:02,477 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:41:02,477 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:02] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:41:04,392 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:41:04,400 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:41:04,400 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:41:04,400 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.4
+2025-07-25 23:41:04,402 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:41:04,402 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:04] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:41:04,411 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:41:04,412 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:04] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:41:12,680 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:41:12,688 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:41:12,688 - OpenIssueBot - INFO - 搜索完成，找到 0 个相关结果
+2025-07-25 23:41:12,688 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:41:12,689 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 0
+2025-07-25 23:41:12,689 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 0 个结果
+2025-07-25 23:41:12,689 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:12] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:41:12,694 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:41:12,694 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:12] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:41:18,131 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:41:48,975 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:41:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:42:17,994 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:42:20,815 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:42:23,879 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:42:23,890 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:42:23,890 - OpenIssueBot - INFO - 搜索完成，找到 0 个相关结果
+2025-07-25 23:42:23,890 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:42:23,890 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 0
+2025-07-25 23:42:23,891 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 0 个结果
+2025-07-25 23:42:23,891 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:23] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:42:23,897 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:42:23,898 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:23] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:42:34,970 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:42:34,981 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:42:34,981 - OpenIssueBot - INFO - 搜索完成，找到 0 个相关结果
+2025-07-25 23:42:34,982 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:42:34,982 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 0
+2025-07-25 23:42:34,982 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 0 个结果
+2025-07-25 23:42:34,982 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:34] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:42:34,988 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:42:34,989 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:34] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:42:43,181 - OpenIssueBot - INFO - 开始搜索: 知识库...
+2025-07-25 23:42:43,192 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:42:43,192 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1663500564, 'number': 60, 'title': '支持word，那word里面的图片正常显示吗？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/60', 'created_at': '2023-04-12 01:26', 'upda
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:43,193 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:43,195 - OpenIssueBot - INFO - 搜索完成: 知识库... -> 5 个结果
+2025-07-25 23:42:43,195 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:43] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:42:43,200 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:42:43,200 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:43] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:42:47,273 - OpenIssueBot - INFO - 开始搜索: 初始化...
+2025-07-25 23:42:47,283 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:42:47,284 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:42:47,284 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:42:47,284 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:42:47,284 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1663500564, 'number': 60, 'title': '支持word，那word里面的图片正常显示吗？', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/60', 'created_at': '2023-04-12 01:26', 'upda
+2025-07-25 23:42:47,284 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:47,285 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:47,285 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:47,285 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:47,285 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:42:47,286 - OpenIssueBot - INFO - 搜索完成: 初始化... -> 5 个结果
+2025-07-25 23:42:47,286 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:47] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:42:47,292 - OpenIssueBot - ERROR - 直接AI回答API错误: No module named 'app.llm_service'
+2025-07-25 23:42:47,292 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:47] "[35m[1mPOST /api/direct_ai_answer HTTP/1.1[0m" 500 -
+2025-07-25 23:42:49,804 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:42:50,315 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:42:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:43:17,861 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:43:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:43:48,453 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:43:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:44:04,921 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:44:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:44:18,880 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:44:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:44:49,864 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:44:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:45:17,837 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:45:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:45:47,652 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:45:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:46:19,960 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:46:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:46:47,916 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:46:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:47:18,078 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:47:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:47:28,910 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:47:28,912 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:47:28,912 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:47:28,936 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:47:47,926 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:47:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:47:51,696 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-25 23:47:51,697 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-25 23:47:51,697 - faiss.loader - INFO - Loading faiss.
+2025-07-25 23:47:51,723 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-25 23:47:51,919 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-25 23:47:51,948 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-25 23:47:51,948 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-25 23:48:12,763 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:12] "GET /?ide_webview_request_time=1753458489999 HTTP/1.1" 200 -
+2025-07-25 23:48:12,774 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:48:12,776 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:12] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:48:12,960 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:12] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:48:15,294 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:48:17,517 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:48:19,562 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:48:45,373 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:48:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:49:14,586 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:49:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:49:44,491 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:49:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:50:18,438 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:50:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:50:46,115 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:50:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:51:05,464 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:05] "GET /search HTTP/1.1" 200 -
+2025-07-25 23:51:05,474 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-25 23:51:05,475 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:05] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-25 23:51:05,517 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:05] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-25 23:51:07,627 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:51:09,443 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:51:14,323 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:51:14,330 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:51:14,332 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:51:14,332 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:51:14,332 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:51:14,332 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:51:14,332 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:51:14,333 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:51:14,333 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:51:14,333 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:51:14,333 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-25 23:51:14,333 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:51:14,334 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:14] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:51:14,346 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-airx
+2025-07-25 23:51:14,346 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-airx
+2025-07-25 23:51:14,346 - OpenIssueBot - INFO - LLM服务初始化成功，使用提供商: zhipu
+2025-07-25 23:51:14,346 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-25 23:51:19,723 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 754
+2025-07-25 23:51:19,724 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:19] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-25 23:51:37,885 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:51:47,605 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:51:47,618 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:51:47,619 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:51:47,619 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:51:47,620 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:51:47,620 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:51:47,620 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:51:47,620 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:51:47,620 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:51:47,621 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:51:47,621 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:51:47,621 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:51:47,621 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:47] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:51:47,626 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-25 23:51:52,812 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 724
+2025-07-25 23:51:52,812 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:51:52] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-25 23:52:05,482 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:52:05,497 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:52:05,498 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:52:05,499 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:52:05,499 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:52:05,499 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:52:05,499 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:52:05,500 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:05] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:52:05,508 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 802，提供商: zhipu
+2025-07-25 23:52:08,152 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:52:10,894 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1065
+2025-07-25 23:52:10,894 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:10] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-25 23:52:15,476 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:52:15,486 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:52:15,486 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:52:15,486 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:52:15,488 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:52:15,488 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:52:15,488 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:52:15,488 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:52:15,488 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:52:15,488 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:52:15,489 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:52:15,489 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:52:15,489 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:15] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:52:15,494 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-25 23:52:17,918 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:52:17,925 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:52:17,926 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:52:17,926 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:52:17,926 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:52:17,926 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:52:17,928 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:52:17,928 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:17] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:52:17,933 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 802，提供商: zhipu
+2025-07-25 23:52:20,617 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 775
+2025-07-25 23:52:20,618 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:20] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-25 23:52:22,524 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 986
+2025-07-25 23:52:22,524 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:22] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-25 23:52:35,143 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:52:35,152 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:52:35,152 - OpenIssueBot - INFO - 搜索完成，找到 0 个相关结果
+2025-07-25 23:52:35,153 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:52:35,153 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 0
+2025-07-25 23:52:35,153 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 0 个结果
+2025-07-25 23:52:35,153 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:35] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:52:35,166 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-25 23:52:38,938 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:52:40,564 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 787
+2025-07-25 23:52:40,564 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:40] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-25 23:52:44,272 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:52:44,280 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:52:44,280 - OpenIssueBot - INFO - 搜索完成，找到 0 个相关结果
+2025-07-25 23:52:44,281 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:52:44,281 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 0
+2025-07-25 23:52:44,281 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 0 个结果
+2025-07-25 23:52:44,282 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:44] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:52:44,289 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-25 23:52:48,306 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:52:48,316 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:52:48,316 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:52:48,317 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:52:48,317 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:52:48,317 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:52:48,317 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:52:48,317 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:48] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:52:48,326 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 802，提供商: zhipu
+2025-07-25 23:52:49,499 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 816
+2025-07-25 23:52:49,499 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:49] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-25 23:52:53,878 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1047
+2025-07-25 23:52:53,878 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:52:53] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-25 23:53:05,986 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-25 23:53:05,994 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-25 23:53:05,994 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-25 23:53:05,994 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-25 23:53:05,994 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-25 23:53:05,994 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-25 23:53:05,995 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:53:05,995 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:53:05,995 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:53:05,995 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:53:05,995 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.1
+2025-07-25 23:53:05,995 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-25 23:53:05,996 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:53:05] "POST /api/search HTTP/1.1" 200 -
+2025-07-25 23:53:06,002 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-25 23:53:08,157 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:53:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:53:10,497 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 708
+2025-07-25 23:53:10,498 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:53:10] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-25 23:53:38,141 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:53:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:54:07,264 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:54:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:54:37,699 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:54:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:55:07,990 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:55:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:55:37,487 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:55:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:56:07,460 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:56:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:56:38,195 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:56:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:57:07,354 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:57:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:57:37,230 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:57:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:58:09,671 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:58:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:58:37,772 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:58:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:59:07,167 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:59:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-25 23:59:37,810 - werkzeug - INFO - 127.0.0.1 - - [25/Jul/2025 23:59:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:00:09,414 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:00:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:00:38,585 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:00:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:01:07,475 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:01:18,006 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-26 00:01:18,007 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-26 00:01:18,007 - faiss.loader - INFO - Loading faiss.
+2025-07-26 00:01:18,031 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-26 00:01:18,203 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-26 00:01:18,227 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-26 00:01:18,227 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-26 00:01:35,209 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:35] "GET /?ide_webview_request_time=1753459292610 HTTP/1.1" 200 -
+2025-07-26 00:01:35,220 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:01:35,222 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:35] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-26 00:01:35,427 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:35] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-26 00:01:39,340 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:01:42,377 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:01:46,677 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:01:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:02:10,769 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:02:38,181 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:02:45,487 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:45] "GET /search HTTP/1.1" 200 -
+2025-07-26 00:02:45,500 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:02:45,501 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:45] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-26 00:02:45,558 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:45] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-26 00:02:47,613 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:02:50,783 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:50] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:02:51,059 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-26 00:02:51,069 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-26 00:02:51,070 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-26 00:02:51,071 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-26 00:02:51,071 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-26 00:02:51,071 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-26 00:02:51,071 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:02:51,072 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:02:51,072 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:02:51,072 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:02:51,072 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:02:51,072 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-26 00:02:51,073 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:51] "POST /api/search HTTP/1.1" 200 -
+2025-07-26 00:02:51,084 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-26 00:02:56,318 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 788
+2025-07-26 00:02:56,318 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:02:56] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-26 00:03:08,527 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:08] "GET / HTTP/1.1" 200 -
+2025-07-26 00:03:08,553 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:03:08,556 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:08] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-26 00:03:10,942 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:13,521 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:13] "GET /config HTTP/1.1" 200 -
+2025-07-26 00:03:13,560 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:03:13,561 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:13] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-26 00:03:13,642 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:16,581 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:17,908 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:18,952 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:19,497 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:19] "GET /search HTTP/1.1" 200 -
+2025-07-26 00:03:19,562 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:03:19,563 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:19] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-26 00:03:21,042 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:22,960 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-26 00:03:22,970 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-26 00:03:22,971 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-26 00:03:22,971 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-26 00:03:22,973 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-26 00:03:22,973 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-26 00:03:22,973 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:03:22,973 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:03:22,973 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:03:22,973 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:03:22,973 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.000 < 阈值0.2
+2025-07-26 00:03:22,974 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-26 00:03:22,974 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:22] "POST /api/search HTTP/1.1" 200 -
+2025-07-26 00:03:22,981 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-26 00:03:23,153 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:23] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:25,584 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:25] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:27,688 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 742
+2025-07-26 00:03:27,689 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:27] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-26 00:03:48,270 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:03:48,647 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:48] "GET /api/stats HTTP/1.1" 200 -

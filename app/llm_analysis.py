@@ -388,6 +388,36 @@ class LLMAnalyzer:
         
         return "\n".join(prompt_parts)
     
+    def analyze_search_results(self, query: str, search_results: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """
+        基于搜索结果分析用户问题并生成AI回答
+        
+        Args:
+            query: 用户查询
+            search_results: 搜索结果列表
+            
+        Returns:
+            Dict: 分析结果
+        """
+        try:
+            # 构建包含搜索结果的上下文
+            context = {
+                'related_issues': search_results[:5] if search_results else []  # 最多使用前5个结果
+            }
+            
+            # 使用现有的analyze_problem方法
+            result = self.analyze_problem(query, context, max_tokens=2000)
+            
+            return result
+            
+        except Exception as e:
+            log_error(f"基于搜索结果的LLM分析失败: {e}")
+            return {
+                'success': False,
+                'error': str(e),
+                'analysis': self._generate_fallback_response(query)
+            }
+    
     def _generate_fallback_response(self, query: str) -> str:
         """
         生成备用回答（当LLM调用失败时）

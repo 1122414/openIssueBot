@@ -67,6 +67,18 @@ def format_search_result(result: Dict[str, Any]) -> Dict[str, Any]:
     Returns:
         Dict: 格式化后的结果
     """
+    # 检查输入类型
+    if not isinstance(result, dict):
+        log_error(f"format_search_result收到非字典类型数据: {type(result)}, 值: {result}")
+        return {
+            'error': 'Invalid result format',
+            'original_data': str(result),
+            'similarity_score': 0.0,
+            'similarity_percentage': '0.0%',
+            'similarity_level': 'error',
+            'similarity_label': '数据错误'
+        }
+    
     formatted = result.copy()
     
     # 格式化时间
@@ -112,10 +124,42 @@ def format_search_result(result: Dict[str, Any]) -> Dict[str, Any]:
     
     # 格式化标签
     if 'labels' in formatted and isinstance(formatted['labels'], list):
-        formatted['labels_formatted'] = [{
-            'name': label.get('name', ''),
-            'color': label.get('color', 'gray')
-        } for label in formatted['labels']]
+        formatted_labels = []
+        for label in formatted['labels']:
+            if isinstance(label, dict):
+                # GitHub API返回的标签对象
+                formatted_labels.append({
+                    'name': label.get('name', ''),
+                    'color': label.get('color', 'gray')
+                })
+            elif isinstance(label, str):
+                # 简单的字符串标签
+                formatted_labels.append({
+                    'name': label,
+                    'color': 'gray'
+                })
+        formatted['labels_formatted'] = formatted_labels
+    
+    # 格式化作者信息
+    if 'author' in formatted:
+        author = formatted['author']
+        if isinstance(author, dict):
+            # 作者是字典对象，保持原样
+            pass
+        elif isinstance(author, str):
+            # 作者是字符串，转换为字典格式
+            formatted['author'] = {
+                'login': author,
+                'url': f'https://github.com/{author}',
+                'avatar_url': f'https://github.com/{author}.png'
+            }
+        else:
+            # 其他类型，设置默认值
+            formatted['author'] = {
+                'login': 'unknown',
+                'url': '',
+                'avatar_url': ''
+            }
     
     return formatted
 
@@ -365,6 +409,7 @@ def api_search():
         max_results = min(data.get('max_results', 5), 20)  # 限制最大结果数
         search_type = data.get('search_type', 'vector')  # vector, keyword, hybrid
         similarity_threshold = data.get('similarity_threshold', 0.3)
+        recall_threshold = data.get('recall_threshold', 0.0)  # 召回阈值，默认为0
         include_llm = data.get('include_llm_analysis', True)
         
         # 获取搜索引擎
@@ -389,6 +434,11 @@ def api_search():
             result = engine.hybrid_search(query, max_results)
         elif search_type == 'keyword':
             keyword_results = engine.search_by_keywords([query], max_results)
+            # 调试信息：记录keyword搜索结果
+            log_info(f"keyword搜索原始结果类型: {type(keyword_results)}, 长度: {len(keyword_results) if hasattr(keyword_results, '__len__') else 'N/A'}")
+            if keyword_results and len(keyword_results) > 0:
+                log_info(f"keyword第一个结果类型: {type(keyword_results[0])}, 内容预览: {str(keyword_results[0])[:200]}")
+            
             result = {
                 'success': True,
                 'query': query,
@@ -400,9 +450,40 @@ def api_search():
         else:  # vector search
             result = engine.search(query, max_results, similarity_threshold, include_llm)
         
-        # 格式化结果
+        # 调试信息：记录原始结果结构
+        log_info(f"搜索原始结果类型: {type(result)}, 键: {list(result.keys()) if isinstance(result, dict) else 'N/A'}")
         if result.get('success') and 'results' in result:
-            result['results'] = [format_search_result(r) for r in result['results']]
+            log_info(f"results字段类型: {type(result['results'])}, 长度: {len(result['results']) if hasattr(result['results'], '__len__') else 'N/A'}")
+            if result['results'] and len(result['results']) > 0:
+                log_info(f"第一个结果类型: {type(result['results'][0])}, 内容预览: {str(result['results'][0])[:200]}")
+            
+            # 格式化搜索结果并应用召回阈值过滤
+            formatted_results = []
+            filtered_count = 0
+            for i, r in enumerate(result['results']):
+                try:
+                    formatted_result = format_search_result(r)
+                    
+                    # 应用召回阈值过滤
+                    similarity_score = formatted_result.get('similarity_score', 0)
+                    if similarity_score >= recall_threshold:
+                        formatted_results.append(formatted_result)
+                    else:
+                        filtered_count += 1
+                        log_info(f"结果被召回阈值过滤: 相似度{similarity_score:.3f} < 阈值{recall_threshold}")
+                        
+                except Exception as format_error:
+                    log_error(f"格式化第{i}个结果时出错: {format_error}, 原始数据: {r}")
+                    # 添加错误结果以便调试
+                    formatted_results.append({
+                        'error': f'格式化失败: {str(format_error)}',
+                        'original_data': str(r),
+                        'index': i
+                    })
+            
+            result['results'] = formatted_results
+            result['filtered_by_recall_threshold'] = filtered_count
+            result['total_after_filter'] = len(formatted_results)
         
         log_info(f"搜索完成: {query[:50]}... -> {result.get('total_found', 0)} 个结果")
         return jsonify(result)
@@ -516,6 +597,173 @@ def api_clear_cache():
         return jsonify({
             'success': False,
             'error': f'清除缓存失败: {str(e)}'
+        }), 500
+
+@app.route('/api/direct_ai_answer', methods=['POST'])
+def api_direct_ai_answer():
+    """
+    直接AI回答API（无搜索结果时使用）
+    
+    Returns:
+        JSON: AI回答结果
+    """
+    try:
+        data = request.get_json()
+        
+        if not data or 'query' not in data:
+            return jsonify({
+                'success': False,
+                'error': '缺少查询参数'
+            }), 400
+        
+        query = data['query'].strip()
+        if not query:
+            return jsonify({
+                'success': False,
+                'error': '查询内容不能为空'
+            }), 400
+        
+        # 获取LLM服务
+        from app.llm_service import get_llm_service
+        llm_service = get_llm_service()
+        
+        if not llm_service:
+            return jsonify({
+                'success': False,
+                'error': 'LLM服务未配置，请检查API密钥设置'
+            }), 500
+        
+        # 构建直接回答的提示词
+        prompt = f"""
+你是一个专业的技术助手。用户提出了以下问题，但在知识库中没有找到相关的搜索结果。
+请基于你的知识和经验，为用户提供有用的回答和建议。
+
+用户问题：{query}
+
+请提供：
+1. 对问题的分析和理解
+2. 可能的解决方案或建议
+3. 相关的最佳实践
+4. 如果需要，提供进一步学习的方向
+
+请用中文回答，内容要专业、准确、有帮助。
+"""
+        
+        # 调用LLM生成回答
+        response = llm_service.generate_response(prompt)
+        
+        if response.get('success'):
+            return jsonify({
+                'success': True,
+                'answer': response.get('answer', ''),
+                'provider': response.get('provider', 'AI'),
+                'model': response.get('model', ''),
+                'tokens_used': response.get('tokens_used', 0),
+                'mode': 'direct'
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'error': response.get('error', 'AI回答生成失败')
+            }), 500
+            
+    except Exception as e:
+        log_error(f"直接AI回答API错误: {e}")
+        return jsonify({
+            'success': False,
+            'error': f'AI回答过程中发生错误: {str(e)}'
+        }), 500
+
+@app.route('/api/rag_analysis', methods=['POST'])
+def api_rag_analysis():
+    """
+    RAG检索增强分析API（有搜索结果时使用）
+    
+    Returns:
+        JSON: RAG分析结果
+    """
+    try:
+        data = request.get_json()
+        
+        if not data or 'query' not in data or 'results' not in data:
+            return jsonify({
+                'success': False,
+                'error': '缺少必要参数'
+            }), 400
+        
+        query = data['query'].strip()
+        results = data['results']
+        
+        if not query:
+            return jsonify({
+                'success': False,
+                'error': '查询内容不能为空'
+            }), 400
+        
+        if not results or len(results) == 0:
+            return jsonify({
+                'success': False,
+                'error': '没有搜索结果可供分析'
+            }), 400
+        
+        # 获取LLM服务
+        from app.llm_service import get_llm_service
+        llm_service = get_llm_service()
+        
+        if not llm_service:
+            return jsonify({
+                'success': False,
+                'error': 'LLM服务未配置，请检查API密钥设置'
+            }), 500
+        
+        # 构建RAG增强的提示词
+        context = "\n\n".join([
+            f"结果 {i+1}:\n标题: {result.get('title', '')}\n内容: {result.get('body_preview', '')}\n相似度: {result.get('similarity_score', 0):.2f}\nURL: {result.get('url', '')}"
+            for i, result in enumerate(results[:5])  # 限制最多5个结果
+        ])
+        
+        prompt = f"""
+你是一个专业的技术助手。用户提出了问题，我已经从知识库中检索到了相关的信息。
+请基于这些检索结果，为用户提供准确、有用的回答。
+
+用户问题：{query}
+
+检索到的相关信息：
+{context}
+
+请基于上述检索结果：
+1. 分析用户问题的核心需求
+2. 结合检索结果提供具体的解决方案
+3. 引用相关的信息来源
+4. 如果检索结果不完全匹配，请说明并提供额外建议
+
+请用中文回答，内容要专业、准确、有帮助。在回答中适当引用检索结果的内容。
+"""
+        
+        # 调用LLM生成RAG增强回答
+        response = llm_service.generate_response(prompt)
+        
+        if response.get('success'):
+            return jsonify({
+                'success': True,
+                'answer': response.get('answer', ''),
+                'provider': response.get('provider', 'AI'),
+                'model': response.get('model', ''),
+                'tokens_used': response.get('tokens_used', 0),
+                'mode': 'rag',
+                'context_results': len(results)
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'error': response.get('error', 'RAG分析生成失败')
+            }), 500
+            
+    except Exception as e:
+        log_error(f"RAG分析API错误: {e}")
+        return jsonify({
+            'success': False,
+            'error': f'RAG分析过程中发生错误: {str(e)}'
         }), 500
 
 @app.route('/api/config', methods=['GET', 'POST'])
@@ -693,6 +941,64 @@ def api_config():
                 'success': False,
                 'error': f'配置更新失败: {str(e)}'
             }), 500
+
+@app.route('/api/chat', methods=['POST'])
+def api_chat():
+    """
+    基于搜索结果的AI对话分析API
+    
+    Returns:
+        JSON: AI分析结果
+    """
+    try:
+        data = request.get_json() or {}
+        query = data.get('query', '').strip()
+        search_results = data.get('search_results', [])
+        
+        if not query:
+            return jsonify({
+                'success': False,
+                'error': '查询内容不能为空'
+            }), 400
+        
+        # 获取LLM配置
+        provider = Config.LLM_PROVIDER
+        if not provider:
+            return jsonify({
+                'success': False,
+                'error': '未配置LLM提供商，请先在配置页面设置LLM'
+            }), 400
+        
+        # 导入LLM分析器
+        from .llm_analysis import LLMAnalyzer
+        
+        # 创建LLM分析器实例
+        analyzer = LLMAnalyzer(Config)
+        
+        # 执行AI分析
+        analysis_result = analyzer.analyze_search_results(query, search_results)
+        
+        if analysis_result['success']:
+            return jsonify({
+                'success': True,
+                'analysis': analysis_result.get('answer', analysis_result.get('analysis', '')),
+                'provider': provider,
+                'model': analysis_result.get('model', ''),
+                'tokens_used': analysis_result.get('tokens_used', 0),
+                'timestamp': datetime.now().isoformat()
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'error': analysis_result.get('error', 'AI分析失败')
+            }), 500
+            
+    except Exception as e:
+        log_error(f"对话API错误: {e}")
+        return jsonify({
+            'success': False,
+            'error': f'AI分析过程中发生错误: {str(e)}'
+        }), 500
 
 @app.route('/api/test-llm', methods=['POST'])
 def api_test_llm():

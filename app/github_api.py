@@ -279,20 +279,41 @@ class GitHubAPI:
         Returns:
             List[Dict]: 搜索结果
         """
-        url = f"{self.base_url}/search/issues"
-        params = {
-            "q": f"{query} repo:{self.repo}",
-            "sort": "updated",
-            "order": "desc",
-            "per_page": min(max_results, 100)
-        }
-        
-        data = self._make_request(url, params)
-        
-        if data and 'items' in data:
-            return data['items']
+        try:
+            # 对查询进行预处理，避免GitHub API的422错误
+            if not query or len(query.strip()) < 2:
+                log_warning(f"搜索查询过短或为空: '{query}'")
+                return []
             
-        return []
+            # 清理查询字符串
+            cleaned_query = query.strip()
+            
+            # 如果查询太简单，添加更多上下文
+            if len(cleaned_query.split()) == 1 and len(cleaned_query) < 4:
+                # 对于单个短词，添加一些常见的Issue相关词汇
+                cleaned_query = f"{cleaned_query} issue OR bug OR problem OR question"
+            
+            url = f"{self.base_url}/search/issues"
+            params = {
+                "q": f"{cleaned_query} repo:{self.repo}",
+                "sort": "updated",
+                "order": "desc",
+                "per_page": min(max_results, 100)
+            }
+            
+            log_info(f"GitHub搜索查询: {params['q']}")
+            data = self._make_request(url, params)
+            
+            if data and 'items' in data:
+                log_info(f"GitHub搜索返回 {len(data['items'])} 个结果")
+                return data['items']
+            else:
+                log_warning(f"GitHub搜索无结果或请求失败")
+                return []
+                
+        except Exception as e:
+            log_error(f"GitHub搜索异常: {e}")
+            return []
     
     def get_repo_info(self) -> Optional[Dict]:
         """
