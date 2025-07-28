@@ -84,7 +84,7 @@ class Config:
     # FAISS 配置
     FAISS_INDEX_TYPE: str = os.getenv("FAISS_INDEX_TYPE", "IndexFlatIP")
     FAISS_INDEX_PATH: str = os.getenv("FAISS_INDEX_PATH", "./data/faiss_index")
-    FAISS_DIMENSION: int = int(os.getenv("FAISS_DIMENSION", "384"))  # MiniLM模型维度
+    FAISS_DIMENSION: int = int(os.getenv("FAISS_DIMENSION", "1536"))  # 默认维度，实际使用embedding服务的维度
     FAISS_CACHE_EXPIRY: int = int(os.getenv("FAISS_CACHE_EXPIRY", "3600"))
     
     # 向量数据库配置
@@ -104,7 +104,7 @@ class Config:
     
     # 搜索配置
     TOP_K_RESULTS: int = int(os.getenv("TOP_K_RESULTS", "5"))
-    SIMILARITY_THRESHOLD: float = float(os.getenv("SIMILARITY_THRESHOLD", "0.7"))
+    SIMILARITY_THRESHOLD: float = float(os.getenv("SIMILARITY_THRESHOLD", "0.3"))
     
     # 缓存配置
     CACHE_DIR: str = os.getenv("CACHE_DIR", "./data/cache")

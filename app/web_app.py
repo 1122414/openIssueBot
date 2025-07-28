@@ -18,6 +18,7 @@ from datetime import datetime
 from typing import Dict, Any, Optional
 
 from .config import Config
+from .user_config import user_config
 from .issue_search import IssueSearchEngine, create_search_engine
 from .utils import log_info, log_error, log_warning, validate_github_repo, format_time_ago
 
@@ -49,8 +50,22 @@ def get_search_engine() -> Optional[IssueSearchEngine]:
     
     if search_engine is None:
         try:
-            search_engine = create_search_engine()
-            log_info("搜索引擎实例创建成功")
+            # 验证用户配置
+            if not user_config.validate_config():
+                log_error("用户配置验证失败")
+                return None
+            
+            # 获取用户配置
+            github_config = user_config.get_github_config()
+            embedding_config = user_config.get_embedding_config()
+            
+            # 根据用户配置创建搜索引擎
+            search_engine = create_search_engine(
+                github_token=github_config['token'],
+                github_repo=github_config['repo'],
+                embedding_provider=embedding_config['provider']
+            )
+            log_info(f"搜索引擎实例创建成功，嵌入提供商: {embedding_config['provider']}, 仓库: {github_config['repo']}")
         except Exception as e:
             log_error(f"创建搜索引擎失败: {e}")
             return None
@@ -264,6 +279,7 @@ def get_config_status() -> Dict[str, Any]:
         'openai_api_key_configured': openai_api_valid,
         'search_engine_ready': search_engine is not None and getattr(search_engine, 'is_index_loaded', False),
         'use_local_embedding': Config.USE_LOCAL_EMBEDDING,
+        'embedding_provider': Config.EMBEDDING_PROVIDER,
         'cache_dir': Config.CACHE_DIR,
         'flask_host': Config.FLASK_HOST,
         'flask_port': Config.FLASK_PORT,
@@ -506,16 +522,43 @@ def api_initialize():
     try:
         data = request.get_json() or {}
         force_refresh = data.get('force_refresh', False)
+        llm_provider = data.get('llm_provider')
+        embedding_provider = data.get('embedding_provider')
         
-        engine = get_search_engine()
-        if not engine:
-            return jsonify({
-                'success': False,
-                'error': '无法创建搜索引擎实例'
-            }), 500
-        
-        log_info(f"开始初始化搜索引擎 (force_refresh={force_refresh})")
-        success = engine.initialize(force_refresh=force_refresh)
+        # 如果指定了新的模型配置，需要重新创建搜索引擎实例
+        if llm_provider or embedding_provider:
+            global search_engine
+            search_engine = None  # 清除现有实例
+            
+            # 更新配置（持久化用户选择）
+            from app.config import Config
+            
+            if llm_provider:
+                Config.LLM_PROVIDER = llm_provider
+                log_info(f"LLM提供商已更新为: {llm_provider}")
+            if embedding_provider:
+                Config.EMBEDDING_PROVIDER = embedding_provider
+                log_info(f"嵌入模型提供商已更新为: {embedding_provider}")
+            
+            engine = get_search_engine()
+            if not engine:
+                return jsonify({
+                    'success': False,
+                    'error': '无法创建搜索引擎实例'
+                }), 500
+            
+            log_info(f"开始重新初始化搜索引擎 (force_refresh={force_refresh}, llm_provider={llm_provider}, embedding_provider={embedding_provider})")
+            success = engine.initialize(force_refresh=True)  # 强制刷新
+        else:
+            engine = get_search_engine()
+            if not engine:
+                return jsonify({
+                    'success': False,
+                    'error': '无法创建搜索引擎实例'
+                }), 500
+            
+            log_info(f"开始初始化搜索引擎 (force_refresh={force_refresh})")
+            success = engine.initialize(force_refresh=force_refresh)
         
         if success:
             stats = engine.get_stats()

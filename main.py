@@ -31,6 +31,7 @@ os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'  # 禁用oneDNN优化警告
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from app.config import Config
+from app.user_config import user_config
 from app.issue_search import IssueSearchEngine, create_search_engine, quick_search
 from app.web_app import run_app
 from app.utils import (
@@ -174,7 +175,24 @@ def cmd_init(args):
     print("🔧 初始化搜索引擎...")
     
     try:
-        search_engine = create_search_engine()
+        # 验证用户配置
+        if not user_config.validate_config():
+            print("❌ 用户配置验证失败，请检查配置文件")
+            sys.exit(1)
+        
+        # 获取用户配置
+        github_config = user_config.get_github_config()
+        embedding_config = user_config.get_embedding_config()
+        
+        # 根据命令行参数或用户配置确定嵌入模型提供商
+        embedding_provider = getattr(args, 'embedding_provider', None) or embedding_config['provider']
+        
+        # 创建搜索引擎，使用用户配置
+        search_engine = create_search_engine(
+            github_token=github_config['token'],
+            github_repo=github_config['repo'],
+            embedding_provider=embedding_provider
+        )
         
         with Timer("初始化"):
             success = search_engine.initialize(force_refresh=args.force)
@@ -185,6 +203,8 @@ def cmd_init(args):
             print(f"   索引Issues数量: {stats.get('total_issues', 0)}")
             print(f"   嵌入向量维度: {stats.get('embedding_service', {}).get('dimension', 0)}")
             print(f"   搜索引擎状态: {'已就绪' if stats.get('is_initialized') else '未就绪'}")
+            print(f"   使用的嵌入提供商: {embedding_provider}")
+            print(f"   目标仓库: {github_config['repo']}")
         else:
             print("❌ 初始化失败")
             sys.exit(1)
@@ -405,7 +425,7 @@ def main():
   python main.py config --validate            # 验证配置
   python main.py interactive                   # 交互式搜索
 
-更多信息请访问: https://github.com/your-repo/openIssueBot
+更多信息请访问: https://github.com/1122414/openIssueBot
         """
     )
     
@@ -438,6 +458,7 @@ def main():
     # 初始化命令
     init_parser = subparsers.add_parser('init', help='初始化搜索引擎')
     init_parser.add_argument('--force', '-f', action='store_true', help='强制重新初始化')
+    init_parser.add_argument('--embedding-provider', choices=['local', 'openai', 'zhipu', 'qwen', 'baidu'], help='指定嵌入模型提供商')
     init_parser.set_defaults(func=cmd_init)
     
     # 配置命令

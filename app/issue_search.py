@@ -34,7 +34,8 @@ class IssueSearchEngine:
                  github_token: Optional[str] = None,
                  github_repo: Optional[str] = None,
                  use_local_embedding: Optional[bool] = None,
-                 openai_api_key: Optional[str] = None):
+                 openai_api_key: Optional[str] = None,
+                 embedding_provider: Optional[str] = None):
         """
         初始化搜索引擎
         
@@ -43,6 +44,7 @@ class IssueSearchEngine:
             github_repo: GitHub仓库
             use_local_embedding: 是否使用本地嵌入模型
             openai_api_key: OpenAI API密钥
+            embedding_provider: 嵌入模型提供商 (local, openai, zhipu, qwen, baidu)
         """
         # 初始化配置
         self.github_token = github_token or Config.GITHUB_TOKEN
@@ -54,7 +56,25 @@ class IssueSearchEngine:
         self.github_api = GitHubAPI(self.github_token, self.github_repo)
         
         # 根据配置确定嵌入服务提供商
-        if self.use_local_embedding:
+        if embedding_provider:
+            # 如果指定了嵌入模型提供商，优先使用（覆盖本地配置）
+            provider = embedding_provider
+            if provider == "local":
+                model_name = Config.LOCAL_EMBEDDING_MODEL
+            elif provider == "openai":
+                model_name = Config.OPENAI_EMBEDDING_MODEL
+            elif provider == "zhipu":
+                model_name = getattr(Config, 'ZHIPU_EMBEDDING_MODEL', 'embedding-2')
+            elif provider == "qwen":
+                model_name = getattr(Config, 'QWEN_EMBEDDING_MODEL', 'text-embedding-v1')
+            elif provider == "baidu":
+                model_name = getattr(Config, 'BAIDU_EMBEDDING_MODEL', 'embedding-v1')
+            else:
+                model_name = Config.EMBEDDING_MODEL
+            # 更新本地配置以反映用户选择
+            self.use_local_embedding = (provider == "local")
+            log_info(f"使用指定的嵌入提供商: {provider}, 模型: {model_name}")
+        elif self.use_local_embedding:
             provider = "local"
             model_name = Config.LOCAL_EMBEDDING_MODEL
         else:
@@ -67,11 +87,10 @@ class IssueSearchEngine:
         
         # LLM分析器（可选）
         self.llm_analyzer = None
-        if self.openai_api_key:
-            try:
-                self.llm_analyzer = LLMAnalyzer(self.openai_api_key)
-            except Exception as e:
-                log_warning(f"LLM分析器初始化失败: {e}")
+        try:
+            self.llm_analyzer = LLMAnalyzer(Config)
+        except Exception as e:
+            log_warning(f"LLM分析器初始化失败: {e}")
         
         # 缓存相关
         self.cache_dir = Config.CACHE_DIR
@@ -105,7 +124,8 @@ class IssueSearchEngine:
             
             # 获取Issues数据
             log_info("获取Issues数据...")
-            issues = self.github_api.fetch_issues(state="all", max_pages=20)
+            # 获取所有Issues，不设置页数限制
+            issues = self.github_api.fetch_issues(state="all", max_pages=None)
             
             if not issues:
                 log_error("未能获取到Issues数据")
@@ -131,7 +151,7 @@ class IssueSearchEngine:
     def search(self, 
                query: str, 
                max_results: int = 5,
-               similarity_threshold: float = 0.3,
+               similarity_threshold: float = None,
                include_llm_analysis: bool = True) -> Dict[str, Any]:
         """
         搜索相关Issues
@@ -146,7 +166,11 @@ class IssueSearchEngine:
             Dict: 搜索结果
         """
         try:
-            log_info(f"开始搜索: {query[:100]}...")
+            # 使用配置文件中的默认相似度阈值
+            if similarity_threshold is None:
+                similarity_threshold = Config.SIMILARITY_THRESHOLD
+                
+            log_info(f"开始搜索: {query[:100]}... (相似度阈值: {similarity_threshold})")
             
             # 确保索引已加载
             if not self.is_index_loaded:
@@ -156,10 +180,10 @@ class IssueSearchEngine:
             # 获取查询向量
             query_embedding = self.embedding_service.get_embeddings([query])[0]
             
-            # 向量搜索
+            # 向量搜索 - 获取更多候选结果以提高相关性
             scores, indices, metadata = self.search_engine.search(
                 query_embedding, 
-                k=min(max_results * 2, 20)  # 获取更多候选结果
+                k=min(max_results * 4, 50)  # 获取更多候选结果以提高召回率
             )
             
             # 过滤低相似度结果
@@ -542,7 +566,8 @@ class IssueSearchEngine:
 def create_search_engine(github_token: Optional[str] = None,
                         github_repo: Optional[str] = None,
                         use_local_embedding: Optional[bool] = None,
-                        openai_api_key: Optional[str] = None) -> IssueSearchEngine:
+                        openai_api_key: Optional[str] = None,
+                        embedding_provider: Optional[str] = None) -> IssueSearchEngine:
     """
     创建Issue搜索引擎
     
@@ -551,11 +576,12 @@ def create_search_engine(github_token: Optional[str] = None,
         github_repo: GitHub仓库
         use_local_embedding: 是否使用本地嵌入模型
         openai_api_key: OpenAI API密钥
+        embedding_provider: 嵌入模型提供商 (local, openai, zhipu, qwen, baidu)
         
     Returns:
         IssueSearchEngine: 搜索引擎实例
     """
-    return IssueSearchEngine(github_token, github_repo, use_local_embedding, openai_api_key)
+    return IssueSearchEngine(github_token, github_repo, use_local_embedding, openai_api_key, embedding_provider)
 
 def quick_search(query: str, 
                 github_repo: Optional[str] = None,

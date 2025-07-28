@@ -89,10 +89,18 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 嵌入模型
-                                {% if config_status.use_local_embedding %}
+                                {% if config_status.embedding_provider == 'local' %}
                                     <span class="badge bg-info"><i class="bi bi-cpu"></i> 本地模型</span>
-                                {% else %}
+                                {% elif config_status.embedding_provider == 'openai' %}
                                     <span class="badge bg-primary"><i class="bi bi-cloud"></i> OpenAI</span>
+                                {% elif config_status.embedding_provider == 'zhipu' %}
+                                    <span class="badge bg-success"><i class="bi bi-cloud"></i> 智谱AI</span>
+                                {% elif config_status.embedding_provider == 'qwen' %}
+                                    <span class="badge bg-warning"><i class="bi bi-cloud"></i> 通义千问</span>
+                                {% elif config_status.embedding_provider == 'baidu' %}
+                                    <span class="badge bg-danger"><i class="bi bi-cloud"></i> 百度文心</span>
+                                {% else %}
+                                    <span class="badge bg-secondary"><i class="bi bi-question-circle"></i> 未知</span>
                                 {% endif %}
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -257,12 +265,22 @@ function initializeSystem() {
     btn.disabled = true;
     btn.innerHTML = '<i class="bi bi-arrow-repeat"></i> 初始化中...';
     
+    // 获取用户选择的模型配置
+    const llmProvider = document.getElementById('llm-provider')?.value;
+    const embeddingProvider = document.getElementById('embedding-provider')?.value;
+    
+    const requestBody = { 
+        force_refresh: true,  // 重新初始化时强制刷新
+        llm_provider: llmProvider,
+        embedding_provider: embeddingProvider
+    };
+    
     fetch('/api/initialize', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ force_refresh: false })
+        body: JSON.stringify(requestBody)
     })
     .then(response => response.json())
     .then(data => {

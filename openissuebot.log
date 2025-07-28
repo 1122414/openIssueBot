@@ -4747,3 +4747,1565 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2025-07-26 00:03:27,689 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:27] "POST /api/direct_ai_answer HTTP/1.1" 200 -
 2025-07-26 00:03:48,270 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:48] "GET /api/stats HTTP/1.1" 200 -
 2025-07-26 00:03:48,647 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:03:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:04:25,274 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-26 00:04:25,275 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-26 00:04:25,275 - faiss.loader - INFO - Loading faiss.
+2025-07-26 00:04:25,302 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-26 00:04:25,504 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-26 00:04:25,531 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-26 00:04:25,531 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-26 00:04:26,764 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-26 00:04:26,764 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-26 00:04:26,807 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-26 00:04:26,807 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-26 00:04:29,876 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:29] "GET /?ide_webview_request_time=1753459467463 HTTP/1.1" 200 -
+2025-07-26 00:04:30,040 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:04:30,190 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:30] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-26 00:04:30,500 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-26 00:04:30,501 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-26 00:04:30,505 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-26 00:04:30,505 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-26 00:04:30,514 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:30] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-26 00:04:31,263 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-26 00:04:31,263 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-26 00:04:31,263 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-26 00:04:31,263 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-26 00:04:31,264 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-26 00:04:31,264 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-26 00:04:31,264 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-26 00:04:32,984 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:32] "GET /search HTTP/1.1" 200 -
+2025-07-26 00:04:33,295 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:04:33,296 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:33] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-26 00:04:33,324 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:33] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-26 00:04:33,334 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:04:35,412 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-26 00:04:35,413 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-26 00:04:35,413 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-26 00:04:35,413 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-26 00:04:35,413 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-26 00:04:35,413 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-26 00:04:35,413 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-26 00:04:35,789 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:04:36,927 - OpenIssueBot - INFO - 正在初始化搜索引擎...
+2025-07-26 00:04:36,927 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-26 00:04:36,932 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-26 00:04:37,050 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-26 00:04:37,051 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-26 00:04:37,051 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-26 00:04:37,390 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:04:38,245 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:04:42,860 - OpenIssueBot - INFO - 原始FAISS分数: [0.35401475 0.33051693 0.32008374 0.32008374 0.32008374]
+2025-07-26 00:04:42,860 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-26 00:04:42,861 - OpenIssueBot - INFO - 转换后的相似度分数: [0.6770074  0.66525847 0.66004187 0.66004187 0.66004187]
+2025-07-26 00:04:42,861 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-26 00:04:42,862 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-26 00:04:42,863 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-26 00:04:42,863 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-26 00:04:42,863 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-26 00:04:42,863 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-26 00:04:42,863 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:42] "POST /api/search HTTP/1.1" 200 -
+2025-07-26 00:04:43,173 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-airx
+2025-07-26 00:04:43,173 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-airx
+2025-07-26 00:04:43,173 - OpenIssueBot - INFO - LLM服务初始化成功，使用提供商: zhipu
+2025-07-26 00:04:43,173 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 802，提供商: zhipu
+2025-07-26 00:04:49,456 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1075
+2025-07-26 00:04:49,457 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:04:49] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-26 00:05:06,067 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:05:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:05:07,089 - OpenIssueBot - INFO - 开始搜索: zilliz...
+2025-07-26 00:05:07,095 - OpenIssueBot - INFO - 原始FAISS分数: [0.35401475 0.33051693 0.32008374 0.32008374 0.32008374]
+2025-07-26 00:05:07,095 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-26 00:05:07,096 - OpenIssueBot - INFO - 转换后的相似度分数: [0.6770074  0.66525847 0.66004187 0.66004187 0.66004187]
+2025-07-26 00:05:07,096 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 1885341842, 'number': 1403, 'title': "No module named 'zhipuai'", 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/1403', 'created_at': '2023-09-07 08:08',
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.677 < 阈值0.7
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.660 < 阈值0.7
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.660 < 阈值0.7
+2025-07-26 00:05:07,098 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.665 < 阈值0.7
+2025-07-26 00:05:07,099 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.660 < 阈值0.7
+2025-07-26 00:05:07,099 - OpenIssueBot - INFO - 搜索完成: zilliz... -> 5 个结果
+2025-07-26 00:05:07,099 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:05:07] "POST /api/search HTTP/1.1" 200 -
+2025-07-26 00:05:07,338 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 166，提供商: zhipu
+2025-07-26 00:05:14,323 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 930
+2025-07-26 00:05:14,323 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:05:14] "POST /api/direct_ai_answer HTTP/1.1" 200 -
+2025-07-26 00:05:26,870 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:05:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:05:35,797 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:05:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:06:05,357 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:06:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:06:25,510 - OpenIssueBot - INFO - 开始搜索: ES connection Error with unexpected keyword argument 'host'...
+2025-07-26 00:06:25,531 - OpenIssueBot - INFO - 原始FAISS分数: [0.57376385 0.51950306 0.477785   0.4424214  0.44138938]
+2025-07-26 00:06:25,531 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-26 00:06:25,531 - OpenIssueBot - INFO - 转换后的相似度分数: [0.7868819  0.75975156 0.7388925  0.7212107  0.72069466]
+2025-07-26 00:06:25,532 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-26 00:06:25,533 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-26 00:06:25,533 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-26 00:06:25,535 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-26 00:06:25,535 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2297634637, 'number': 4025, 'title': '本地部署模型，启动error，Register to controller报错socket.gaierror: Name or service not known', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-
+2025-07-26 00:06:25,535 - OpenIssueBot - INFO - 搜索完成: ES connection Error with unexpected keyword argume... -> 5 个结果
+2025-07-26 00:06:25,535 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:06:25] "POST /api/search HTTP/1.1" 200 -
+2025-07-26 00:06:25,843 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 1064，提供商: zhipu
+2025-07-26 00:06:31,800 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1165
+2025-07-26 00:06:31,801 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:06:31] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-26 00:06:35,082 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:06:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:06:54,643 - OpenIssueBot - INFO - 开始搜索: ES connection Error with unexpected keyword argument 'host'...
+2025-07-26 00:06:54,650 - OpenIssueBot - INFO - 原始FAISS分数: [0.57376385 0.51950306 0.477785   0.4424214  0.44138938]
+2025-07-26 00:06:54,652 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-26 00:06:54,652 - OpenIssueBot - INFO - 转换后的相似度分数: [0.7868819  0.75975156 0.7388925  0.7212107  0.72069466]
+2025-07-26 00:06:54,652 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-26 00:06:54,654 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-26 00:06:54,655 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-26 00:06:54,655 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 10
+2025-07-26 00:06:54,655 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2031764542, 'number': 2318, 'title': '已开vpn，浏览器能访问openai接口，但是选择LLM模型为openai-api的时候聊天报错openai.APIConnectionError: Connection error.', 'state': 'closed', 'url': 'https://github.com/chatchat-space
+2025-07-26 00:06:54,655 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.697 < 阈值0.7
+2025-07-26 00:06:54,655 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.691 < 阈值0.7
+2025-07-26 00:06:54,655 - OpenIssueBot - INFO - 结果被召回阈值过滤: 相似度0.687 < 阈值0.7
+2025-07-26 00:06:54,656 - OpenIssueBot - INFO - 搜索完成: ES connection Error with unexpected keyword argume... -> 10 个结果
+2025-07-26 00:06:54,656 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:06:54] "POST /api/search HTTP/1.1" 200 -
+2025-07-26 00:06:54,895 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 1118，提供商: zhipu
+2025-07-26 00:06:59,172 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1018
+2025-07-26 00:06:59,173 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:06:59] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-26 00:07:05,264 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:07:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:07:37,370 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:07:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:09:40,070 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:09:40] "GET /search HTTP/1.1" 200 -
+2025-07-26 00:09:40,093 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:09:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-26 00:09:40,396 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:09:40] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-26 00:09:40,747 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:09:40] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-26 00:09:42,317 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:09:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-26 00:09:44,182 - werkzeug - INFO - 127.0.0.1 - - [26/Jul/2025 00:09:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:24:41,989 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:24:41,990 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:24:41,990 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:24:42,112 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:24:42,289 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 21:24:42,307 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 21:24:42,307 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 21:24:52,833 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:24:52] "GET / HTTP/1.1" 200 -
+2025-07-28 21:24:53,059 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:24:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:24:53,068 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:24:53] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:24:53,203 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:24:53,203 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:24:53,318 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:24:53,319 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:24:53,707 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:24:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-28 21:24:58,352 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-28 21:25:03,367 - OpenIssueBot - ERROR - 加载本地模型失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: 5b9421a3-9268-40e8-8592-614de4081eab)')
+2025-07-28 21:25:03,368 - OpenIssueBot - ERROR - 创建搜索引擎失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: 5b9421a3-9268-40e8-8592-614de4081eab)')
+2025-07-28 21:25:03,368 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:03] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-28 21:25:03,372 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:03,372 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:03,377 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:25:03,377 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:07,501 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:07] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:25:07,530 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:25:07,531 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:07] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:25:08,407 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-28 21:25:10,371 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:13,208 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:13,209 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:13,214 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:25:13,214 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:13,412 - OpenIssueBot - ERROR - 加载本地模型失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: 10553047-3f4d-4f76-a625-4233c5d41d67)')
+2025-07-28 21:25:13,412 - OpenIssueBot - ERROR - 创建搜索引擎失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: 10553047-3f4d-4f76-a625-4233c5d41d67)')
+2025-07-28 21:25:13,412 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:13] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-28 21:25:13,415 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:13,416 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:13,420 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:25:13,420 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:15,398 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/repos/chatchat-space/Langchain-Chatchat, 错误: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/chatchat-space/Langchain-Chatchat (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-07-28 21:25:15,398 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:15] "[31m[1mPOST /api/test-github HTTP/1.1[0m" 400 -
+2025-07-28 21:25:18,219 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-28 21:25:18,439 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-28 21:25:23,224 - OpenIssueBot - ERROR - 加载本地模型失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: 81368e6c-5ceb-4b2a-86ab-c476a6ab4541)')
+2025-07-28 21:25:23,224 - OpenIssueBot - ERROR - 创建搜索引擎失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: 81368e6c-5ceb-4b2a-86ab-c476a6ab4541)')
+2025-07-28 21:25:23,224 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:23] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-28 21:25:23,457 - OpenIssueBot - ERROR - 加载本地模型失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: c1dab5a1-7b26-42af-9dec-8b641114f979)')
+2025-07-28 21:25:23,458 - OpenIssueBot - ERROR - 创建搜索引擎失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: c1dab5a1-7b26-42af-9dec-8b641114f979)')
+2025-07-28 21:25:23,459 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:23] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-28 21:25:23,462 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:23,462 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:23,466 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:25:23,466 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:28,494 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-28 21:25:33,518 - OpenIssueBot - ERROR - 加载本地模型失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: b5a9fcd9-8ac7-4b4f-b6e9-ac64c8d1b61e)')
+2025-07-28 21:25:33,518 - OpenIssueBot - ERROR - 创建搜索引擎失败: (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/config.json (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))"), '(Request ID: b5a9fcd9-8ac7-4b4f-b6e9-ac64c8d1b61e)')
+2025-07-28 21:25:33,519 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:33] "[35m[1mGET /api/stats HTTP/1.1[0m" 500 -
+2025-07-28 21:25:39,909 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:39,910 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:39,919 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:25:39,919 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:25:40,864 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:42,912 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:42] "POST /api/test-github HTTP/1.1" 200 -
+2025-07-28 21:25:43,829 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:43] "GET /api/config HTTP/1.1" 200 -
+2025-07-28 21:25:50,343 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 21:25:50,343 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 21:25:50,343 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 21:25:50,344 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 21:25:50,344 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-28 21:25:50,344 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:25:50,344 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-28 21:25:50,863 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:50] "GET /api/config HTTP/1.1" 200 -
+2025-07-28 21:25:54,319 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:25:55,351 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:55] "GET / HTTP/1.1" 200 -
+2025-07-28 21:25:55,377 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:25:55,379 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:55] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:25:59,057 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:25:59] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:02,582 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=False)
+2025-07-28 21:26:02,582 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 21:26:02,589 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-28 21:26:02,734 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-28 21:26:02,735 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-28 21:26:02,735 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:02] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 21:26:04,005 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:09,214 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:13,427 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:17,753 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:21,841 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:21] "GET / HTTP/1.1" 200 -
+2025-07-28 21:26:24,714 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:24] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:26:24,742 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:26:24,742 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:24] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:26:32,801 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:32] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:36,033 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:37,576 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:37] "POST /api/test-llm HTTP/1.1" 200 -
+2025-07-28 21:26:47,131 - OpenIssueBot - INFO - 配置已重新加载
+2025-07-28 21:26:47,132 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:47] "POST /api/config HTTP/1.1" 200 -
+2025-07-28 21:26:47,141 - OpenIssueBot - INFO - 配置已重新加载
+2025-07-28 21:26:47,141 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:47] "POST /api/config HTTP/1.1" 200 -
+2025-07-28 21:26:52,121 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:52] "GET /api/config HTTP/1.1" 200 -
+2025-07-28 21:26:53,643 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:53] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:26:53,663 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:26:53,664 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:53] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:26:56,461 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:26:58,061 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:26:59,464 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:26:59] "POST /api/test-github HTTP/1.1" 200 -
+2025-07-28 21:27:01,467 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:01] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:27:03,427 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:03] "GET / HTTP/1.1" 200 -
+2025-07-28 21:27:03,456 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:27:03,457 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:03] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:27:05,770 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:05] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:27:10,613 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:27:12,396 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:12] "GET /search HTTP/1.1" 200 -
+2025-07-28 21:27:12,422 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:27:12,422 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:12] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:27:13,940 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:27:15,997 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:27:17,711 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:27:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:28:54,040 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:28:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:29:05,118 - OpenIssueBot - INFO - 开始搜索: chatchat能支持多线程并发吗...
+2025-07-28 21:29:10,782 - OpenIssueBot - INFO - 原始FAISS分数: [0.9066846  0.83640975 0.80795914 0.7924073  0.7713311 ]
+2025-07-28 21:29:10,783 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 21:29:10,783 - OpenIssueBot - INFO - 转换后的相似度分数: [0.9533423  0.9182049  0.90397954 0.89620364 0.88566554]
+2025-07-28 21:29:10,783 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-28 21:29:10,784 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-28 21:29:10,784 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-28 21:29:10,786 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-28 21:29:10,786 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2348159305, 'number': 4174, 'title': 'chatchat 未找到相关文档,该回答为大模型自身能力解答!', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4174', 'created_at': '2024-06-12 0
+2025-07-28 21:29:10,786 - OpenIssueBot - INFO - 搜索完成: chatchat能支持多线程并发吗... -> 5 个结果
+2025-07-28 21:29:10,786 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:29:10] "POST /api/search HTTP/1.1" 200 -
+2025-07-28 21:29:10,794 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 21:29:10,794 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 21:29:10,794 - OpenIssueBot - INFO - LLM服务初始化成功，使用提供商: zhipu
+2025-07-28 21:29:10,795 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 876，提供商: zhipu
+2025-07-28 21:29:23,709 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:29:23] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:29:26,970 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1130
+2025-07-28 21:29:26,970 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:29:26] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-28 21:29:49,456 - OpenIssueBot - INFO - 开始搜索: chatchat能支持多线程并发吗...
+2025-07-28 21:29:49,467 - OpenIssueBot - INFO - 原始FAISS分数: [0.9066846  0.83640975 0.80795914 0.7924073  0.7713311 ]
+2025-07-28 21:29:49,467 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 21:29:49,467 - OpenIssueBot - INFO - 转换后的相似度分数: [0.9533423  0.9182049  0.90397954 0.89620364 0.88566554]
+2025-07-28 21:29:49,468 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-28 21:29:49,470 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-28 21:29:49,470 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-28 21:29:49,470 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 10
+2025-07-28 21:29:49,470 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2348159305, 'number': 4174, 'title': 'chatchat 未找到相关文档,该回答为大模型自身能力解答!', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4174', 'created_at': '2024-06-12 0
+2025-07-28 21:29:49,471 - OpenIssueBot - INFO - 搜索完成: chatchat能支持多线程并发吗... -> 10 个结果
+2025-07-28 21:29:49,471 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:29:49] "POST /api/search HTTP/1.1" 200 -
+2025-07-28 21:29:49,481 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 975，提供商: zhipu
+2025-07-28 21:29:53,797 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:29:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:30:02,811 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1097
+2025-07-28 21:30:02,811 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:02] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-28 21:30:19,212 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:30:35,705 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:30:44,210 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:30:49,003 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:49] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:30:49,034 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:30:49,036 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:49] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:30:52,531 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:30:54,429 - OpenIssueBot - INFO - 智谱AI嵌入模型测试 - API Key长度: 49
+2025-07-28 21:30:54,429 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 21:30:54,783 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:54] "POST /api/test-embedding HTTP/1.1" 200 -
+2025-07-28 21:30:57,549 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:30:57] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:02,715 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:02] "GET / HTTP/1.1" 200 -
+2025-07-28 21:31:02,740 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:31:02,744 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:02] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:31:06,393 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:11,199 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:11] "GET / HTTP/1.1" 200 -
+2025-07-28 21:31:11,219 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:31:11,219 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:11] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:31:13,312 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:13,493 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:18,319 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:19,475 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:19] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:31:19,500 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:31:19,501 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:19] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:31:20,351 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:22,636 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:27,667 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:27] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:32,451 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:32] "GET / HTTP/1.1" 200 -
+2025-07-28 21:31:32,473 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:31:32,476 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:32] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:31:35,347 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:37,768 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:31:42,774 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:31:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:32:08,829 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:32:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:32:32,966 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:32:32] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:33:10,111 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:33:10] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:35:32,768 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:35:32] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:37:17,642 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:37:17,643 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:37:17,643 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:37:17,662 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:37:17,818 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 21:37:17,841 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 21:37:17,841 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 21:37:30,502 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:37:30] "GET /?ide_webview_request_time=1753709848556 HTTP/1.1" 200 -
+2025-07-28 21:37:30,517 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:37:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-28 21:37:30,517 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:37:30] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-28 21:37:33,002 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:37:33] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 21:37:34,940 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:37:34] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:37:36,911 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:37:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:37:38,965 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:37:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:03,226 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:03] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:08,785 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:08] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:38:11,081 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:23,451 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:38:23,452 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:38:23,452 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:38:23,471 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:38:23,612 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 21:38:23,631 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 21:38:23,631 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 21:38:32,010 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:32] "GET / HTTP/1.1" 200 -
+2025-07-28 21:38:32,031 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:38:32,033 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:32] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:38:35,784 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:39,136 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:39] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:40,442 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:40] "GET /search HTTP/1.1" 200 -
+2025-07-28 21:38:41,345 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:41] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:38:41,367 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:41,373 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:38:41,378 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:41] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:38:44,454 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:38:46,658 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:46] "POST /api/test-github HTTP/1.1" 200 -
+2025-07-28 21:38:47,260 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:49,267 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:38:52,060 - OpenIssueBot - INFO - 智谱AI嵌入模型测试 - API Key长度: 49
+2025-07-28 21:38:52,061 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 21:38:52,388 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:52] "POST /api/test-embedding HTTP/1.1" 200 -
+2025-07-28 21:38:53,697 - OpenIssueBot - INFO - 配置已重新加载
+2025-07-28 21:38:53,706 - OpenIssueBot - INFO - 配置已重新加载
+2025-07-28 21:38:53,706 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:53] "POST /api/config HTTP/1.1" 200 -
+2025-07-28 21:38:53,708 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:53] "POST /api/config HTTP/1.1" 200 -
+2025-07-28 21:38:55,916 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:38:55] "GET /api/config HTTP/1.1" 200 -
+2025-07-28 21:39:01,551 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:01] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:39:01,568 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:39:01,569 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:01] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:39:02,138 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:02] "GET /config HTTP/1.1" 200 -
+2025-07-28 21:39:08,060 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:08,962 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:08] "GET / HTTP/1.1" 200 -
+2025-07-28 21:39:08,988 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:39:08,992 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:08] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:39:12,227 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:14,064 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:14] "GET / HTTP/1.1" 200 -
+2025-07-28 21:39:14,085 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:39:14,085 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:14] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:39:17,229 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:21,120 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:23,750 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:23] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:26,150 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:52,615 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:52] "GET /search HTTP/1.1" 200 -
+2025-07-28 21:39:52,647 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:39:52,648 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:52] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:39:53,146 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:55,410 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:39:57,572 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:39:57] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:40:10,610 - OpenIssueBot - INFO - 开始搜索: 多线程使用chatchat...
+2025-07-28 21:40:10,619 - OpenIssueBot - INFO - 原始FAISS分数: [0.8838946  0.81720555 0.7910675  0.7832401  0.78200257]
+2025-07-28 21:40:10,624 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 21:40:10,624 - OpenIssueBot - INFO - 转换后的相似度分数: [0.94194734 0.9086028  0.89553374 0.89162004 0.8910013 ]
+2025-07-28 21:40:10,624 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-28 21:40:10,627 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-28 21:40:10,627 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-28 21:40:10,627 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 10
+2025-07-28 21:40:10,627 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2348159305, 'number': 4174, 'title': 'chatchat 未找到相关文档,该回答为大模型自身能力解答!', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4174', 'created_at': '2024-06-12 0
+2025-07-28 21:40:10,628 - OpenIssueBot - INFO - 搜索完成: 多线程使用chatchat... -> 10 个结果
+2025-07-28 21:40:10,628 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:40:10] "POST /api/search HTTP/1.1" 200 -
+2025-07-28 21:40:10,635 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 1008，提供商: zhipu
+2025-07-28 21:40:21,620 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:40:21] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:40:29,534 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1361
+2025-07-28 21:40:29,535 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:40:29] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-28 21:40:33,593 - OpenIssueBot - INFO - 开始搜索: 多线程使用chatchat...
+2025-07-28 21:40:33,604 - OpenIssueBot - INFO - 原始FAISS分数: [0.8838946  0.81720555 0.7910675  0.7832401  0.78200257]
+2025-07-28 21:40:33,606 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 21:40:33,606 - OpenIssueBot - INFO - 转换后的相似度分数: [0.94194734 0.9086028  0.89553374 0.89162004 0.8910013 ]
+2025-07-28 21:40:33,606 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-28 21:40:33,607 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-28 21:40:33,607 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-28 21:40:33,607 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 10
+2025-07-28 21:40:33,607 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2348159305, 'number': 4174, 'title': 'chatchat 未找到相关文档,该回答为大模型自身能力解答!', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4174', 'created_at': '2024-06-12 0
+2025-07-28 21:40:33,608 - OpenIssueBot - INFO - 搜索完成: 多线程使用chatchat... -> 10 个结果
+2025-07-28 21:40:33,608 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:40:33] "POST /api/search HTTP/1.1" 200 -
+2025-07-28 21:40:33,614 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 1008，提供商: zhipu
+2025-07-28 21:40:52,170 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:40:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:40:58,985 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1551
+2025-07-28 21:40:58,985 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:40:58] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-28 21:41:02,215 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:02] "GET / HTTP/1.1" 200 -
+2025-07-28 21:41:02,252 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:41:02,253 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:02] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:41:04,285 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:41:06,716 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:41:12,643 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:41:43,856 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:41:43,857 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:41:43,857 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:41:43,880 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:41:44,040 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 21:41:44,063 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 21:41:44,063 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 21:41:48,130 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:48] "GET / HTTP/1.1" 200 -
+2025-07-28 21:41:48,384 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:41:48,388 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:48] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:41:48,464 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:41:48,464 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:41:48,491 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:41:48,492 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:41:53,497 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-28 21:41:56,509 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 21:41:56,510 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 21:41:56,510 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 21:41:56,510 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 21:41:56,510 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-28 21:41:56,510 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:41:56,510 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-28 21:41:56,791 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=False)
+2025-07-28 21:41:56,791 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 21:41:56,794 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-28 21:41:56,901 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-28 21:41:56,902 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-28 21:41:56,902 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:56] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 21:41:58,871 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:41:58] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:01,083 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:01] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:03,964 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=False)
+2025-07-28 21:42:03,964 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 21:42:03,969 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-28 21:42:04,305 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-28 21:42:04,305 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-28 21:42:04,306 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:04] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 21:42:12,260 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:15,170 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:18,755 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:20,612 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:23,610 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:23] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:36,382 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:39,529 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:39] "GET /search HTTP/1.1" 200 -
+2025-07-28 21:42:39,562 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:42:39,563 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:39] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:42:42,536 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:44,815 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:42:46,439 - OpenIssueBot - INFO - 开始搜索: 多线程使用chatchat...
+2025-07-28 21:42:51,504 - OpenIssueBot - INFO - 原始FAISS分数: [0.8838946  0.81720555 0.7910675  0.7832401  0.78200257]
+2025-07-28 21:42:51,504 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 21:42:51,505 - OpenIssueBot - INFO - 转换后的相似度分数: [0.94194734 0.9086028  0.89553374 0.89162004 0.8910013 ]
+2025-07-28 21:42:51,505 - OpenIssueBot - INFO - 搜索完成，返回 10 个结果
+2025-07-28 21:42:51,506 - OpenIssueBot - INFO - 搜索完成，找到 5 个相关结果
+2025-07-28 21:42:51,506 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp']
+2025-07-28 21:42:51,507 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 5
+2025-07-28 21:42:51,507 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2348159305, 'number': 4174, 'title': 'chatchat 未找到相关文档,该回答为大模型自身能力解答!', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/4174', 'created_at': '2024-06-12 0
+2025-07-28 21:42:51,507 - OpenIssueBot - INFO - 搜索完成: 多线程使用chatchat... -> 5 个结果
+2025-07-28 21:42:51,508 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:42:51] "POST /api/search HTTP/1.1" 200 -
+2025-07-28 21:42:51,514 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 21:42:51,514 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 21:42:51,514 - OpenIssueBot - INFO - LLM服务初始化成功，使用提供商: zhipu
+2025-07-28 21:42:51,515 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 899，提供商: zhipu
+2025-07-28 21:43:11,347 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1326
+2025-07-28 21:43:11,348 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:11] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-28 21:43:14,320 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:43:20,507 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:20] "GET / HTTP/1.1" 200 -
+2025-07-28 21:43:20,545 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:43:20,546 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:20] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:43:22,792 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:22] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:43:26,279 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:26] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:43:29,260 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:43:29] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:48:43,337 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:48:43] "GET /?ide_webview_request_time=1753710520040 HTTP/1.1" 200 -
+2025-07-28 21:48:43,351 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:48:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:48:43,352 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:48:43] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:48:43,512 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:48:43] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 21:48:49,208 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:48:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:48:51,023 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:48:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:48:52,876 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:48:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:49:15,992 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:49:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:49:33,264 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=False)
+2025-07-28 21:49:33,265 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 21:49:33,272 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-28 21:49:33,379 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-28 21:49:33,379 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-28 21:49:33,380 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:49:33] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 21:49:35,245 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:49:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:49:43,847 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=False)
+2025-07-28 21:49:43,847 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 21:49:43,852 - OpenIssueBot - INFO - 索引已从 ./data/cache\index_chatchat-space_Langchain-Chatchat 加载，包含 2000 个向量
+2025-07-28 21:49:43,959 - OpenIssueBot - INFO - 成功加载缓存索引，包含 2000 个Issues
+2025-07-28 21:49:43,959 - OpenIssueBot - INFO - 成功加载缓存的索引
+2025-07-28 21:49:43,960 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:49:43] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 21:49:45,225 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:49:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:50:06,236 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:50:06,237 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:50:06,237 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:50:06,257 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:52:14,158 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:52:14,159 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:52:14,159 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:52:14,179 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:52:14,329 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 21:52:14,352 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 21:52:14,352 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 21:52:19,788 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:52:19] "GET / HTTP/1.1" 200 -
+2025-07-28 21:52:20,018 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:52:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:52:20,020 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:52:20] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:52:20,108 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:52:20,108 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:52:20,142 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:52:20,143 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:52:30,467 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:52:30,467 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:52:30,471 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:52:30,472 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:52:35,351 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 21:52:35,352 - OpenIssueBot - WARNING - LLM分析器初始化失败: 'str' object has no attribute 'OPENAI_MODEL'
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 21:52:35,352 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 21:52:35,353 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-28 21:52:37,705 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-28 21:52:39,432 - OpenIssueBot - INFO - 获取第 2 页，共 100 个Issues
+2025-07-28 21:52:41,411 - OpenIssueBot - INFO - 获取第 3 页，共 100 个Issues
+2025-07-28 21:52:42,094 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:52:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:52:42,366 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:52:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:55:34,415 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:55:34,417 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:55:34,417 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:55:34,436 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:56:48,077 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:56:48,078 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:56:48,078 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:56:48,098 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:56:48,230 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 21:56:48,250 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 21:56:48,250 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 21:56:52,620 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:56:52] "GET / HTTP/1.1" 200 -
+2025-07-28 21:56:52,827 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:56:52] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:56:52,833 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:56:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:56:52,943 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:56:52,943 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:56:52,967 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:56:52,969 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:56:58,257 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:56:58,257 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 21:56:58,262 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 21:56:58,262 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 21:56:58,379 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 21:56:58,380 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 21:56:58,380 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 21:56:58,380 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 21:56:58,381 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 21:56:58,381 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 21:56:58,381 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:56:58,381 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-28 21:57:00,250 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:57:00] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:57:02,277 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:57:02] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:57:03,268 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-28 21:57:05,264 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - 搜索引擎实例创建成功
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 21:57:05,265 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-28 21:57:07,270 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:57:07] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:57:08,933 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-28 21:59:13,414 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:59:13,414 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:59:13,414 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:59:13,433 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:59:36,428 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 21:59:36,429 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 21:59:36,429 - faiss.loader - INFO - Loading faiss.
+2025-07-28 21:59:36,446 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 21:59:36,586 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 21:59:36,614 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 21:59:36,614 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 21:59:48,348 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:59:48] "GET /?ide_webview_request_time=1753711185943 HTTP/1.1" 200 -
+2025-07-28 21:59:48,581 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:59:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 21:59:48,588 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:59:48] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 21:59:48,664 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:59:48,664 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: all-MiniLM-L6-v2
+2025-07-28 21:59:48,664 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 21:59:48,664 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 1024, 类型: flat
+2025-07-28 21:59:48,664 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 21:59:48,665 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 21:59:48,665 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 21:59:48,665 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 21:59:48,665 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 21:59:48,675 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:59:48] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 21:59:54,156 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:59:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:59:55,796 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:59:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 21:59:56,356 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 21:59:56] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:00:02,335 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:02] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:00:27,358 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:00:27,359 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:00:27,359 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:00:27,380 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:00:27,540 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:00:27,560 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:00:27,561 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:00:28,482 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:00:28,482 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: all-MiniLM-L6-v2
+2025-07-28 22:00:28,482 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:00:28,483 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 1024, 类型: flat
+2025-07-28 22:00:28,483 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:00:28,483 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:00:28,484 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:00:28,484 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:00:28,484 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:00:31,487 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:31] "GET /?ide_webview_request_time=1753711228558 HTTP/1.1" 200 -
+2025-07-28 22:00:31,625 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:31] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-07-28 22:00:31,803 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:31] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-07-28 22:00:32,134 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:32] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:00:35,219 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:35] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:00:37,129 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:37] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:00:42,930 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:42] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:00:46,889 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:00:55,769 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:00:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:00:56,568 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:00:56,568 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:00:56,568 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:00:56,569 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-28 22:01:01,045 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-28 22:01:03,340 - OpenIssueBot - INFO - 获取第 2 页，共 100 个Issues
+2025-07-28 22:01:04,534 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:01:05,430 - OpenIssueBot - INFO - 获取第 3 页，共 100 个Issues
+2025-07-28 22:01:07,087 - OpenIssueBot - INFO - 获取第 4 页，共 100 个Issues
+2025-07-28 22:01:10,261 - OpenIssueBot - INFO - 获取第 5 页，共 100 个Issues
+2025-07-28 22:01:11,937 - OpenIssueBot - INFO - 获取第 6 页，共 100 个Issues
+2025-07-28 22:01:13,602 - OpenIssueBot - INFO - 获取第 7 页，共 100 个Issues
+2025-07-28 22:01:15,370 - OpenIssueBot - INFO - 获取第 8 页，共 100 个Issues
+2025-07-28 22:01:19,622 - OpenIssueBot - INFO - 获取第 9 页，共 100 个Issues
+2025-07-28 22:01:20,637 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:20] "GET /config HTTP/1.1" 200 -
+2025-07-28 22:01:20,670 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:01:20,671 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:20] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:01:23,520 - OpenIssueBot - INFO - 获取第 10 页，共 100 个Issues
+2025-07-28 22:01:25,844 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:25] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:01:28,539 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:28] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:01:28,644 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 错误: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/chatchat-space/Langchain-Chatchat/issues?state=all&per_page=100&page=11&sort=updated&direction=desc (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-07-28 22:01:28,644 - OpenIssueBot - INFO - 总共获取 1000 个Issues
+2025-07-28 22:01:28,746 - OpenIssueBot - INFO - 数据已缓存: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:01:28,746 - OpenIssueBot - INFO - 开始构建索引，共 1000 个Issues
+2025-07-28 22:01:28,749 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:01:29,015 - OpenIssueBot - ERROR - 智谱AI嵌入计算失败: 智谱AI API调用失败: {"error":{"code":"1211","message":"模型不存在，请检查模型代码。"}}
+2025-07-28 22:01:29,015 - OpenIssueBot - ERROR - 构建索引失败: 智谱AI API调用失败: {"error":{"code":"1211","message":"模型不存在，请检查模型代码。"}}
+2025-07-28 22:01:29,016 - OpenIssueBot - ERROR - 索引构建失败
+2025-07-28 22:01:29,017 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:29] "[35m[1mPOST /api/initialize HTTP/1.1[0m" 500 -
+2025-07-28 22:01:36,837 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:01:55,842 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:01:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:02:09,333 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:02:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:02:23,172 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:02:23] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:02:36,497 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:02:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:02:53,080 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:02:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:06,055 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:34,565 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:03:34,566 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:03:34,566 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:03:34,585 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:03:34,734 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:03:34,753 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:03:34,754 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:03:35,166 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:03:35,166 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 1024, 类型: flat
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:03:35,167 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:03:41,144 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:41,963 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:41] "GET /?ide_webview_request_time=1753711414850 HTTP/1.1" 200 -
+2025-07-28 22:03:42,082 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:03:42,272 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:42] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:03:42,618 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:42] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:03:44,480 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:48,550 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:48] "GET /?ide_webview_request_time=1753711425333 HTTP/1.1" 200 -
+2025-07-28 22:03:48,561 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:03:48,563 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:48] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:03:48,681 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:48] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:03:49,500 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:51,378 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:53,015 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:54,322 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:03:57,946 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:03:57] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:04:35,676 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:04:35,676 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:04:35,677 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:04:35,699 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:04:35,860 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:04:35,884 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:04:35,884 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:04:39,029 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 1024, 类型: flat
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:04:39,030 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:04:42,245 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:42] "GET /?ide_webview_request_time=1753711479086 HTTP/1.1" 200 -
+2025-07-28 22:04:42,407 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:04:42,560 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:42] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:04:42,887 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:42] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:04:45,099 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:04:45,193 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:04:51,079 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:04:52,571 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:52] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:04:53,160 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:04:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:05:15,231 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:05:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:05:16,310 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:05:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:05:18,038 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:05:18,038 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:05:18,038 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:05:18,089 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:05:18,089 - OpenIssueBot - INFO - 开始构建索引，共 1000 个Issues
+2025-07-28 22:05:18,092 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:05:18,577 - OpenIssueBot - ERROR - 智谱AI嵌入计算失败: 智谱AI API调用失败: {"error":{"code":"1210","message":"API 调用参数有误，请检查文档。Request Entity Too Large"}}
+2025-07-28 22:05:18,577 - OpenIssueBot - ERROR - 构建索引失败: 智谱AI API调用失败: {"error":{"code":"1210","message":"API 调用参数有误，请检查文档。Request Entity Too Large"}}
+2025-07-28 22:05:18,578 - OpenIssueBot - ERROR - 索引构建失败
+2025-07-28 22:05:18,583 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:05:18] "[35m[1mPOST /api/initialize HTTP/1.1[0m" 500 -
+2025-07-28 22:05:31,551 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:05:31,551 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:05:31,551 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:05:31,596 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:05:31,596 - OpenIssueBot - INFO - 开始构建索引，共 1000 个Issues
+2025-07-28 22:05:31,598 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:05:32,120 - OpenIssueBot - ERROR - 智谱AI嵌入计算失败: 智谱AI API调用失败: {"error":{"code":"1210","message":"API 调用参数有误，请检查文档。Request Entity Too Large"}}
+2025-07-28 22:05:32,120 - OpenIssueBot - ERROR - 构建索引失败: 智谱AI API调用失败: {"error":{"code":"1210","message":"API 调用参数有误，请检查文档。Request Entity Too Large"}}
+2025-07-28 22:05:32,121 - OpenIssueBot - ERROR - 索引构建失败
+2025-07-28 22:05:32,124 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:05:32] "[35m[1mPOST /api/initialize HTTP/1.1[0m" 500 -
+2025-07-28 22:05:45,060 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:05:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:05:45,524 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:05:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:06:15,843 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:06:18,403 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:06:48,109 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:06:48,110 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:06:48,110 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:06:48,128 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:06:48,272 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:06:48,290 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:06:48,290 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:06:51,980 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:06:51,980 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:06:51,980 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:06:51,980 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:06:51,980 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 1024, 类型: flat
+2025-07-28 22:06:51,980 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:06:51,981 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:06:51,981 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:06:51,981 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:06:51,981 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:06:54,390 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:54] "GET /?ide_webview_request_time=1753711611670 HTTP/1.1" 200 -
+2025-07-28 22:06:54,508 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:06:54,688 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:06:54,709 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:54] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:06:55,022 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:55] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:06:58,606 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:58] "GET /?ide_webview_request_time=1753711616642 HTTP/1.1" 200 -
+2025-07-28 22:06:58,615 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:06:58,617 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:58] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:06:58,737 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:06:58] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:07:00,949 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:00] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:07:01,215 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:01] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:07:02,799 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:07:02,799 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:07:02,799 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:07:02,844 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:07:02,844 - OpenIssueBot - INFO - 开始构建索引，共 1000 个Issues
+2025-07-28 22:07:02,848 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:07:04,565 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:07:06,381 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:07:09,727 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:07:14,701 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:07:32,242 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:32] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:07:47,676 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:07:47] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:08:03,726 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:08:03] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:08:15,472 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:08:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:08:21,960 - OpenIssueBot - ERROR - 添加向量到索引失败: 向量维度不匹配: 期望 1024, 实际 2048
+2025-07-28 22:08:21,960 - OpenIssueBot - ERROR - 构建索引失败: 向量维度不匹配: 期望 1024, 实际 2048
+2025-07-28 22:08:21,962 - OpenIssueBot - ERROR - 索引构建失败
+2025-07-28 22:08:21,965 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:08:21] "[35m[1mPOST /api/initialize HTTP/1.1[0m" 500 -
+2025-07-28 22:08:31,168 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:08:31] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:08:48,442 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:08:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:09:01,069 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:09:01] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:09:14,514 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:09:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:09:33,740 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:09:33] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:01,049 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:10:01,049 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:10:01,050 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:10:01,068 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:10:01,213 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:10:01,234 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:10:01,234 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:10:04,023 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:10:04,024 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:10:04,024 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:10:04,024 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:10:04,024 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 2048, 类型: flat
+2025-07-28 22:10:04,024 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:10:04,024 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:10:04,025 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:10:04,025 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:10:04,025 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:10:06,559 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:06] "GET /?ide_webview_request_time=1753711804056 HTTP/1.1" 200 -
+2025-07-28 22:10:06,685 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:10:06,876 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:06] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:10:06,918 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:07,203 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:07] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:10:09,439 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:12,000 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:12] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:14,387 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:15,898 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:15] "GET /?ide_webview_request_time=1753711813149 HTTP/1.1" 200 -
+2025-07-28 22:10:15,914 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:10:15,917 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:15] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:10:16,030 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:16] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:10:18,244 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:19,431 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:19,657 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:10:19,657 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:10:19,657 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:10:19,702 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:10:19,702 - OpenIssueBot - INFO - 开始构建索引，共 1000 个Issues
+2025-07-28 22:10:19,705 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:10:20,488 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:20] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:24,723 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:24] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:46,878 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:46] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:10:48,099 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:10:48] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:11:15,437 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:11:15] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:11:17,640 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:11:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:11:41,177 - OpenIssueBot - INFO - 成功添加 1000 个向量到索引
+2025-07-28 22:11:41,178 - OpenIssueBot - INFO - 索引构建完成，包含 1000 个Issues
+2025-07-28 22:11:41,189 - OpenIssueBot - INFO - 索引已保存到: ./data/cache\index_chatchat-space_Langchain-Chatchat
+2025-07-28 22:11:41,303 - OpenIssueBot - INFO - 索引缓存保存成功
+2025-07-28 22:11:41,304 - OpenIssueBot - INFO - 索引构建并缓存成功
+2025-07-28 22:11:41,304 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:11:41] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 22:11:43,709 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:11:43] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:11:44,346 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:11:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:11:51,020 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:11:51] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:12:14,509 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:12:18,088 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:12:32,685 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:32] "GET /search HTTP/1.1" 200 -
+2025-07-28 22:12:32,703 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:12:32,705 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:32] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:12:32,751 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:32] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:12:36,269 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:12:41,274 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:12:41] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:12:45,502 - OpenIssueBot - INFO - 开始搜索: chatchat多线程... (相似度阈值: 0.3)
+2025-07-28 22:12:45,721 - OpenIssueBot - INFO - 原始FAISS分数: [0.6565637  0.61068845 0.5996461  0.5699129  0.5596919 ]
+2025-07-28 22:12:45,721 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 22:12:45,722 - OpenIssueBot - INFO - 转换后的相似度分数: [0.93253225 0.9200299  0.9167193  0.90717775 0.9036772 ]
+2025-07-28 22:12:45,722 - OpenIssueBot - INFO - 搜索完成，返回 40 个结果
+2025-07-28 22:12:45,726 - OpenIssueBot - INFO - 提供LLM增强分析
+2025-07-28 22:12:47,529 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 11，提供商: zhipu
+2025-07-28 22:13:04,622 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:13:04] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:13:08,449 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1244
+2025-07-28 22:13:08,449 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-28 22:13:08,450 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp', 'llm_enhancement']
+2025-07-28 22:13:08,450 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 10
+2025-07-28 22:13:08,450 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2023113043, 'number': 2269, 'title': 'webui无法启动是为什么？但是Chatchat API Server启动正常', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/2269', 'created_at': '2023
+2025-07-28 22:13:08,450 - OpenIssueBot - INFO - 搜索完成: chatchat多线程... -> 10 个结果
+2025-07-28 22:13:08,451 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:13:08] "POST /api/search HTTP/1.1" 200 -
+2025-07-28 22:13:08,459 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:13:08,459 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:13:08,459 - OpenIssueBot - INFO - LLM服务初始化成功，使用提供商: zhipu
+2025-07-28 22:13:08,459 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 930，提供商: zhipu
+2025-07-28 22:13:27,904 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1278
+2025-07-28 22:13:27,904 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:13:27] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-28 22:13:38,524 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:13:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:14:06,520 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:14:06] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:14:08,702 - OpenIssueBot - INFO - 开始搜索: chatchat支持多线程吗... (相似度阈值: 0.3)
+2025-07-28 22:14:09,035 - OpenIssueBot - INFO - 原始FAISS分数: [0.67297363 0.60098505 0.56274027 0.55970293 0.55740863]
+2025-07-28 22:14:09,035 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 22:14:09,036 - OpenIssueBot - INFO - 转换后的相似度分数: [0.9365466  0.91712725 0.90473336 0.9036811  0.9028793 ]
+2025-07-28 22:14:09,036 - OpenIssueBot - INFO - 搜索完成，返回 40 个结果
+2025-07-28 22:14:09,039 - OpenIssueBot - INFO - 提供LLM增强分析
+2025-07-28 22:14:11,125 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 14，提供商: zhipu
+2025-07-28 22:14:30,769 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1171
+2025-07-28 22:14:30,769 - OpenIssueBot - INFO - 搜索完成，找到 10 个相关结果
+2025-07-28 22:14:30,769 - OpenIssueBot - INFO - 搜索原始结果类型: <class 'dict'>, 键: ['success', 'query', 'total_found', 'results', 'has_high_similarity', 'search_strategy', 'timestamp', 'llm_enhancement']
+2025-07-28 22:14:30,769 - OpenIssueBot - INFO - results字段类型: <class 'list'>, 长度: 10
+2025-07-28 22:14:30,769 - OpenIssueBot - INFO - 第一个结果类型: <class 'dict'>, 内容预览: {'id': 2023113043, 'number': 2269, 'title': 'webui无法启动是为什么？但是Chatchat API Server启动正常', 'state': 'closed', 'url': 'https://github.com/chatchat-space/Langchain-Chatchat/issues/2269', 'created_at': '2023
+2025-07-28 22:14:30,770 - OpenIssueBot - INFO - 搜索完成: chatchat支持多线程吗... -> 10 个结果
+2025-07-28 22:14:30,770 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:14:30] "POST /api/search HTTP/1.1" 200 -
+2025-07-28 22:14:30,776 - OpenIssueBot - INFO - 开始LLM分析，查询长度: 926，提供商: zhipu
+2025-07-28 22:14:36,932 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:14:36] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:14:46,765 - OpenIssueBot - INFO - LLM分析完成，使用tokens: 1133
+2025-07-28 22:14:46,766 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:14:46] "POST /api/rag_analysis HTTP/1.1" 200 -
+2025-07-28 22:14:54,594 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:14:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:15:42,025 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:15:42,025 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:15:42,025 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:15:42,071 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:15:42,072 - OpenIssueBot - INFO - 开始构建索引，共 1000 个Issues
+2025-07-28 22:15:42,074 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:15:45,264 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:15:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:17:06,434 - OpenIssueBot - INFO - 成功添加 1000 个向量到索引
+2025-07-28 22:17:06,439 - OpenIssueBot - INFO - 索引构建完成，包含 1000 个Issues
+2025-07-28 22:17:06,453 - OpenIssueBot - INFO - 索引已保存到: ./data/cache\index_chatchat-space_Langchain-Chatchat
+2025-07-28 22:17:06,598 - OpenIssueBot - INFO - 索引缓存保存成功
+2025-07-28 22:17:06,598 - OpenIssueBot - INFO - 索引构建并缓存成功
+2025-07-28 22:17:06,598 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:17:06] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 22:17:13,213 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:17:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:19:00,104 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:19:00] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:20:26,055 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:20:26,056 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:20:26,056 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:20:26,081 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:20:26,263 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:20:26,286 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:20:26,286 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:20:40,865 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:20:40] "GET /?ide_webview_request_time=1753712426506 HTTP/1.1" 200 -
+2025-07-28 22:20:41,012 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:20:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:20:41,189 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:20:41] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:20:41,501 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:20:41,503 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:20:41,503 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:20:41,503 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:20:41,503 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 2048, 类型: flat
+2025-07-28 22:20:41,503 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:20:41,503 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:20:41,503 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:20:41,504 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:20:41,504 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:20:41,521 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:20:41] "[33mGET /@vite/client HTTP/1.1[0m" 404 -
+2025-07-28 22:20:49,091 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:20:49] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:20:53,697 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:20:53] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:20:55,843 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:20:55] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:21:13,440 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:21:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:21:42,163 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:21:42,164 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:21:42,164 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:21:42,185 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:21:45,817 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:21:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:22:11,160 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:22:11,162 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:22:11,162 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:22:11,181 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:22:11,324 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:22:11,324 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 22:22:11,366 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 22:22:11,367 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 22:22:17,560 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 22:22:17,560 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:22:17,561 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 22:22:17,561 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:22:17,561 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:22:17,561 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:22:17,561 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:22:17,561 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:22:17,562 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:22:17,562 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-28 22:22:17,882 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:22:17] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:22:21,828 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 1, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:21,828 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:21,829 - OpenIssueBot - INFO - 剩余请求次数: 4609
+2025-07-28 22:22:21,830 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:21,833 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-28 22:22:24,210 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 2, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:24,210 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:24,210 - OpenIssueBot - INFO - 剩余请求次数: 4608
+2025-07-28 22:22:24,212 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:24,214 - OpenIssueBot - INFO - 获取第 2 页，共 100 个Issues
+2025-07-28 22:22:27,407 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 3, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:27,407 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:27,407 - OpenIssueBot - INFO - 剩余请求次数: 4607
+2025-07-28 22:22:27,410 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:27,411 - OpenIssueBot - INFO - 获取第 3 页，共 100 个Issues
+2025-07-28 22:22:30,955 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 4, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:30,955 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:30,955 - OpenIssueBot - INFO - 剩余请求次数: 4606
+2025-07-28 22:22:30,959 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:30,960 - OpenIssueBot - INFO - 获取第 4 页，共 100 个Issues
+2025-07-28 22:22:32,849 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 5, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:32,849 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:32,849 - OpenIssueBot - INFO - 剩余请求次数: 4605
+2025-07-28 22:22:32,853 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:32,854 - OpenIssueBot - INFO - 获取第 5 页，共 100 个Issues
+2025-07-28 22:22:34,601 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 6, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:34,602 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:34,602 - OpenIssueBot - INFO - 剩余请求次数: 4604
+2025-07-28 22:22:34,605 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:34,606 - OpenIssueBot - INFO - 获取第 6 页，共 100 个Issues
+2025-07-28 22:22:37,857 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 7, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:37,857 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:37,859 - OpenIssueBot - INFO - 剩余请求次数: 4603
+2025-07-28 22:22:37,862 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:37,863 - OpenIssueBot - INFO - 获取第 7 页，共 100 个Issues
+2025-07-28 22:22:39,933 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 8, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:39,933 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:39,933 - OpenIssueBot - INFO - 剩余请求次数: 4602
+2025-07-28 22:22:39,936 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:39,937 - OpenIssueBot - INFO - 获取第 8 页，共 100 个Issues
+2025-07-28 22:22:41,768 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 9, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:41,768 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:41,768 - OpenIssueBot - INFO - 剩余请求次数: 4601
+2025-07-28 22:22:41,772 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:41,773 - OpenIssueBot - INFO - 获取第 9 页，共 100 个Issues
+2025-07-28 22:22:43,425 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 10, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:43,425 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:43,425 - OpenIssueBot - INFO - 剩余请求次数: 4599
+2025-07-28 22:22:43,428 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:43,430 - OpenIssueBot - INFO - 获取第 10 页，共 100 个Issues
+2025-07-28 22:22:45,522 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:22:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:22:46,820 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 11, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:46,820 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:46,820 - OpenIssueBot - INFO - 剩余请求次数: 4597
+2025-07-28 22:22:46,824 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:46,826 - OpenIssueBot - INFO - 获取第 11 页，共 100 个Issues
+2025-07-28 22:22:51,575 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 12, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:22:51,575 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:22:51,575 - OpenIssueBot - INFO - 剩余请求次数: 4596
+2025-07-28 22:22:51,577 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:22:51,579 - OpenIssueBot - INFO - 获取第 12 页，共 100 个Issues
+2025-07-28 22:22:56,683 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 错误: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/chatchat-space/Langchain-Chatchat/issues?state=all&per_page=100&page=13&sort=updated&direction=desc (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-07-28 22:22:56,683 - OpenIssueBot - INFO - 总共获取 1200 个Issues
+2025-07-28 22:22:56,801 - OpenIssueBot - INFO - 数据已缓存: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:22:56,801 - OpenIssueBot - INFO - 开始构建索引，共 1200 个Issues
+2025-07-28 22:22:56,805 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:23:02,794 - OpenIssueBot - INFO - 成功添加 1200 个向量到索引
+2025-07-28 22:23:02,795 - OpenIssueBot - INFO - 索引构建完成，包含 1200 个Issues
+2025-07-28 22:23:02,803 - OpenIssueBot - INFO - 索引已保存到: ./data/cache\index_chatchat-space_Langchain-Chatchat
+2025-07-28 22:23:02,940 - OpenIssueBot - INFO - 索引缓存保存成功
+2025-07-28 22:23:02,940 - OpenIssueBot - INFO - 索引构建并缓存成功
+2025-07-28 22:23:02,942 - OpenIssueBot - INFO - 初始化 执行时间: 45.38秒
+2025-07-28 22:23:14,158 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:23:14] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:23:44,434 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:23:44] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:23:59,144 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:23:59,146 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:23:59,146 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:23:59,165 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:23:59,302 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:23:59,319 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:23:59,320 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:24:18,110 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:18] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:24:25,977 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:25] "GET / HTTP/1.1" 200 -
+2025-07-28 22:24:25,995 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:24:26,279 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:26] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:24:27,221 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:27] "GET /api/config HTTP/1.1" 200 -
+2025-07-28 22:24:28,916 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:24:28,917 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:24:28,917 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:24:28,972 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:24:28,972 - OpenIssueBot - INFO - 开始构建索引，共 1200 个Issues
+2025-07-28 22:24:28,975 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:24:29,309 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:29] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:24:29,381 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:29] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:24:30,838 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:30] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:24:32,375 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:32] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:24:34,544 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:24:34,544 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:24:34,544 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:24:34,545 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:24:34,545 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 2048, 类型: flat
+2025-07-28 22:24:34,545 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:24:34,545 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:24:34,545 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:24:34,545 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:24:34,545 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:24:38,567 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:38] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:24:45,073 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:24:45] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:25:01,209 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:25:01,210 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:25:01,210 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:25:01,231 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:25:01,365 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:25:01,393 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:25:01,393 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-28 22:25:04,948 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:25:04,948 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:25:04,948 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:25:04,948 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:25:04,948 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 2048, 类型: flat
+2025-07-28 22:25:04,948 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:25:04,949 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:25:04,949 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:25:04,949 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:25:04,949 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: zhipu
+2025-07-28 22:25:05,616 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:05] "GET / HTTP/1.1" 200 -
+2025-07-28 22:25:05,874 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:05] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:25:05,876 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:25:07,512 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:07] "GET /?ide_webview_request_time=1753712704634 HTTP/1.1" 200 -
+2025-07-28 22:25:07,520 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:25:08,579 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:08] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:25:09,351 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:09] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:25:13,644 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:13] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:25:16,012 - OpenIssueBot - INFO - 开始初始化搜索引擎 (force_refresh=True)
+2025-07-28 22:25:16,013 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:25:16,013 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:25:16,068 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:25:16,068 - OpenIssueBot - INFO - 开始构建索引，共 1200 个Issues
+2025-07-28 22:25:16,071 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:25:16,838 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:16] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:25:19,150 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:25:19] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:26:52,311 - OpenIssueBot - INFO - 成功添加 1200 个向量到索引
+2025-07-28 22:26:52,313 - OpenIssueBot - INFO - 索引构建完成，包含 1200 个Issues
+2025-07-28 22:26:52,323 - OpenIssueBot - INFO - 索引已保存到: ./data/cache\index_chatchat-space_Langchain-Chatchat
+2025-07-28 22:26:52,476 - OpenIssueBot - INFO - 索引缓存保存成功
+2025-07-28 22:26:52,476 - OpenIssueBot - INFO - 索引构建并缓存成功
+2025-07-28 22:26:52,476 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:26:52] "POST /api/initialize HTTP/1.1" 200 -
+2025-07-28 22:26:54,425 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:26:54] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:27:11,037 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:27:11] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:27:22,334 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:27:22] "GET /search HTTP/1.1" 200 -
+2025-07-28 22:27:22,368 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:27:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-07-28 22:27:22,370 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:27:22] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-07-28 22:27:25,280 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:27:25] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:27:28,550 - werkzeug - INFO - 127.0.0.1 - - [28/Jul/2025 22:27:28] "GET /api/stats HTTP/1.1" 200 -
+2025-07-28 22:27:31,556 - OpenIssueBot - INFO - 开始搜索: chatchat支持多线程操作吗... (相似度阈值: 0.3)
+2025-07-28 22:27:31,871 - OpenIssueBot - INFO - 原始FAISS分数: [0.69823426 0.6130209  0.5980444  0.57204115 0.56264615]
+2025-07-28 22:27:31,871 - OpenIssueBot - INFO - 索引类型: flat
+2025-07-28 22:27:31,871 - OpenIssueBot - INFO - 转换后的相似度分数: [0.942293   0.9207137  0.91622883 0.9078921  0.90470093]
+2025-07-28 22:27:31,871 - OpenIssueBot - INFO - 搜索完成，返回 20 个结果
+2025-07-28 22:27:31,872 - OpenIssueBot - INFO - 提供LLM增强分析
+2025-07-28 22:27:46,665 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:27:46,666 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:27:46,666 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:27:46,684 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:27:46,816 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:27:46,817 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 22:27:46,843 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 22:27:46,843 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 22:27:55,200 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 22:27:55,200 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:27:55,200 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 22:27:55,201 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:27:55,201 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:27:55,201 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:27:55,201 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:27:55,201 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:27:55,201 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:27:55,202 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-28 22:27:57,679 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 1, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:27:57,679 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:27:57,679 - OpenIssueBot - INFO - 剩余请求次数: 4974
+2025-07-28 22:27:57,682 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:27:57,683 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-28 22:28:00,347 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 2, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:28:00,347 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:28:00,347 - OpenIssueBot - INFO - 剩余请求次数: 4973
+2025-07-28 22:28:00,350 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:28:00,351 - OpenIssueBot - INFO - 获取第 2 页，共 100 个Issues
+2025-07-28 22:28:03,220 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 3, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:28:03,220 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:28:03,220 - OpenIssueBot - INFO - 剩余请求次数: 4972
+2025-07-28 22:28:03,222 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:28:03,224 - OpenIssueBot - INFO - 获取第 3 页，共 100 个Issues
+2025-07-28 22:28:05,790 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 4, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:28:05,790 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:28:05,790 - OpenIssueBot - INFO - 剩余请求次数: 4971
+2025-07-28 22:28:05,793 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:28:05,795 - OpenIssueBot - INFO - 获取第 4 页，共 100 个Issues
+2025-07-28 22:28:07,934 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 5, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:28:07,935 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:28:07,935 - OpenIssueBot - INFO - 剩余请求次数: 4970
+2025-07-28 22:28:07,938 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:28:07,939 - OpenIssueBot - INFO - 获取第 5 页，共 100 个Issues
+2025-07-28 22:28:10,695 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 6, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:28:10,695 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:28:10,695 - OpenIssueBot - INFO - 剩余请求次数: 4969
+2025-07-28 22:28:10,697 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:28:10,699 - OpenIssueBot - INFO - 获取第 6 页，共 100 个Issues
+2025-07-28 22:28:12,540 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 7, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:28:12,540 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:28:12,540 - OpenIssueBot - INFO - 剩余请求次数: 4968
+2025-07-28 22:28:12,544 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:28:12,545 - OpenIssueBot - INFO - 获取第 7 页，共 100 个Issues
+2025-07-28 22:28:14,918 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 8, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:28:14,918 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:28:14,919 - OpenIssueBot - INFO - 剩余请求次数: 4967
+2025-07-28 22:28:14,922 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:28:14,923 - OpenIssueBot - INFO - 获取第 8 页，共 100 个Issues
+2025-07-28 22:28:20,042 - OpenIssueBot - ERROR - 请求失败: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 错误: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/chatchat-space/Langchain-Chatchat/issues?state=all&per_page=100&page=9&sort=updated&direction=desc (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:1002)')))
+2025-07-28 22:28:20,042 - OpenIssueBot - WARNING - 第 9 页请求失败，停止获取
+2025-07-28 22:28:20,042 - OpenIssueBot - INFO - 总共获取 800 个Issues
+2025-07-28 22:28:20,120 - OpenIssueBot - INFO - 数据已缓存: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:28:20,120 - OpenIssueBot - INFO - 开始构建索引，共 800 个Issues
+2025-07-28 22:28:20,121 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:28:25,435 - OpenIssueBot - INFO - 成功添加 800 个向量到索引
+2025-07-28 22:28:25,435 - OpenIssueBot - INFO - 索引构建完成，包含 800 个Issues
+2025-07-28 22:28:25,441 - OpenIssueBot - INFO - 索引已保存到: ./data/cache\index_chatchat-space_Langchain-Chatchat
+2025-07-28 22:28:25,531 - OpenIssueBot - INFO - 索引缓存保存成功
+2025-07-28 22:28:25,531 - OpenIssueBot - INFO - 索引构建并缓存成功
+2025-07-28 22:28:25,531 - OpenIssueBot - INFO - 初始化 执行时间: 30.33秒
+2025-07-28 22:35:26,306 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:35:26,307 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:35:26,307 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:35:26,325 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:35:26,459 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:35:26,459 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 22:35:26,485 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 22:35:26,485 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 22:35:33,523 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 22:35:33,523 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:35:33,523 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 22:35:33,524 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:35:33,524 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:35:33,524 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:35:33,524 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:35:33,524 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:35:33,524 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:35:33,524 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-28 22:35:39,961 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 1, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:35:39,961 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:35:39,963 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:35:39,965 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-28 22:35:45,080 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 2, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:35:45,080 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:35:45,082 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:35:45,083 - OpenIssueBot - INFO - 获取第 2 页，共 100 个Issues
+2025-07-28 22:35:47,772 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 3, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:35:47,772 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:35:47,774 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:35:47,776 - OpenIssueBot - INFO - 获取第 3 页，共 100 个Issues
+2025-07-28 22:35:51,122 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 4, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:35:51,122 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:35:51,124 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:35:51,126 - OpenIssueBot - INFO - 获取第 4 页，共 100 个Issues
+2025-07-28 22:35:53,185 - OpenIssueBot - INFO - 初始化 执行时间: 19.66秒
+2025-07-28 22:41:21,370 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:41:21,371 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:41:21,371 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:41:21,389 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:41:21,402 - OpenIssueBot - INFO - 成功加载用户配置文件: user_config.json
+2025-07-28 22:41:21,535 - OpenIssueBot - INFO - 用户配置验证通过
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - 使用指定的嵌入提供商: zhipu, 模型: embedding-3
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: embedding-3
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 2048, 类型: flat
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:41:21,536 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:41:21,538 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:41:21,538 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:41:21,538 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:41:21,538 - OpenIssueBot - INFO - 开始获取 chatchat-space/Langchain-Chatchat 的Issues (状态: all)
+2025-07-28 22:41:23,149 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 1, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:23,149 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:23,151 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:23,153 - OpenIssueBot - INFO - 获取第 1 页，共 100 个Issues
+2025-07-28 22:41:25,813 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 2, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:25,813 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:25,815 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:25,817 - OpenIssueBot - INFO - 获取第 2 页，共 100 个Issues
+2025-07-28 22:41:27,877 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 3, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:27,877 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:27,880 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:27,882 - OpenIssueBot - INFO - 获取第 3 页，共 100 个Issues
+2025-07-28 22:41:30,052 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 4, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:30,052 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:30,055 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:30,056 - OpenIssueBot - INFO - 获取第 4 页，共 100 个Issues
+2025-07-28 22:41:33,039 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 5, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:33,039 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:33,041 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:33,043 - OpenIssueBot - INFO - 获取第 5 页，共 100 个Issues
+2025-07-28 22:41:34,715 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 6, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:34,715 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:34,717 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:34,719 - OpenIssueBot - INFO - 获取第 6 页，共 100 个Issues
+2025-07-28 22:41:42,785 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 7, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:42,785 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:42,787 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:42,789 - OpenIssueBot - INFO - 获取第 7 页，共 100 个Issues
+2025-07-28 22:41:44,696 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 8, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:44,696 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:44,697 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:44,699 - OpenIssueBot - INFO - 获取第 8 页，共 100 个Issues
+2025-07-28 22:41:47,945 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 9, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:47,945 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:47,948 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:47,950 - OpenIssueBot - INFO - 获取第 9 页，共 100 个Issues
+2025-07-28 22:41:49,723 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 10, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:49,723 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:49,727 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:49,728 - OpenIssueBot - INFO - 获取第 10 页，共 100 个Issues
+2025-07-28 22:41:51,446 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 11, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:51,446 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:51,449 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:51,450 - OpenIssueBot - INFO - 获取第 11 页，共 100 个Issues
+2025-07-28 22:41:53,165 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 12, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:53,165 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:53,170 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:53,171 - OpenIssueBot - INFO - 获取第 12 页，共 100 个Issues
+2025-07-28 22:41:55,375 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 13, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:55,375 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:55,378 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:55,379 - OpenIssueBot - INFO - 获取第 13 页，共 100 个Issues
+2025-07-28 22:41:57,317 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 14, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:57,317 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:57,321 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:57,322 - OpenIssueBot - INFO - 获取第 14 页，共 100 个Issues
+2025-07-28 22:41:59,384 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 15, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:41:59,384 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:41:59,386 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:41:59,388 - OpenIssueBot - INFO - 获取第 15 页，共 100 个Issues
+2025-07-28 22:42:01,591 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 16, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:01,591 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:01,595 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:01,597 - OpenIssueBot - INFO - 获取第 16 页，共 100 个Issues
+2025-07-28 22:42:04,258 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 17, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:04,258 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:04,261 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:04,263 - OpenIssueBot - INFO - 获取第 17 页，共 100 个Issues
+2025-07-28 22:42:06,383 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 18, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:06,383 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:06,386 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:06,388 - OpenIssueBot - INFO - 获取第 18 页，共 100 个Issues
+2025-07-28 22:42:09,612 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 19, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:09,612 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:09,615 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:09,617 - OpenIssueBot - INFO - 获取第 19 页，共 100 个Issues
+2025-07-28 22:42:11,962 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 20, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:11,962 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:11,966 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:11,967 - OpenIssueBot - INFO - 获取第 20 页，共 100 个Issues
+2025-07-28 22:42:15,098 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 21, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:15,098 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:15,101 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:15,102 - OpenIssueBot - INFO - 获取第 21 页，共 100 个Issues
+2025-07-28 22:42:17,389 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 22, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:17,389 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:17,392 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:17,394 - OpenIssueBot - INFO - 获取第 22 页，共 100 个Issues
+2025-07-28 22:42:19,404 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 23, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:19,404 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:19,409 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:19,410 - OpenIssueBot - INFO - 获取第 23 页，共 100 个Issues
+2025-07-28 22:42:22,682 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 24, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:22,682 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:22,686 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:22,687 - OpenIssueBot - INFO - 获取第 24 页，共 100 个Issues
+2025-07-28 22:42:24,669 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 25, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:24,669 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:24,672 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:24,673 - OpenIssueBot - INFO - 获取第 25 页，共 100 个Issues
+2025-07-28 22:42:26,435 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 26, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:26,435 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:26,439 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:26,440 - OpenIssueBot - INFO - 获取第 26 页，共 100 个Issues
+2025-07-28 22:42:28,221 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 27, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:28,221 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:28,224 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:28,225 - OpenIssueBot - INFO - 获取第 27 页，共 100 个Issues
+2025-07-28 22:42:30,888 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 28, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:30,888 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:30,891 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:30,893 - OpenIssueBot - INFO - 获取第 28 页，共 100 个Issues
+2025-07-28 22:42:33,356 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 29, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:33,356 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:33,359 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:33,361 - OpenIssueBot - INFO - 获取第 29 页，共 100 个Issues
+2025-07-28 22:42:35,557 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 30, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:35,558 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:35,561 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:35,562 - OpenIssueBot - INFO - 获取第 30 页，共 100 个Issues
+2025-07-28 22:42:38,068 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 31, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:38,068 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:38,071 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:38,073 - OpenIssueBot - INFO - 获取第 31 页，共 100 个Issues
+2025-07-28 22:42:41,152 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 32, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:41,152 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:41,155 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:41,156 - OpenIssueBot - INFO - 获取第 32 页，共 100 个Issues
+2025-07-28 22:42:43,205 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 33, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:43,205 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:43,207 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:43,209 - OpenIssueBot - INFO - 获取第 33 页，共 100 个Issues
+2025-07-28 22:42:46,871 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 34, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:46,871 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:46,873 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:46,875 - OpenIssueBot - INFO - 获取第 34 页，共 100 个Issues
+2025-07-28 22:42:49,228 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 35, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:49,228 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:49,231 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:49,232 - OpenIssueBot - INFO - 获取第 35 页，共 100 个Issues
+2025-07-28 22:42:51,609 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 36, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:51,609 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:51,612 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:51,613 - OpenIssueBot - INFO - 获取第 36 页，共 100 个Issues
+2025-07-28 22:42:54,320 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 37, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:54,320 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:54,322 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:54,324 - OpenIssueBot - INFO - 获取第 37 页，共 100 个Issues
+2025-07-28 22:42:56,057 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 38, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:56,057 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:56,060 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:56,061 - OpenIssueBot - INFO - 获取第 38 页，共 100 个Issues
+2025-07-28 22:42:57,831 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 39, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:42:57,831 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:42:57,833 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:42:57,835 - OpenIssueBot - INFO - 获取第 39 页，共 100 个Issues
+2025-07-28 22:43:00,223 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 40, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:00,223 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:00,226 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:00,227 - OpenIssueBot - INFO - 获取第 40 页，共 100 个Issues
+2025-07-28 22:43:02,188 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 41, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:02,189 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:02,191 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:02,192 - OpenIssueBot - INFO - 获取第 41 页，共 100 个Issues
+2025-07-28 22:43:03,910 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 42, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:03,910 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:03,912 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:03,914 - OpenIssueBot - INFO - 获取第 42 页，共 100 个Issues
+2025-07-28 22:43:07,730 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 43, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:07,730 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:07,733 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:07,735 - OpenIssueBot - INFO - 获取第 43 页，共 100 个Issues
+2025-07-28 22:43:09,651 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 44, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:09,651 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:09,653 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:09,654 - OpenIssueBot - INFO - 获取第 44 页，共 100 个Issues
+2025-07-28 22:43:11,948 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 45, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:11,948 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:11,949 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:11,952 - OpenIssueBot - INFO - 获取第 45 页，共 100 个Issues
+2025-07-28 22:43:14,083 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 46, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:14,083 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:14,085 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:14,086 - OpenIssueBot - INFO - 获取第 46 页，共 100 个Issues
+2025-07-28 22:43:17,275 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 47, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:17,275 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:17,277 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:17,278 - OpenIssueBot - INFO - 获取第 47 页，共 100 个Issues
+2025-07-28 22:43:18,968 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 48, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:18,968 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:18,971 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:18,972 - OpenIssueBot - INFO - 获取第 48 页，共 100 个Issues
+2025-07-28 22:43:20,837 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 49, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:20,837 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:20,839 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:20,840 - OpenIssueBot - INFO - 获取第 49 页，共 100 个Issues
+2025-07-28 22:43:22,844 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 50, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:22,845 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:22,847 - OpenIssueBot - INFO - 返回数据长度: 100
+2025-07-28 22:43:22,847 - OpenIssueBot - INFO - 获取第 50 页，共 100 个Issues
+2025-07-28 22:43:24,864 - OpenIssueBot - INFO - API请求: https://api.github.com/repos/chatchat-space/Langchain-Chatchat/issues, 参数: {'state': 'all', 'per_page': 100, 'page': 51, 'sort': 'updated', 'direction': 'desc'}
+2025-07-28 22:43:24,864 - OpenIssueBot - INFO - 响应状态: 200
+2025-07-28 22:43:24,864 - OpenIssueBot - INFO - 返回数据长度: 36
+2025-07-28 22:43:24,866 - OpenIssueBot - INFO - 获取第 51 页，共 36 个Issues
+2025-07-28 22:43:24,866 - OpenIssueBot - INFO - 第 51 页数据不足 100 个，已到最后一页
+2025-07-28 22:43:24,866 - OpenIssueBot - INFO - 总共获取 5036 个Issues
+2025-07-28 22:43:25,412 - OpenIssueBot - INFO - 数据已缓存: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:43:25,412 - OpenIssueBot - INFO - 开始构建索引，共 5036 个Issues
+2025-07-28 22:43:25,425 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:46:02,621 - OpenIssueBot - ERROR - 智谱AI嵌入计算失败: 智谱AI API调用失败: {"error":{"code":"1113","message":"您的账户已欠费，请充值后重试。"}}
+2025-07-28 22:46:02,622 - OpenIssueBot - ERROR - 构建索引失败: 智谱AI API调用失败: {"error":{"code":"1113","message":"您的账户已欠费，请充值后重试。"}}
+2025-07-28 22:46:02,648 - OpenIssueBot - ERROR - 索引构建失败
+2025-07-28 22:46:02,662 - OpenIssueBot - INFO - 初始化 执行时间: 281.12秒
+2025-07-28 22:46:40,226 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:46:40,227 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:46:40,227 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:46:40,245 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:46:40,255 - OpenIssueBot - INFO - 成功加载用户配置文件: user_config.json
+2025-07-28 22:46:40,382 - OpenIssueBot - INFO - 用户配置验证通过
+2025-07-28 22:46:40,383 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:46:40,383 - OpenIssueBot - INFO - 使用指定的嵌入提供商: local, 模型: paraphrase-MiniLM-L6-v2
+2025-07-28 22:46:40,384 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-07-28 22:46:40,407 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-07-28 22:46:40,407 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - 开始初始化搜索引擎...
+2025-07-28 22:46:48,905 - OpenIssueBot - INFO - 获取Issues数据...
+2025-07-28 22:46:49,354 - OpenIssueBot - INFO - 从缓存加载数据: issues_chatchat-space_Langchain-Chatchat_all
+2025-07-28 22:46:49,355 - OpenIssueBot - INFO - 开始构建索引，共 5036 个Issues
+2025-07-28 22:46:49,368 - OpenIssueBot - INFO - 生成嵌入向量...
+2025-07-28 22:46:58,750 - OpenIssueBot - INFO - 成功添加 5036 个向量到索引
+2025-07-28 22:46:58,751 - OpenIssueBot - INFO - 索引构建完成，包含 5036 个Issues
+2025-07-28 22:46:58,773 - OpenIssueBot - INFO - 索引已保存到: ./data/cache\index_chatchat-space_Langchain-Chatchat
+2025-07-28 22:46:59,378 - OpenIssueBot - INFO - 索引缓存保存成功
+2025-07-28 22:46:59,379 - OpenIssueBot - INFO - 索引构建并缓存成功
+2025-07-28 22:46:59,379 - OpenIssueBot - INFO - 初始化 执行时间: 10.47秒
+2025-07-28 22:47:21,249 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-07-28 22:47:21,250 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-07-28 22:47:21,250 - faiss.loader - INFO - Loading faiss.
+2025-07-28 22:47:21,268 - faiss.loader - INFO - Successfully loaded faiss.
+2025-07-28 22:47:21,276 - OpenIssueBot - INFO - 成功加载用户配置文件: user_config.json
+2025-07-28 22:47:21,408 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-07-28 22:47:21,427 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-28 22:47:21,427 - werkzeug - INFO - [33mPress CTRL+C to quit[0m

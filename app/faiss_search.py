@@ -224,12 +224,12 @@ class FAISSSearchEngine:
         if self.index_type == "hnsw":
             # HNSW使用L2距离，距离越小相似度越高
             # L2距离范围是[0, +∞)，我们需要转换为相似度[0, 1]
-            # 使用公式: similarity = 1 / (1 + distance)
-            converted_scores = 1.0 / (1.0 + scores)
+            # 使用改进的公式: similarity = exp(-distance/2) 提供更好的区分度
+            converted_scores = np.exp(-scores / 2.0)
         else:
             # flat和ivf索引使用内积，分数已经在[-1, 1]范围内（归一化向量）
-            # 转换到[0, 1]范围
-            converted_scores = (scores + 1) / 2
+            # 使用sigmoid函数提供更好的区分度: sigmoid(score * 4)
+            converted_scores = 1.0 / (1.0 + np.exp(-scores * 4.0))
         
         # 调试信息：记录转换后的分数
         log_info(f"转换后的相似度分数: {converted_scores[:5] if len(converted_scores) > 5 else converted_scores}")

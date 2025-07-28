@@ -1,0 +1,60 @@
+{
+  "comment": "OpenIssueBot 用户配置文件 - 请根据需要修改以下配置",
+  "github": {
+    "token": "",
+    "repo": "chatchat-space/Langchain-Chatchat",
+    "comment": "GitHub访问令牌和目标仓库"
+  },
+  "llm": {
+    "provider": "zhipu",
+    "comment": "LLM提供商: openai, zhipu, qwen, baidu, deepseek",
+    "models": {
+      "openai": {
+        "api_key": "",
+        "model": "gpt-3.5-turbo",
+        "embedding_model": "text-embedding-3-small"
+      },
+      "zhipu": {
+        "api_key": "",
+        "model": "glm-4-plus",
+        "embedding_model": "embedding-2"
+      },
+      "qwen": {
+        "api_key": "",
+        "model": "qwen-turbo",
+        "embedding_model": "text-embedding-v1"
+      },
+      "baidu": {
+        "api_key": "",
+        "secret_key": "",
+        "model": "ernie-bot-turbo",
+        "embedding_model": "embedding-v1"
+      },
+      "deepseek": {
+        "api_key": "",
+        "model": "deepseek-chat"
+      }
+    }
+  },
+  "embedding": {
+    "provider": "local",
+    "comment": "嵌入模型提供商: local, openai, zhipu, qwen, baidu",
+    "local_model": "paraphrase-MiniLM-L6-v2",
+    "comment2": "当provider为local时使用的本地模型名称"
+  },
+  "search": {
+    "top_k_results": 5,
+    "similarity_threshold": 0.3,
+    "comment": "搜索相关配置"
+  },
+  "cache": {
+    "expiry_hours": 24,
+    "comment": "缓存过期时间（小时）"
+  },
+  "web": {
+    "host": "127.0.0.1",
+    "port": 5000,
+    "debug": true,
+    "comment": "Web服务器配置"
+  }
+}

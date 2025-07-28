@@ -120,35 +120,60 @@ class GitHubAPI:
         except Exception as e:
             log_error(f"保存缓存失败: {e}")
     
-    def _make_request(self, url: str, params: Optional[Dict] = None) -> Optional[Dict]:
+    def _make_request(self, url: str, params: Optional[Dict] = None, max_retries: int = 3) -> Optional[Dict]:
         """
-        发送HTTP请求
+        发送HTTP请求，带重试机制
         
         Args:
             url: 请求URL
             params: 请求参数
+            max_retries: 最大重试次数
             
         Returns:
             响应数据或None
         """
-        try:
-            response = requests.get(url, headers=self.headers, params=params, timeout=30)
-            
-            # 检查API限制
-            if response.status_code == 403:
-                reset_time = response.headers.get('X-RateLimit-Reset')
-                if reset_time:
-                    reset_datetime = datetime.fromtimestamp(int(reset_time))
-                    log_warning(f"API限制达到，重置时间: {reset_datetime}")
-                    
-            response.raise_for_status()
-            return response.json()
-            
-        except requests.exceptions.RequestException as e:
-            log_error(f"请求失败: {url}, 错误: {e}")
-            return None
+        for attempt in range(max_retries + 1):
+            try:
+                response = requests.get(url, headers=self.headers, params=params, timeout=30)
+                
+                # 记录响应头信息用于调试
+                if attempt == 0:  # 只在第一次尝试时记录详细信息
+                    log_info(f"API请求: {url}, 参数: {params}")
+                    log_info(f"响应状态: {response.status_code}")
+                    # log_info(f"剩余请求次数: {response.headers.get('X-RateLimit-Remaining', 'N/A')}")
+                
+                # 检查API限制
+                if response.status_code == 403:
+                    reset_time = response.headers.get('X-RateLimit-Reset')
+                    if reset_time:
+                        reset_datetime = datetime.fromtimestamp(int(reset_time))
+                        log_warning(f"API限制达到，重置时间: {reset_datetime}")
+                        
+                response.raise_for_status()
+                data = response.json()
+                
+                # 记录返回数据的长度
+                if isinstance(data, list) and attempt == 0:
+                    log_info(f"返回数据长度: {len(data)}")
+                
+                return data
+                
+            except (requests.exceptions.SSLError, requests.exceptions.ConnectionError) as e:
+                if attempt < max_retries:
+                    wait_time = (attempt + 1) * 2  # 递增等待时间
+                    log_warning(f"网络连接错误 (尝试 {attempt + 1}/{max_retries + 1}): {e}")
+                    log_info(f"等待 {wait_time} 秒后重试...")
+                    time.sleep(wait_time)
+                else:
+                    log_error(f"请求失败，已达最大重试次数: {url}, 错误: {e}")
+                    return None
+            except requests.exceptions.RequestException as e:
+                log_error(f"请求失败: {url}, 错误: {e}")
+                return None
+        
+        return None
     
-    def fetch_issues(self, state: str = "all", per_page: int = 100, max_pages: int = 10) -> List[Dict]:
+    def fetch_issues(self, state: str = "all", per_page: int = 100, max_pages: int = None) -> List[Dict]:
         """
         获取仓库的Issues
         
@@ -172,7 +197,7 @@ class GitHubAPI:
         all_issues = []
         page = 1
         
-        while page <= max_pages:
+        while max_pages is None or page <= max_pages:
             url = f"{self.base_url}/repos/{self.repo}/issues"
             params = {
                 "state": state,
@@ -183,10 +208,12 @@ class GitHubAPI:
             }
             
             data = self._make_request(url, params)
-            if not data:
+            if not data:  # API请求失败
+                log_warning(f"第 {page} 页请求失败，停止获取")
                 break
                 
-            if not data:  # 空页面，结束
+            if len(data) == 0:  # 空页面，结束
+                log_info(f"第 {page} 页为空，已获取所有Issues")
                 break
                 
             all_issues.extend(data)
@@ -194,6 +221,7 @@ class GitHubAPI:
             
             # 如果返回的数据少于per_page，说明已经是最后一页
             if len(data) < per_page:
+                log_info(f"第 {page} 页数据不足 {per_page} 个，已到最后一页")
                 break
                 
             page += 1

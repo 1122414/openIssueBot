@@ -161,6 +161,14 @@ class EmbeddingService:
         if not texts:
             return np.array([])
         
+        # 根据提供商调整批处理大小
+        if self.provider == "zhipu":
+            batch_size = min(batch_size, 5)  # 智谱AI减少批处理大小
+        elif self.provider == "qwen":
+            batch_size = min(batch_size, 10)
+        elif self.provider == "baidu":
+            batch_size = min(batch_size, 16)
+        
         if self.provider == "local":
             return self._get_local_embeddings(texts, batch_size)
         elif self.provider == "openai":
@@ -449,8 +457,20 @@ class EmbeddingService:
         # 基本清理
         text = text.strip()
         
-        # 限制长度（避免过长文本）
-        max_length = 8000 if self.provider == "local" else 8000
+        # 根据提供商限制长度（避免过长文本）
+        if self.provider == "local":
+            max_length = 8000
+        elif self.provider == "zhipu":
+            max_length = 2000  # 智谱AI对请求体大小有限制，减少单个文本长度
+        elif self.provider == "openai":
+            max_length = 8000
+        elif self.provider == "qwen":
+            max_length = 6000
+        elif self.provider == "baidu":
+            max_length = 5000
+        else:
+            max_length = 4000
+            
         if len(text) > max_length:
             text = text[:max_length] + "..."
             
@@ -527,7 +547,7 @@ class EmbeddingService:
             else:
                 return 1536  # 默认维度
         elif self.provider == "zhipu":
-            return 1024  # 智谱AI嵌入维度
+            return 2048  # 智谱AI嵌入维度 (embedding-3默认维度)
         elif self.provider == "qwen":
             return 1536  # 通义千问嵌入维度
         elif self.provider == "baidu":
