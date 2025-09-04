@@ -6309,3 +6309,97 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2025-07-28 22:47:21,427 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 2025-07-28 22:47:21,427 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-04 11:06:00,535 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-09-04 11:06:00,536 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-09-04 11:06:00,536 - faiss.loader - INFO - Loading faiss.
+2025-09-04 11:06:00,653 - faiss.loader - INFO - Successfully loaded faiss.
+2025-09-04 11:06:00,674 - OpenIssueBot - INFO - 成功加载用户配置文件: user_config.json
+2025-09-04 11:06:27,623 - faiss.loader - INFO - Loading faiss with AVX2 support.
+2025-09-04 11:06:27,624 - faiss.loader - INFO - Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2025-09-04 11:06:27,624 - faiss.loader - INFO - Loading faiss.
+2025-09-04 11:06:27,644 - faiss.loader - INFO - Successfully loaded faiss.
+2025-09-04 11:06:27,653 - OpenIssueBot - INFO - 成功加载用户配置文件: user_config.json
+2025-09-04 11:06:27,780 - OpenIssueBot - INFO - 启动Flask应用: http://127.0.0.1:5000
+2025-09-04 11:06:27,801 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-09-04 11:06:27,801 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-04 11:06:35,511 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:35] "GET / HTTP/1.1" 200 -
+2025-09-04 11:06:35,714 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:35] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-04 11:06:35,718 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:35] "GET /static/js/app.js?v=20250724214300 HTTP/1.1" 200 -
+2025-09-04 11:06:36,505 - OpenIssueBot - INFO - 用户配置验证通过
+2025-09-04 11:06:36,506 - OpenIssueBot - INFO - GitHub API客户端初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-09-04 11:06:36,506 - OpenIssueBot - INFO - 使用指定的嵌入提供商: local, 模型: paraphrase-MiniLM-L6-v2
+2025-09-04 11:06:36,507 - OpenIssueBot - INFO - 正在加载本地嵌入模型: paraphrase-MiniLM-L6-v2
+2025-09-04 11:06:36,632 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2025-09-04 11:06:36,632 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-09-04 11:06:37,984 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-04 11:06:41,925 - OpenIssueBot - INFO - 本地模型加载成功，向量维度: 384
+2025-09-04 11:06:41,925 - OpenIssueBot - INFO - FAISS索引创建成功: flat
+2025-09-04 11:06:41,925 - OpenIssueBot - INFO - FAISS搜索引擎初始化完成，维度: 384, 类型: flat
+2025-09-04 11:06:41,925 - OpenIssueBot - INFO - Issue摘要提取器初始化完成
+2025-09-04 11:06:41,925 - OpenIssueBot - INFO - 智谱AI客户端初始化成功，使用模型: glm-4-plus
+2025-09-04 11:06:41,925 - OpenIssueBot - INFO - LLM分析器初始化完成，使用模型: glm-4-plus
+2025-09-04 11:06:41,926 - OpenIssueBot - INFO - Issue搜索引擎初始化完成，目标仓库: chatchat-space/Langchain-Chatchat
+2025-09-04 11:06:41,926 - OpenIssueBot - INFO - 搜索引擎实例创建成功，嵌入提供商: local, 仓库: chatchat-space/Langchain-Chatchat
+2025-09-04 11:06:42,791 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:42] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:06:43,666 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:43] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:06:44,578 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:44] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:06:56,303 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:56] "GET /config HTTP/1.1" 200 -
+2025-09-04 11:06:56,335 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:06:56,337 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:56] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:06:57,290 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:57] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:06:58,161 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:06:58] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:07,925 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:07] "GET /search HTTP/1.1" 200 -
+2025-09-04 11:07:07,946 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:07:07,948 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:07] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:07:08,826 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:08] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:09,699 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:09] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:16,833 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:16] "GET /about HTTP/1.1" 200 -
+2025-09-04 11:07:16,857 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:07:16,858 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:16] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:07:17,737 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:17] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:18,608 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:18] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:19,442 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:19] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:24,205 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:24] "GET /config HTTP/1.1" 200 -
+2025-09-04 11:07:24,238 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:07:24,238 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:24] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:07:25,177 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:25] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:26,274 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:26] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:27,540 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:27] "GET /search HTTP/1.1" 200 -
+2025-09-04 11:07:27,568 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:07:27,573 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:27] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:07:28,484 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:28] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:29,342 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:29] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:30,084 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:30] "GET / HTTP/1.1" 200 -
+2025-09-04 11:07:30,109 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:07:30,116 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:30] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:07:30,982 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:30] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:31,892 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:31] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:07:32,724 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:07:32] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:08:22,754 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:08:22] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:08:28,942 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:08:28] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:09:46,228 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:09:46] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:00,190 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:00] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:05,177 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:05] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:16,482 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:16] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:26,313 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:26] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:35,125 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:35] "GET / HTTP/1.1" 200 -
+2025-09-04 11:10:35,153 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:10:35,155 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:35] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:10:36,064 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:36] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:36,299 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:36] "GET /search HTTP/1.1" 200 -
+2025-09-04 11:10:36,329 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:10:36,332 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:36] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:10:36,970 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:36] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:37,832 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:37] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:38,675 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:38] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:10:39,596 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:10:39] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:11:13,487 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:11:13] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:23:01,307 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:23:01] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:25:37,311 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:25:37] "GET / HTTP/1.1" 200 -
+2025-09-04 11:25:37,333 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:25:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-04 11:25:37,335 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:25:37] "[36mGET /static/js/app.js?v=20250724214300 HTTP/1.1[0m" 304 -
+2025-09-04 11:25:38,540 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:25:38] "GET /api/stats HTTP/1.1" 200 -
+2025-09-04 11:25:39,420 - werkzeug - INFO - 127.0.0.1 - - [04/Sep/2025 11:25:39] "GET /api/stats HTTP/1.1" 200 -
